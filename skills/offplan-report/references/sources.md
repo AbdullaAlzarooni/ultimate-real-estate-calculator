@@ -8,7 +8,7 @@ read pages in the browser; don't scrape aggressively or bulk-export without the 
 |---|---|---|
 | Developer **sales offer / brochure** (PDF from user) | price on plan, sizes (internal + balcony), plan dates, DLD, admin fee, floor, view | Highest priority. If it shows DLD, use that exact amount. |
 | **Reelly** – find.reelly.io | project facts, units & availability, **gallery (≈2000px)**, unit mix | Search box → project → "Units & Availability", photo gallery tabs. Gallery image URLs come via `/_next/image?url=<inner>`; the inner URL (S3 `.../projects/<id>/images/<hash>.webp`) is the full-size file. |
-| **GenieMap** – geniemap.net (**paid**, optional; Reelly covers most of it) | project info, price range, payment plans, unsold units, **gallery (720px)** | Prices shown are often the **maximum** (post-handover plan). "Units" tab = unsold stock only, not the building total. Gallery: click the › arrow and read each `img.currentSrc` (CDN serves 720px only). |
+| **GenieMap** – geniemap.net (**paid**, optional; Reelly covers most of it) | project info, price range, payment plans, discounts, unsold units, **gallery (up to 1440px)** | Prices shown are often the **maximum** (post-handover plan). "Units" tab = unsold stock only, not the building total. Gallery: open the photo viewer and click › through every photo, reading the `1440_` `img.currentSrc` each time (a 1440px copy only exists once viewed; thumbnails are `320_`). |
 | Property Finder / Bayut new projects | fallback project facts | |
 
 ## Area comparables
@@ -34,8 +34,15 @@ read pages in the browser; don't scrape aggressively or bulk-export without the 
 Sales → Status Off-plan → period "Last quarter" (picker → Last quarter → Apply → Search) → median
 price/sqft. Rental → "New rentals" average annual rent. All sizes (not size-matched) → note that
 smaller units sell for more per sqft, so it can flatter a larger unit.
-The area search box may not accept automated input; if the area won't change, ask the user to set
-the area once in their browser, or leave DXB Interact out (the report works with 1–3 sources).
+DXB Interact is an Oracle APEX app; typing in the area box often doesn't stick. What works (in page JS):
+type into `input[type=search]`, wait, then `.click()` the matching `<article>` suggestion → check
+`P74_DLD_LOCATION` (e.g. `al-jaddaf`). Beds = `li[data-value="0"]` "Studio"; status = `li[data-value="Y"]`
+"Off-plan"; date = `button.drp-preset` "Last quarter"; then click `#searchResult`. Rentals: click the
+"Rental" radio, pick `li[data-value="N"]` "New", search again. **Always include DXB Interact** when the
+user has it; never drop a source silently — if it truly fails, tell the user and ask.
+**Supply page** (`/dubai-units-supply-analysis`): `apex.item('P59_AREA_ID').setValue(<area id>)`,
+`apex.item('P59_STATUS').setValue('ac')` (under construction) → projects with completion date, units by
+bedroom and **commercial** units. Use it to cross-check Property Monitor's handover years.
 
 **Bayut** – bayut.com market analysis (public).
 - Off-plan sales: `/property-market-analysis/transactions/sale/off-plan/{studio|1-bedroom|2-bedroom|3-bedroom}-property/dubai/{community-slug}/?time_since_creation=3m`

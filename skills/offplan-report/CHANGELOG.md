@@ -6,7 +6,10 @@ Lessons from a second real test (Binghatti Starfall, from a brochure):
 - Read image-only brochure PDFs by rendering pages (PyMuPDF); setup check now includes `pymupdf` + `pillow`.
 - Checks work with 1, 2 or 3 data sources (`dump.js`).
 - PDF keeps the first photo (`--virtual-time-budget=4000`).
-- Growth caveat when a jump comes from a tiny prior-year sample; DXB Interact fallback note.
+- Growth caveat when a jump comes from a tiny prior-year sample.
+- DXB Interact: how to set area/filters reliably, and its supply page to cross-check handover years.
+- Photos: always both Reelly and GenieMap (1440px via the viewer), de-duplicated, larger copy kept.
+- Supply includes retail and offices; years shown up to the last year the sources list.
 
 ## 1.0.0 — 8 Oct 2026
 - Part of The Ultimate Real Estate Calculator (repo renamed and restructured: `skills/offplan-report/`).

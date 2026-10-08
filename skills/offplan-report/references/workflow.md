@@ -55,7 +55,10 @@ suncalc.org, shademap.app, noise-map.com, windy.com, news/Wikipedia). Only write
 
 ## 7. Supply & demand section
 - Community supply: PM project page for the community (Supply tracker: ready units, under
-  construction, handovers per year). Fallback: DXB Interact supply / skip section.
+  construction, handovers per year) **and** DXB Interact's supply page to cross-check. Show handover years
+  up to the last year either source lists (don't invent later years; say "nothing listed after YYYY yet").
+- **Include retail and offices:** PM splits ready / under-construction units into apartments, retail and
+  offices; the building's shops go in its unit mix (e.g. `["Retail",17,"649–3,026"]`).
 - What's selling: PM market statistics for the community, current year: bedroom mix (all sales and
   Oqood-only) → counts, % and % off-plan vs ready.
 - This building's unit mix: PM project page "Unit configuration" (units per type + size ranges).
@@ -65,7 +68,9 @@ suncalc.org, shademap.app, noise-map.com, windy.com, news/Wikipedia). Only write
 - Write: one takeaway sentence, a "matches what's selling" line, 4 short key points.
 
 ## 8. Photos
-Reelly project gallery (≈2000px renders) first; GenieMap gallery (720px) for anything missing.
+**Always check both** Reelly (≈2000px) and GenieMap (up to 1440px) when the user has them.
+Compare every photo across both (contact sheet): same render → keep the larger file; different render
+(even of the same view, e.g. different lighting) → keep both.
 **Remove duplicates** (same render in both → keep the larger), order: exteriors → rooftop/amenities →
 lobby → interiors → location map. Save as `data/<name>-img/NN.webp` (max 1920px), caption each.
 Ask before bulk-downloading if the user hasn't asked for photos.
