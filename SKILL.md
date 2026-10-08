@@ -47,10 +47,18 @@ node tools/dump.js <project>-<unit>.html                  # must print: bad 0 []
 Then make the PDF and publish/share (workflow steps 10–11).
 
 ## First run for a new person
-Ask once, then save into `kit/config/agent.js` (and remember it):
+**Guide them step by step, in plain words; don't assume they are technical.**
+0. **Check the setup** before anything else and help fix what's missing (one item at a time):
+   `python3 --version`, `node --version`, Google Chrome installed, and the **Claude in Chrome**
+   extension connected (needed to read the data sites). If something is missing, explain what it is
+   in one line and walk them through installing it (official sites only; ask before downloading).
+   Then copy `kit/` to a working folder they choose (default `~/Documents/Off-plan Reports`).
+1. Ask once, then save into `config/agent.js` of their working folder (and remember it):
 name, company, BRN, WhatsApp number, social links (any of Instagram, Facebook, TikTok, YouTube,
-Threads, X, LinkedIn, Snapchat), optional formulas credit line; optional files in `kit/brand/`:
+Threads, X, LinkedIn, Snapchat), optional formulas credit line; optional files in `brand/` of the working folder:
 `logo-dark.png` + `logo-light.png` (transparent; light/dark versions) and `agent.jpg` (square
 headshot – crop to the face, it shows in a circle). Anything left empty is simply hidden.
-Also ask which data accounts they have (Property Monitor, DXB Interact, Reelly, GenieMap) –
-this decides which sources and fallbacks to use.
+2. Ask which data accounts they have (Property Monitor, DXB Interact, Reelly, GenieMap) –
+this decides which sources and fallbacks to use (no paid accounts → Reelly + DXB Interact + Bayut).
+3. Then ask for the first property (sales offer PDF, brochure, or a project link) and follow `workflow.md`.
+   Tell them what you are doing as you go (e.g. "Reading Bayut rents…") and what each step needs from them.

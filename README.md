@@ -30,6 +30,10 @@ desktop app, or the `claude` terminal app.
 **1. Install** — paste this into Claude Code:
 > Install this skill: https://github.com/AbdullaAlzarooni/offplan-report-skill
 
+Claude downloads it and then **guides you through the setup** (checks Python, Node, Chrome and the
+Claude in Chrome extension, asks for your details). If Claude doesn't pick up the skill right away,
+start a new session.
+
 or run it yourself:
 ```bash
 git clone https://github.com/AbdullaAlzarooni/offplan-report-skill.git ~/.claude/skills/offplan-report
