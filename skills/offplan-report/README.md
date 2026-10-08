@@ -2,7 +2,7 @@
 
 Part of **[The Ultimate Real Estate Calculator](../../README.md)**.
 
-**Version 1.0.1** · [Changelog](CHANGELOG.md) · by **Abdulla Alzarooni** (Real Estate with Abdulla Alzarooni)
+**Version 1.1.0** · [Changelog](CHANGELOG.md) · by **Abdulla Alzarooni** (Real Estate with Abdulla Alzarooni)
 
 Turn any Dubai / UAE off-plan unit into a **client-ready evaluation report** (web page + PDF) in one
 conversation with Claude. Give it a **sales offer**, a **brochure**, or a project link from
@@ -97,7 +97,7 @@ See [Updating](../../README.md#updating).
 - `references/` — `workflow.md` (step by step), `sources.md` (websites), `rules.md` (formulas, bands,
   labels), `design.md` (layout decisions), `data-schema.md` (every field)
 - `kit/` — `build.py` (data file → report), `template/report-template.html` (layout + all formulas),
-  `data/example-weston-109.js` (a complete real example), `tools/` (automatic checks)
+  `data/example-weston-109.js` (from a sales offer) and `data/example-starfall-studio.js` (from a brochure): complete real examples, `tools/` (automatic checks)
 
 Try the example yourself:
 ```bash

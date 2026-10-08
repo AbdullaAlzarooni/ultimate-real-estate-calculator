@@ -10,7 +10,7 @@ and new ones arrive with a single update.
 ## Calculators
 | Calculator | What it does | Version |
 |---|---|---|
-| [**Off-plan Report**](skills/offplan-report/README.md) | Sales offer / brochure / Reelly or GenieMap link → full off-plan evaluation (profit at handover, yield, what-ifs, supply & demand, payment plan, location, PDF) | 1.0.1 |
+| [**Off-plan Report**](skills/offplan-report/README.md) | Sales offer / brochure / Reelly or GenieMap link → full off-plan evaluation (profit at handover, yield, what-ifs, supply & demand, payment plan, location, PDF) | 1.1.0 |
 | Post-handover | coming soon | – |
 | Ready property | coming soon | – |
 | Mortgage | coming soon | – |
