@@ -32,6 +32,8 @@ read pages in the browser; don't scrape aggressively or bulk-export without the 
   `project-details.php?project_id=<id>`): community **Units Supply Tracker** (ready, under
   construction, per-year handovers — read from `Highcharts.charts`) and a building's
   **Unit configuration** (units per bedroom + size ranges).
+- Community page price/rent index: the bars are **monthly** changes; quote the summary lines below them
+  ("Last 12 / 6 / 3 months change"), never a single month's bar as a period change.
 
 **DXB Interact** – dxbinteract.com (free tier limited). Community + beds + Apartment;
 Sales → Status Off-plan → period "Last quarter" (picker → Last quarter → Apply → Search) → median
