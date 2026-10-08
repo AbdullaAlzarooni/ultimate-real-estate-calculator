@@ -95,7 +95,8 @@ Set `pdf:"<Name>-client.pdf"` in the data file so the "Download PDF" button link
 
 ## 11. Share
 - Claude.ai Artifacts (if available): publish `<name>.html` with `files` = every path in
-  `<name>.files.txt` + the PDF, and `capabilities: {downloads: true}` (needed for Download PDF).
+  `<name>.files.txt`, **published at exactly that path, including `data/`** (e.g.
+  `"data/<name>-img/01.webp"`; otherwise the photos don't show), + the PDF, and `capabilities: {downloads: true}` (needed for Download PDF).
   Update the same artifact URL on later changes. Artifacts start private — remind the user to Share.
 - Otherwise: zip `<name>.html` + `data/<name>-img/` + PDF, or host the folder (any static host).
 
