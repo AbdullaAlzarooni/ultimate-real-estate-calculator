@@ -2,7 +2,7 @@
 
 Part of **[The Ultimate Real Estate Calculator](../../README.md)**.
 
-**Version 1.1.0** · [Changelog](CHANGELOG.md) · by **Abdulla Alzarooni** (Real Estate with Abdulla Alzarooni)
+**Version 1.1.0** · [Changelog](CHANGELOG.md) · Version history: [all off-plan versions](../../../../tags) · [collection releases](../../../../releases) · by **Abdulla Alzarooni** (Real Estate with Abdulla Alzarooni)
 
 Turn any Dubai / UAE off-plan unit into a **client-ready evaluation report** (web page + PDF) in one
 conversation with Claude. Give it a **sales offer**, a **brochure**, or a project link from

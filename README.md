@@ -1,6 +1,6 @@
 # The Ultimate Real Estate Calculator
 
-**Version 1.0** · [Changelog](CHANGELOG.md)
+**Version 1.0** · [Changelog](CHANGELOG.md) · [Releases](../../releases)
 
 by **Abdulla Alzarooni** · Real Estate with Abdulla Alzarooni ·
 [Instagram](https://www.instagram.com/abdulla.al.zarooni)
