@@ -22,7 +22,7 @@ Google Chrome (makes the PDF). No paid software needed.
 | [Reelly](https://find.reelly.io) | project facts, unit breakdown (if no Property Monitor), full-size photos | free login |
 | [GenieMap](https://geniemap.net) | project info, payment plans, photos (most of this is also on Reelly) | paid (optional) – use Reelly instead |
 | [Property Monitor](https://propertymonitor.ae) | size-matched rents & sales, supply tracker, project unit breakdown | paid (optional) |
-| [DXB Interact](https://dxbinteract.com) | off-plan price/sqft, new rents | free tier |
+| [DXB Interact](https://dxbinteract.com) | off-plan price/sqft, new rents, supply (if no Property Monitor) | free tier |
 | [Bayut market analysis](https://www.bayut.com/property-market-analysis/) | off-plan sales & rents, 12-month growth | public |
 | Property Finder / Bayut new projects | fallback project facts | public |
 | Google Maps | facing, distances to metro & airport | public |
