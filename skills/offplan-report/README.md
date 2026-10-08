@@ -65,6 +65,7 @@ Each report takes a while: Claude visits the data sites and pulls fresh numbers 
 | [DXB Interact](https://dxbinteract.com) | off-plan price/sqft, new rents, supply (if no Property Monitor) | free tier |
 | [Bayut market analysis](https://www.bayut.com/property-market-analysis/) | off-plan sales & rents, 12-month growth | public |
 | Property Finder / Bayut new projects | backup project facts | public |
+| [Property Finder transactions](https://www.propertyfinder.ae/en/transactions) | what's selling: studios, 1-beds… and shops vs offices | public |
 | Google Maps | facing, distances to metro & airport | public |
 | [SunCalc](https://www.suncalc.org) · [ShadeMap](https://shademap.app) | sun and shade | public |
 | [Noise-map](https://noise-map.com) | aircraft noise (dB) | public |

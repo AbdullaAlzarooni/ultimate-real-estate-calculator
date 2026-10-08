@@ -60,9 +60,12 @@ suncalc.org, shademap.app, noise-map.com, windy.com, news/Wikipedia). Only write
 - **Include retail and offices:** PM splits ready / under-construction units into apartments, retail and
   offices; the building's shops go in its unit mix (e.g. `["Retail",17,"649–3,026"]`).
 - What's selling: current-year sales **in the same categories as the building** (e.g. Studio · 1 Bed ·
-  2 Bed · Retail) so the two donuts compare side by side. PM market statistics cover homes only; DXB
-  Interact covers homes **and** commercial (type "Commercial" = shops + offices together, so label it
-  "Retail / office"). Take all categories from one source; leave out types the building doesn't have.
+  2 Bed · Retail) so the two donuts compare side by side. Best source: **Property Finder transactions**
+  (`propertyfinder.ae/en/transactions/buy/dubai/<area>`, period YTD): beds via `?bdr[]=0|1|2…`; switch
+  Residential → **Commercial** → Property type **Shop** (or Office Space) to count shops separately. The page
+  text shows 0 for counts, so read the "Transactions" figure from the screen. PM statistics cover homes only;
+  DXB Interact lumps shops + offices as "Commercial". Take all categories from one source; leave out types
+  the building doesn't have.
 - This building's unit mix: PM project page "Unit configuration" (units per type + size ranges).
   Fallback: Reelly project page (Units & availability).
 - Zone oversupply (optional): a supply & demand sheet (existing + new units vs projected
