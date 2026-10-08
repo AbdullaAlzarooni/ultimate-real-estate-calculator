@@ -12,7 +12,7 @@ Start from `kit/data/example-weston-109.js` (a complete real example). One unit 
 | project, unit, area, emirate | names shown in the hero | "Weston by Wadan", "Studio · Unit 109", "Dubai Land Residence Complex (DLRC)", "Dubai" |
 | date, offer | prepared date; source document | "8 Oct 2026", "Wadan sales offer WES-SO-109-58" |
 | price, size, internal, balcony | AED; sqft (internal+balcony = size when known) | 645241, 482.65, 362.31, 120.34 |
-| sc, floor, view, furnished, parking, handover | service charge AED/sqft etc. | 15, "1 of G+17", "Boulevard", true, 1, "31 Dec 2028" |
+| sc, floor, view, furnished, furnText, parking, handover | service charge AED/sqft etc.; `furnText` optional label (e.g. "Semi-furnished (kitchen appliances)") | 15, "1 of G+17", "Boulevard", true, 1, "31 Dec 2028" |
 | years | years to handover | 2.23 |
 | dldPct, dldAdmin, oqood | DLD %, extra DLD admin (0 if offer shows DLD, else 40), admin fee | 4, 0, 3500 |
 | dldNote | note under the plan (when DLD from offer) | see rules.md |

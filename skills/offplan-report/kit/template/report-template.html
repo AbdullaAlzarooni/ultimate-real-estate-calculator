@@ -600,7 +600,7 @@ $("#legend").innerHTML=`Yield: ${pill("good","Good ≥ 6%")} ${pill("ok","OK 5�
 
 /* inputs */
 $("#unit-tag").textContent="Unit · "+(D.offer||"GenieMap");$("#plan-tag").textContent="Payment plan · "+D.planName;
-$("#unit").innerHTML=[["Price",aed(D.price)],["Size",fmt(D.size,2)+" sqft"+(D.internal?` (${fmt(D.internal,2)} inside + ${fmt(D.balcony,2)} balcony)`:"")],...(D.valSize?[["Valued at",fmt(D.valSize,0)+" sqft (terrace at 25%)"]]:[]),["Price per sqft",aed(R[0].r.unitPsf)],["Floor",D.floor],["View",D.view],["Furnishing",D.furnished?"Fully furnished":"Unfurnished"],["Service charge",D.sc+" AED/sqft"],["Handover",D.handover+" ("+D.years+" yrs)"]].map(([k,v])=>`<dt>${k}</dt><dd>${v}</dd>`).join("");
+$("#unit").innerHTML=[["Price",aed(D.price)],["Size",fmt(D.size,2)+" sqft"+(D.internal?` (${fmt(D.internal,2)} inside + ${fmt(D.balcony,2)} balcony)`:"")],...(D.valSize?[["Valued at",fmt(D.valSize,0)+" sqft (terrace at 25%)"]]:[]),["Price per sqft",aed(R[0].r.unitPsf)],["Floor",D.floor],["View",D.view],["Furnishing",D.furnText||(D.furnished?"Fully furnished":"Unfurnished")],["Service charge",D.sc+" AED/sqft"],["Handover",D.handover+" ("+D.years+" yrs)"]].map(([k,v])=>`<dt>${k}</dt><dd>${v}</dd>`).join("");
 $("#planbar").innerHTML=D.plan.map(([k,p],i)=>`<div class="pseg${i===D.plan.length-1?" last":""}" style="flex:${p}" title="${k} · ${p}%"><span>${p}%</span></div>`).join("");
 $("#plan").innerHTML=[["DLD "+D.dldPct+"%"+(D.dldAdmin?" + "+D.dldAdmin:""),aed(R[0].r.dld)],["Admin fee",aed(D.oqood)],...D.plan.map(([k,p])=>[k+" · "+p+"%",aed(D.price*p/100)]),["Total cost",`<b>${aed(R[0].r.total)}</b>`]].map(([k,v])=>`<dt>${k}</dt><dd>${v}</dd>`).join("");
 $("#dld-note").innerHTML=D.dldNote||"";
