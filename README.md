@@ -1,71 +1,132 @@
 # Off-plan Report — a Claude skill
 
-**Version 1.0.0** · [Changelog](CHANGELOG.md)
+**Version 1.0.0** · [Changelog](CHANGELOG.md) · by **Abdulla Alzarooni** (Real Estate with Abdulla Alzarooni)
 
-Give Claude an off-plan **sales offer / brochure**, or a project on **Reelly / GenieMap / Bayut /
-Property Finder**, and get a client-ready evaluation report (web page + PDF):
+Turn any Dubai / UAE off-plan unit into a **client-ready evaluation report** (web page + PDF) in one
+conversation with Claude. Give it a **sales offer**, a **brochure**, or a project link from
+**Reelly / GenieMap / Bayut / Property Finder** — Claude collects the market data, does the maths,
+and builds the report.
 
-- Verdict: profit if you sell at handover, net rent and yield
-- 4 deal checks (fair price, how safe, break-even, rent), what-if scenarios (market & rents)
-- Three data sources side by side (Property Monitor, DXB Interact, Bayut), conservative / normal / optimistic
-- Supply & demand (what's selling, the building's unit mix, handovers by year)
-- Payment plan, location & comfort (sun, shade, noise, flooding), full step-by-step maths
-- Photo gallery with full-screen viewer, your contact footer (WhatsApp + socials), client PDF
+---
 
-## Tools & websites it uses
-**Tools:** Claude Code (with Claude in Chrome for browsing), Python 3 (builds the page), Node.js (checks),
-Google Chrome (makes the PDF). No paid software needed.
+## What you get
+- **Verdict** — profit if you sell at handover, net rent and net yield, in plain words
+- **4 deal checks** — fair price, how safe (cushion), break-even sale price, rent
+- **What-if scenarios** — market and rents (−5%, flat, our analysis, strong)
+- **Conservative / normal / optimistic** cases, up to 3 data sources side by side
+- **Supply & demand** — what's selling, the building's unit breakdown, handovers by year
+- **Payment plan** timeline, **location & comfort** (sun, shade, noise, flooding)
+- **The calculations** step by step, so the client can check every number
+- **Photo gallery** with full-screen viewer
+- **Your footer** — logo, photo, name, BRN, WhatsApp button (pre-filled message), social icons
+- **Client PDF** and a phone-friendly page (light & dark)
 
+---
+
+## Quick start (Claude Code)
+This skill is built for **[Claude Code](https://claude.com/claude-code)** — the Code tab in the Claude
+desktop app, or the `claude` terminal app.
+
+**1. Install** — paste this into Claude Code:
+> Install this skill: https://github.com/AbdullaAlzarooni/offplan-report-skill
+
+or run it yourself:
+```bash
+git clone https://github.com/AbdullaAlzarooni/offplan-report-skill.git ~/.claude/skills/offplan-report
+```
+
+**2. Make a report** — attach the sales offer PDF (or paste a project link) and say:
+> Make an off-plan report for this unit
+
+**3. First time only** — Claude asks for your details (name, company, BRN, WhatsApp, socials, logo,
+photo) and which data accounts you have. They are saved, so you're only asked once.
+
+Each report takes a while: Claude visits the data sites and pulls fresh numbers for that unit.
+
+---
+
+## What you need
+| | |
+|---|---|
+| **Claude Code** | required (Claude desktop app → Code tab, or the terminal app) |
+| **Claude in Chrome** | browser extension, so Claude can read the data sites in your logged-in Chrome |
+| **Python 3** and **Node.js** | build and check the page (Claude can help you install them) |
+| **Google Chrome** | makes the PDF |
+| Data accounts | see below — the free ones are enough to start |
+
+> The claude.ai website also supports skills (upload the ZIP in Settings → Capabilities → Skills),
+> but this skill is **tested in Claude Code only**; browsing, building and checking work best there.
+
+---
+
+## Websites it uses
 | Website | Used for | Account |
 |---|---|---|
 | Developer sales offer / brochure (PDF) | price, sizes, payment plan, DLD, fees | – |
 | [Reelly](https://find.reelly.io) | project facts, unit breakdown (if no Property Monitor), full-size photos | free login |
-| [GenieMap](https://geniemap.net) | project info, payment plans, photos (most of this is also on Reelly) | paid (optional) – use Reelly instead |
-| [Property Monitor](https://propertymonitor.ae) | size-matched rents & sales, supply tracker, project unit breakdown | paid (optional) |
+| [GenieMap](https://geniemap.net) | project info, payment plans, photos (most is also on Reelly) | paid, optional |
+| [Property Monitor](https://propertymonitor.ae) | size-matched rents & sales, supply, project unit breakdown | paid, optional |
 | [DXB Interact](https://dxbinteract.com) | off-plan price/sqft, new rents, supply (if no Property Monitor) | free tier |
 | [Bayut market analysis](https://www.bayut.com/property-market-analysis/) | off-plan sales & rents, 12-month growth | public |
-| Property Finder / Bayut new projects | fallback project facts | public |
+| Property Finder / Bayut new projects | backup project facts | public |
 | Google Maps | facing, distances to metro & airport | public |
-| [SunCalc](https://www.suncalc.org) | sun path (summer / winter) | public |
-| [ShadeMap](https://shademap.app) | shade at different hours | public |
+| [SunCalc](https://www.suncalc.org) · [ShadeMap](https://shademap.app) | sun and shade | public |
 | [Noise-map](https://noise-map.com) | aircraft noise (dB) | public |
 | [Windy](https://www.windy.com) | wind (beachfront only) | public |
 | News / Wikipedia | flooding history (e.g. April 2024) | public |
-| Dubai Statistics Center | population for supply vs demand (optional) | public |
+| Dubai Statistics Center | population, for supply vs demand (optional) | public |
 
-Minimum for a report: the sales offer + Bayut. Every extra source makes it stronger.
-Details for each site are in [references/sources.md](references/sources.md).
+**No paid accounts?** Use Reelly instead of GenieMap, and DXB Interact instead of Property Monitor.
+**Minimum for a report:** the sales offer + Bayut. Every extra source makes it stronger.
+Full details per site: [references/sources.md](references/sources.md).
 
-## Install
+---
+
+## Your branding (optional, done once)
+Claude fills these for you on the first run, or edit them yourself:
+- `kit/config/agent.js` — name, company, BRN, WhatsApp, social links (empty = hidden)
+- `kit/brand/logo-dark.png` + `kit/brand/logo-light.png` — transparent logo (for light / dark theme)
+- `kit/brand/agent.jpg` — square headshot (shown in a circle)
+
+---
+
+## Updating
 ```bash
-git clone https://github.com/AbdullaAlzarooni/offplan-report-skill.git ~/.claude/skills/offplan-report
+cd ~/.claude/skills/offplan-report && git pull
 ```
-Then in Claude Code just ask, e.g. *"Make an off-plan report for this sales offer"* and attach the PDF,
-or paste a Reelly/GenieMap project link.
+If you edited `agent.js` or the brand files, back them up before updating.
 
-## First-time setup (2 minutes)
-1. Fill `kit/config/agent.js` with your name, company, BRN, WhatsApp and social links.
-2. Optional: add `kit/brand/logo-dark.png`, `kit/brand/logo-light.png` (transparent) and
-   `kit/brand/agent.jpg` (square photo). Anything missing is simply hidden.
-3. Data access: the report is best with **Property Monitor** (size-matched comparables) and
-   **DXB Interact**; it also works with **Bayut** only (public). Claude uses a browser you're logged in to.
+---
 
-## How it works
-- `SKILL.md` — instructions Claude follows; `references/` — workflow, sources, rules, design, data schema.
-- `kit/` — `build.py` (data file → report), `template/report-template.html` (layout + maths),
-  `data/example-weston-109.js` (complete example), `tools/` (automated checks).
+## How it works (for the curious)
+- `SKILL.md` — the instructions Claude follows
+- `references/` — `workflow.md` (step by step), `sources.md` (websites), `rules.md` (formulas, bands,
+  labels), `design.md` (layout decisions), `data-schema.md` (every field)
+- `kit/` — `build.py` (data file → report), `template/report-template.html` (layout + all formulas),
+  `data/example-weston-109.js` (a complete real example), `tools/` (automatic checks)
 
+Try the example yourself:
 ```bash
-cd kit
-python3 build.py data/example-weston-109.js    # builds example-weston-109.html
-node tools/dump.js example-weston-109.html     # renders all 144 scenario combinations: "bad 0 []"
+cd ~/.claude/skills/offplan-report/kit
+python3 build.py data/example-weston-109.js
+node tools/dump.js example-weston-109.html
 ```
+The check renders all 144 scenario combinations and must print `bad 0 []`.
 (The example's photos aren't included; the page works without them.)
 
-## License
-© 2026 Abdulla Alzarooni (Real Estate with Abdulla Alzarooni). Free to use for your own client
-reports; keep the "Report engine ©" credit line on every report; no resale. See [LICENSE](LICENSE).
+The formulas match the author's off-plan evaluation sheet, checked across all 144 combinations
+(difference 0).
+
+---
+
+## License & credit
+© 2026 Abdulla Alzarooni (Real Estate with Abdulla Alzarooni). All rights reserved.
+
+**Free to use** for your own client reports. **Keep the "Report engine ©" credit line** on every
+report and the notices in the code. **No resale** or passing it off as your own.
+Full terms: [LICENSE](LICENSE). Commercial use or removing the credit:
+contact [@abdulla.al.zarooni](https://www.instagram.com/abdulla.al.zarooni) on Instagram.
 
 ## Disclaimer
-Reports are estimates from public/market data and the developer's documents, not financial advice.
+Reports are estimates based on market data and the developer's documents — **not financial advice**.
 Check each data site's terms of use. Icons: Font Awesome Free brand shapes (CC BY 4.0).
