@@ -20,7 +20,7 @@ Google Chrome (makes the PDF). No paid software needed.
 |---|---|---|
 | Developer sales offer / brochure (PDF) | price, sizes, payment plan, DLD, fees | – |
 | [Reelly](https://find.reelly.io) | project facts, unit mix, full-size photos | free login |
-| [GenieMap](https://geniemap.net) | project info, payment plans, photos | free login |
+| [GenieMap](https://geniemap.net) | project info, payment plans, photos (most of this is also on Reelly) | paid (optional) – use Reelly instead |
 | [Property Monitor](https://propertymonitor.ae) | size-matched rents & sales, supply tracker, unit configuration | paid (optional) |
 | [DXB Interact](https://dxbinteract.com) | off-plan price/sqft, new rents | free tier |
 | [Bayut market analysis](https://www.bayut.com/property-market-analysis/) | off-plan sales & rents, 12-month growth | public |

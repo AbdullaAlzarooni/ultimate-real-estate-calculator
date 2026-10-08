@@ -8,7 +8,7 @@ read pages in the browser; don't scrape aggressively or bulk-export without the 
 |---|---|---|
 | Developer **sales offer / brochure** (PDF from user) | price on plan, sizes (internal + balcony), plan dates, DLD, admin fee, floor, view | Highest priority. If it shows DLD, use that exact amount. |
 | **Reelly** – find.reelly.io | project facts, units & availability, **gallery (≈2000px)**, unit mix | Search box → project → "Units & Availability", photo gallery tabs. Gallery image URLs come via `/_next/image?url=<inner>`; the inner URL (S3 `.../projects/<id>/images/<hash>.webp`) is the full-size file. |
-| **GenieMap** – geniemap.net | project info, price range, payment plans, unsold units, **gallery (720px)** | Prices shown are often the **maximum** (post-handover plan). "Units" tab = unsold stock only, not the building total. Gallery: click the › arrow and read each `img.currentSrc` (CDN serves 720px only). |
+| **GenieMap** – geniemap.net (**paid**, optional; Reelly covers most of it) | project info, price range, payment plans, unsold units, **gallery (720px)** | Prices shown are often the **maximum** (post-handover plan). "Units" tab = unsold stock only, not the building total. Gallery: click the › arrow and read each `img.currentSrc` (CDN serves 720px only). |
 | Property Finder / Bayut new projects | fallback project facts | |
 
 ## Area comparables
@@ -40,6 +40,8 @@ smaller units sell for more per sqft, so it can flatter a larger unit.
   (must be the **off-plan** path; a page without location = all of Dubai).
 - Rent: `/property-market-analysis/transactions/rent/{beds}-property/dubai/{slug}/?time_since_creation=3m`
 - 12-month growth (for the growth bands): same pages, last 12 months, price and rent change.
+
+**No GenieMap account?** Use Reelly for project facts, payment plans, unit mix and photos (Reelly photos are larger: ≈2000px vs 720px).
 
 **Fallbacks when a source isn't available:** use the sources you have (the report works with 1–3);
 remove the missing source from `sources`; say which were used. Bayut alone + a sales offer is the
