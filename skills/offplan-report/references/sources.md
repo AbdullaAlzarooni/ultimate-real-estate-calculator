@@ -15,6 +15,8 @@ read pages in the browser; don't scrape aggressively or bulk-export without the 
 ## Area comparables
 **Property Monitor** – propertymonitor.ae/v2 (paid login). Best source: size-matched.
 - Community names differ from DLD names (e.g. DLRC = "Dubai Residence Complex").
+- Data sources in the search: **Residential sales** (`Sales`), **Commercial sales** (`COMM`: Retail,
+  Office, Land… by Unit Type), **Rentals**.
 - Rent: data source Rentals, last 3 months, Apartment, beds, size ±10%. Results mix
   "Rental Contracts" and "Active Listings" → use contracts, **New** (not Renewal). Median.
 - Sales: data source Sales; column "Evidence type" Oqood (off-plan) / Title Deed (ready);
