@@ -1,0 +1,6 @@
+# generated per property
+kit/*.html
+kit/*.pdf
+kit/*.files.txt
+kit/data/*-img/
+.DS_Store
