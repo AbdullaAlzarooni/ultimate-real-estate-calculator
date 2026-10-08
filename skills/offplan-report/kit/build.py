@@ -1,5 +1,5 @@
-# Off-plan Report engine · © 2026 Abdulla Alzarooni. All rights reserved.
-# Licensed under the Off-plan Report License (see LICENSE). Keep this notice.
+# The Ultimate Real Estate Calculator — Off-plan Report · © 2026 Abdulla Alzarooni. All rights reserved.
+# Licensed under the The Ultimate Real Estate Calculator License (see LICENSE). Keep this notice.
 """Build a property report:  python3 build.py data/<name>.js   ->  <name>.html (+ <name>.files.txt)
 
 template/report-template.html  layout + maths (do not edit per property)

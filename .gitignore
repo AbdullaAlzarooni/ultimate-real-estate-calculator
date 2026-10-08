@@ -1,6 +1,6 @@
 # generated per property
-kit/*.html
-kit/*.pdf
-kit/*.files.txt
-kit/data/*-img/
+skills/*/kit/*.html
+skills/*/kit/*.pdf
+skills/*/kit/*.files.txt
+skills/*/kit/data/*-img/
 .DS_Store

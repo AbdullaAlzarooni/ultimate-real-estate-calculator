@@ -30,7 +30,7 @@ The build kit is in `kit/` (copy it to a working folder first – see step 0).
 4. **Say each number once.** Don't repeat the same figure in two places.
 5. **Ask before downloading** anything the user didn't ask for, before publishing/sharing outside
    their account, and before typing into anything that isn't a search/filter box. Never enter passwords.
-6. **Credit line stays.** Never remove the footer line "Report engine © 2026 Abdulla Alzarooni …" or the
+6. **Credit line stays.** Never remove the footer line "The Ultimate Real Estate Calculator · Off-plan Report v… © 2026 Abdulla Alzarooni …" or the
    copyright notices; they are required by the LICENSE.
 7. **Verify before handing over:** run the checks in `workflow.md` (step 9). Report failures honestly.
 

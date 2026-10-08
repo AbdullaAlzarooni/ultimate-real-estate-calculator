@@ -1,8 +1,8 @@
 <!--
-  Off-plan Report engine v1.0.0
+  The Ultimate Real Estate Calculator — Off-plan Report v1.0.0
   © 2026 Abdulla Alzarooni (Real Estate with Abdulla Alzarooni). All rights reserved.
-  Licensed under the Off-plan Report License (see LICENSE): free to use for your own client
-  reports; keep this notice and the "Report engine ©" credit line visible; no resale.
+  Licensed under The Ultimate Real Estate Calculator License (see LICENSE): free to use for your own client
+  reports; keep this notice and the "The Ultimate Real Estate Calculator ©" credit line visible; no resale.
 -->
 <meta charset="utf-8">
 <title>@@TITLE@@</title>
@@ -788,7 +788,7 @@ const ico=k=>`<svg class="bico" viewBox="0 0 ${ICO[k][0]} 512" aria-hidden="true
 const wa=AGENT.whatsapp.replace(/[^0-9]/g,"");
 $("#foot").innerHTML=`<div class="agent"><div class="sig"><img class="logo l-dark" src="@@LOGO_DARK@@" alt="${AGENT.company||""}"><img class="logo l-light" src="@@LOGO_LIGHT@@" alt="${AGENT.company||""}"><img class="avatar" src="@@AVATAR@@" alt="${AGENT.name}"><div><span class="by">Prepared by</span><b>${AGENT.name}</b>${AGENT.brn?` · BRN ${AGENT.brn}`:""}</div></div>${wa?`<a class="wa" href="https://wa.me/${wa}?text=${encodeURIComponent("Hi "+(AGENT.name||"").split(" ")[0]+", I am interested to invest in "+D.project)}" target="_blank" rel="noopener">${ico("whatsapp")} WhatsApp me about this project</a><span class="printonly">WhatsApp ${AGENT.whatsapp}</span>`:""}${(()=>{const S=AGENT.socials||{},N={instagram:"Instagram",facebook:"Facebook",tiktok:"TikTok",youtube:"YouTube",threads:"Threads",x:"X (Twitter)",linkedin:"LinkedIn",snapchat:"Snapchat"},I={instagram:"fa-instagram",facebook:"fa-facebook-f",tiktok:"fa-tiktok",youtube:"fa-youtube",threads:"fa-threads",x:"fa-x-twitter",linkedin:"fa-linkedin-in",snapchat:"fa-snapchat"};const on=Object.keys(N).filter(k=>S[k]);return on.length?`<div class="socials">${on.map(k=>`<a class="soc" href="${S[k]}" target="_blank" rel="noopener" aria-label="${N[k]}" title="${N[k]}">${ico(k)}</a>`).join("")}</div><span class="printonly"> · ${on.map(k=>N[k]+" "+S[k].replace(/^https?:\/\/(www\.)?/,"")).join(" · ")}</span>`:""})()}</div>
 <p><b>Disclaimer:</b> estimates based on market data as of ${D.date} (DXB Interact, Bayut, Property Monitor, GenieMap, Google Maps) and the developer's sales offer. Prices, rents and fees can change; past growth does not guarantee future growth. Not financial advice. Confirm fees and the payment plan with the developer and DLD before buying.</p>
-<p>Prepared ${D.date} · ${AGENT.formulas||""}</p><p class="credit">Report engine v1.0 © 2026 Abdulla Alzarooni · Real Estate with Abdulla Alzarooni</p>`;
+<p>Prepared ${D.date} · ${AGENT.formulas||""}</p><p class="credit">The Ultimate Real Estate Calculator · Off-plan Report v1.0 © 2026 Abdulla Alzarooni · Real Estate with Abdulla Alzarooni</p>`;
 }
 renderAll();
 document.addEventListener("click",e=>{
