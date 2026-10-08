@@ -1,8 +1,6 @@
 # Changelog — Off-plan Report
 
 ## 1.1.0 — 9 Oct 2026
-Lessons from the second real report (Binghatti Starfall, Al Jaddaf — from a brochure).
-
 **Data & sources**
 - Demand chart uses the **same categories as the building** (e.g. Studio · 1 Bed · 2 Bed · Retail) so
   the two donuts compare side by side.
@@ -22,7 +20,6 @@ Lessons from the second real report (Binghatti Starfall, Al Jaddaf — from a br
 - Second example data file `kit/data/example-starfall-studio.js` (brochure-based, no unit chosen).
 
 ## 1.0.1 — 9 Oct 2026
-First lessons from the Starfall test.
 - Check today's price on Reelly / GenieMap (brochures go out of date); brochure without a unit →
   starting unit.
 - Read image-only brochure PDFs by rendering pages (PyMuPDF); setup check includes `pymupdf` + `pillow`.
