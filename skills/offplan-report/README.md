@@ -68,7 +68,7 @@ Each report takes a while: Claude visits the data sites and pulls fresh numbers 
 | Google Maps | facing, distances to metro & airport | public |
 | [SunCalc](https://www.suncalc.org) · [ShadeMap](https://shademap.app) | sun and shade | public |
 | [Noise-map](https://noise-map.com) | aircraft noise (dB) | public |
-| [Windy](https://www.windy.com) | wind (beachfront only) | public |
+| [Windy](https://www.windy.com) | wind & sea exposure (every report; detailed for beachfront) | public |
 | News / Wikipedia | flooding history (e.g. April 2024) | public |
 | Dubai Statistics Center | population, for supply vs demand (optional) | public |
 

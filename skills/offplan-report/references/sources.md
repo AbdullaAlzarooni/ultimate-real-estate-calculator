@@ -58,7 +58,7 @@ community) → apply growth bands (`rules.md`).
 | Sun | suncalc.org | sun path for 21 Jun & 21 Dec at the pin; which faces get afternoon sun |
 | Shade | shademap.app | ready buildings: shade at 9am/3pm/5pm Jun & Dec. **Off-plan / new areas:** ShadeMap lacks the buildings → calculate: shadow = height ÷ tan(sun altitude) from planned heights (G+N ≈ 3.3 m per floor) |
 | Aircraft noise | noise-map.com | community names often fail → search a nearby landmark, pan, tap → average dB. Over 55 dB affects the airport premium |
-| Wind & sea | windy.com | only matters for beachfront |
+| Wind & sea | windy.com (+ Google Maps for distance to coast) | **every report has this card.** Inland → "Not exposed" with the distance to the coast. Beachfront / waterfront → check prevailing wind direction and strength, sea spray / salt, which side gets the wind |
 | Flooding | news / Wikipedia (e.g. "2024 UAE floods") + Google search "<community> flooded April 2024" | state how strong the evidence is |
 | Distances (metro, airport) | Google Maps | straight-line from the pin; confirmed lines/stations only |
 
