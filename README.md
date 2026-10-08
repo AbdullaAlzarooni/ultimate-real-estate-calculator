@@ -12,7 +12,7 @@ Property Finder**, and get a client-ready evaluation report (web page + PDF):
 
 ## Install
 ```bash
-git clone <this-repo-url> ~/.claude/skills/offplan-report
+git clone https://github.com/AbdullaAlzarooni/offplan-report-skill.git ~/.claude/skills/offplan-report
 ```
 Then in Claude Code just ask, e.g. *"Make an off-plan report for this sales offer"* and attach the PDF,
 or paste a Reelly/GenieMap project link.
