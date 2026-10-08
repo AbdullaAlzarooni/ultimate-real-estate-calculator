@@ -71,6 +71,8 @@ community) → apply growth bands (`rules.md`).
   "Units & Availability" (count units per type; note if it shows only available units, not the full building).
 - **No PM access → DXB Interact.** Build the **same supply section** from DXB Interact
   (community page): what's selling (off-plan sales by bedrooms → counts), ready vs under-construction
-  units, and handovers by year. Building unit breakdown → Reelly (above). Same cards, same wording.
+  units, and handovers by year. Ready/under-construction counts use the supply & demand sheet method:
+  **ready = existing (completed) units** in the community; **under construction = new units handing over
+  up to the horizon year** (the last handover year in the pipeline), split by year. Building unit breakdown → Reelly (above). Same cards, same wording.
   Ratios: if a number looks unreasonable (tiny or booming population, odd totals) show **N/A**, don't force it.
 - If neither PM nor DXB Interact is available, leave the section out (omit `sd` in the data).
