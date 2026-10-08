@@ -37,7 +37,7 @@ The build kit is in `kit/` (copy it to a working folder first – see step 0).
 ## Quick start
 ```bash
 cp -R ~/.claude/skills/offplan-report/kit  "<working folder>/offplan-reports"   # once
-# first time only: fill kit/config/agent.js and drop logo/photo into kit/brand/ (optional)
+# first time only: fill config/agent.js and drop logo/photo into brand/ (optional)
 cp data/example-weston-109.js data/<project>-<unit>.js                         # per property
 # ...fill the data file following workflow.md...
 python3 build.py data/<project>-<unit>.js          # -> <project>-<unit>.html
