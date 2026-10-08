@@ -25,7 +25,7 @@ Source buttons · case buttons · "★ Recommended view" (resets to recommended 
    break-even · rent); a price ruler (becomes a stacked list on phones).
 2. A: pick the market (radio-style boxes, "☝ Tap to choose", ★ Recommended badge, dot bottom-right)
    → 3 valuation cases (static). B: pick how rents move (same radio style). Static cards never look tappable.
-3. Supply & demand: takeaway sentence; cards tagged DEMAND (blue donut "of sales") · THIS BUILDING
+3. Supply & demand: takeaway sentence; cards tagged DEMAND (blue donut "of sales", same categories as the building) · THIS BUILDING
    (green donut "of units", size ranges) · SUPPLY (handover bars, peak row "YYYY · <building>",
    no dashed lines/flags); a "mix matches what's selling" line; 4 key points (big number + 2 lines);
    quiet sources line.

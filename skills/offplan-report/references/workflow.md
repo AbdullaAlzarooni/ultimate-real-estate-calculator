@@ -59,8 +59,10 @@ suncalc.org, shademap.app, noise-map.com, windy.com, news/Wikipedia). Only write
   up to the last year either source lists (don't invent later years; say "nothing listed after YYYY yet").
 - **Include retail and offices:** PM splits ready / under-construction units into apartments, retail and
   offices; the building's shops go in its unit mix (e.g. `["Retail",17,"649–3,026"]`).
-- What's selling: PM market statistics for the community, current year: bedroom mix (all sales and
-  Oqood-only) → counts, % and % off-plan vs ready.
+- What's selling: current-year sales **in the same categories as the building** (e.g. Studio · 1 Bed ·
+  2 Bed · Retail) so the two donuts compare side by side. PM market statistics cover homes only; DXB
+  Interact covers homes **and** commercial (type "Commercial" = shops + offices together, so label it
+  "Retail / office"). Take all categories from one source; leave out types the building doesn't have.
 - This building's unit mix: PM project page "Unit configuration" (units per type + size ranges).
   Fallback: Reelly project page (Units & availability).
 - Zone oversupply (optional): a supply & demand sheet (existing + new units vs projected
