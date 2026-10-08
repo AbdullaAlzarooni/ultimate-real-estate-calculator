@@ -1,5 +1,7 @@
 # Off-plan Report — a Claude skill
 
+**Version 1.0.0** · [Changelog](CHANGELOG.md)
+
 Give Claude an off-plan **sales offer / brochure**, or a project on **Reelly / GenieMap / Bayut /
 Property Finder**, and get a client-ready evaluation report (web page + PDF):
 
@@ -9,6 +11,30 @@ Property Finder**, and get a client-ready evaluation report (web page + PDF):
 - Supply & demand (what's selling, the building's unit mix, handovers by year)
 - Payment plan, location & comfort (sun, shade, noise, flooding), full step-by-step maths
 - Photo gallery with full-screen viewer, your contact footer (WhatsApp + socials), client PDF
+
+## Tools & websites it uses
+**Tools:** Claude Code (with Claude in Chrome for browsing), Python 3 (builds the page), Node.js (checks),
+Google Chrome (makes the PDF). No paid software needed.
+
+| Website | Used for | Account |
+|---|---|---|
+| Developer sales offer / brochure (PDF) | price, sizes, payment plan, DLD, fees | – |
+| [Reelly](https://find.reelly.io) | project facts, unit mix, full-size photos | free login |
+| [GenieMap](https://geniemap.net) | project info, payment plans, photos | free login |
+| [Property Monitor](https://propertymonitor.ae) | size-matched rents & sales, supply tracker, unit configuration | paid (optional) |
+| [DXB Interact](https://dxbinteract.com) | off-plan price/sqft, new rents | free tier |
+| [Bayut market analysis](https://www.bayut.com/property-market-analysis/) | off-plan sales & rents, 12-month growth | public |
+| Property Finder / Bayut new projects | fallback project facts | public |
+| Google Maps | facing, distances to metro & airport | public |
+| [SunCalc](https://www.suncalc.org) | sun path (summer / winter) | public |
+| [ShadeMap](https://shademap.app) | shade at different hours | public |
+| [Noise-map](https://noise-map.com) | aircraft noise (dB) | public |
+| [Windy](https://www.windy.com) | wind (beachfront only) | public |
+| News / Wikipedia | flooding history (e.g. April 2024) | public |
+| Dubai Statistics Center | population for supply vs demand (optional) | public |
+
+Minimum for a report: the sales offer + Bayut. Every extra source makes it stronger.
+Details for each site are in [references/sources.md](references/sources.md).
 
 ## Install
 ```bash

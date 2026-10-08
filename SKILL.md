@@ -5,6 +5,8 @@ description: Build a client-ready Dubai/UAE off-plan property evaluation report 
 
 # Off-plan evaluation report
 
+Version **1.0.0** (see `VERSION` and `CHANGELOG.md`).
+
 Turns one off-plan unit into a polished, phone-friendly report: verdict, deal checks, what-if
 scenarios, supply & demand, payment plan, location comfort, full step-by-step maths, photo gallery,
 and a client PDF. Everything is driven by **one data file**; the template does the maths.
