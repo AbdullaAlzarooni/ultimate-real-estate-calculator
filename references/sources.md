@@ -69,17 +69,8 @@ community) → apply growth bands (`rules.md`).
 - **Project unit breakdown** (units per type – studio/1BR/2BR… – and size ranges, for "This building"):
   Property Monitor project page → Unit configuration. **No PM access → Reelly** project →
   "Units & Availability" (count units per type; note if it shows only available units, not the full building).
-- **No PM access → DXB Interact** (same method as the zone supply & demand sheet):
-  1. Map the community to its **official DSC community** (e.g. DLRC → Wadi Al Safa 5); note the sub-communities.
-  2. **Population** 2022–2025 from Dubai Statistics Center → growth % a year (CAGR 22–25).
-  3. **Horizon year** = the last handover year in the pipeline (usually 2029–2031).
-     Projected population = population 2025 × (1 + CAGR)^(horizon − 2025).
-  4. **Supply** from DXB Interact (community → projects/supply): **existing units** (completed) and
-     **new units** (under construction / off-plan, handover up to the horizon year); per-year handovers for the bars.
-  5. **Ratio** = (existing + new units) ÷ (projected population ÷ 3 people per home).
-     Labels: < 0.5 Low · 0.5–1.0 Balanced · 1.0–1.5 Moderate · > 1.5 High.
-     **N/A** when the population is tiny or booming (emerging/establishing zones, e.g. growth > 25% a year)
-     – the ratio isn't meaningful there; say so.
-  6. Show it as a zone-level **estimate** with a range (e.g. 2.5–3.5 people per home), never a verdict (see rules.md).
-  Sales mix (what's selling): DXB Interact sales, community + off-plan, by bedrooms → counts.
+- **No PM access → DXB Interact.** Build the **same supply section** from DXB Interact
+  (community page): what's selling (off-plan sales by bedrooms → counts), ready vs under-construction
+  units, and handovers by year. Building unit breakdown → Reelly (above). Same cards, same wording.
+  Ratios: if a number looks unreasonable (tiny or booming population, odd totals) show **N/A**, don't force it.
 - If neither PM nor DXB Interact is available, leave the section out (omit `sd` in the data).
