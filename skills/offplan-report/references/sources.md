@@ -46,6 +46,9 @@ user has it; never drop a source silently — if it truly fails, tell the user a
 **Supply page** (`/dubai-units-supply-analysis`): `apex.item('P59_AREA_ID').setValue(<area id>)`,
 `apex.item('P59_STATUS').setValue('ac')` (under construction) → projects with completion date, units by
 bedroom and **commercial** units. Use it to cross-check Property Monitor's handover years.
+**Commercial sales:** Type = Commercial; each row says "Offplan/Ready **Shop**" (retail) or "**Office**".
+The list shows 13 rows per page; page links are `#action$paginate?min=14…`; dispatch a real
+`MouseEvent('click')` on each link inside `#report_soldhistory` and read the rows after each.
 
 **Bayut** – bayut.com market analysis (public).
 - Off-plan sales: `/property-market-analysis/transactions/sale/off-plan/{studio|1-bedroom|2-bedroom|3-bedroom}-property/dubai/{community-slug}/?time_since_creation=3m`

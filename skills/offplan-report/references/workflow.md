@@ -64,8 +64,8 @@ suncalc.org, shademap.app, noise-map.com, windy.com, news/Wikipedia). Only write
   sales list (`data_source_select=Sales`, community, 1 Jan → today, count by Beds) **plus** its
   **Commercial sales** list (`data_source_select=COMM`, count Unit Type = Retail / Office; ignore Land).
   No PM access → Property Finder transactions (`propertyfinder.ae/en/transactions/buy/dubai/<area>`, YTD,
-  `?bdr[]=0|1|2`, Commercial → Shop; read the Transactions box from the screen). DXB Interact lumps shops +
-  offices as "Commercial". Take all categories from one source; leave out types the building doesn't have.
+  `?bdr[]=0|1|2`, Commercial → Shop; read the Transactions box from the screen). DXB Interact: Type = Commercial, then
+  count each row's label: "Shop" = retail, "Office" = office (page through all rows; see sources.md). Take all categories from one source; leave out types the building doesn't have.
 - This building's unit mix: PM project page "Unit configuration" (units per type + size ranges).
   Fallback: Reelly project page (Units & availability).
 - Zone oversupply (optional): a supply & demand sheet (existing + new units vs projected
