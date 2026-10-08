@@ -5,7 +5,7 @@ description: Build a client-ready Dubai/UAE off-plan property evaluation report 
 
 # Off-plan evaluation report
 
-Version **1.0.0** (see `VERSION` and `CHANGELOG.md`).
+Version **1.0.1** (see `VERSION` and `CHANGELOG.md`).
 
 Turns one off-plan unit into a polished, phone-friendly report: verdict, deal checks, what-if
 scenarios, supply & demand, payment plan, location comfort, full step-by-step maths, photo gallery,
@@ -49,7 +49,7 @@ Then make the PDF and publish/share (workflow steps 10–11).
 ## First run for a new person
 **Guide them step by step, in plain words; don't assume they are technical.**
 0. **Check the setup** before anything else and help fix what's missing (one item at a time):
-   `python3 --version`, `node --version`, Google Chrome installed, and the **Claude in Chrome**
+   `python3 --version`, `node --version`, Python packages `pymupdf` and `pillow` (`pip3 install pymupdf pillow`: read image-only brochures, resize photos), Google Chrome installed, and the **Claude in Chrome**
    extension connected (needed to read the data sites). If something is missing, explain what it is
    in one line and walk them through installing it (official sites only; ask before downloading).
    Then copy `kit/` to a working folder they choose (default `~/Documents/Off-plan Reports`).

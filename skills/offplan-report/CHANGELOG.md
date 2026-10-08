@@ -1,5 +1,13 @@
 # Changelog — Off-plan Report
 
+## 1.0.1 — 9 Oct 2026
+Lessons from a second real test (Binghatti Starfall, from a brochure):
+- Check today's price on Reelly/GenieMap: brochures go out of date. Brochure without a unit → starting unit.
+- Read image-only brochure PDFs by rendering pages (PyMuPDF); setup check now includes `pymupdf` + `pillow`.
+- Checks work with 1, 2 or 3 data sources (`dump.js`).
+- PDF keeps the first photo (`--virtual-time-budget=4000`).
+- Growth caveat when a jump comes from a tiny prior-year sample; DXB Interact fallback note.
+
 ## 1.0.0 — 8 Oct 2026
 - Part of The Ultimate Real Estate Calculator (repo renamed and restructured: `skills/offplan-report/`).
 - Guided first run (setup check, details, accounts); Reelly / DXB Interact fallbacks for paid sources.

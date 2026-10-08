@@ -34,6 +34,8 @@ read pages in the browser; don't scrape aggressively or bulk-export without the 
 Sales → Status Off-plan → period "Last quarter" (picker → Last quarter → Apply → Search) → median
 price/sqft. Rental → "New rentals" average annual rent. All sizes (not size-matched) → note that
 smaller units sell for more per sqft, so it can flatter a larger unit.
+The area search box may not accept automated input; if the area won't change, ask the user to set
+the area once in their browser, or leave DXB Interact out (the report works with 1–3 sources).
 
 **Bayut** – bayut.com market analysis (public).
 - Off-plan sales: `/property-market-analysis/transactions/sale/off-plan/{studio|1-bedroom|2-bedroom|3-bedroom}-property/dubai/{community-slug}/?time_since_creation=3m`

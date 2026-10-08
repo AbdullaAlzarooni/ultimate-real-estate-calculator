@@ -15,6 +15,12 @@ handover date, DLD amount if shown, admin/Oqood fee, service charge AED/sqft, fu
 - If only a listing price is known: GenieMap prices are often the *maximum* (post-handover plan).
   Say "estimated" and, if the developer's plan discount is known, apply it.
 - Years to handover = (handover date − today) in years, 2 decimals.
+- **Brochures go out of date.** Check today's developer price and availability on Reelly ("Units &
+  availability") or GenieMap; if it differs from the brochure, use today's price and say so in the notes.
+  With a brochure (no unit chosen), use the **starting unit**: smallest size at the starting price, and check
+  that price ÷ size falls inside the brochure's price-per-sqft range.
+- **Image-only PDFs** (most brochures): text extraction returns nothing, so render the pages to images
+  (PyMuPDF `fitz`, or `pdftoppm` from poppler) and read them; make a contact sheet to find the key pages.
 
 ## 2. Area comparables (3 sources, last 3 months, same bedroom type)
 For each source get **(a) average/median annual rent** and **(b) off-plan price per sqft**:
@@ -28,6 +34,8 @@ Details, URLs and gotchas: `sources.md`. Min 5 deals per figure (widen to 6m/1y;
 ## 3. Growth rates (shared by all sources)
 Bayut market analysis, **last 12 months**: off-plan price change and rent change for that
 bedroom type in that community. Apply the **growth bands** (`rules.md`) → "used" rates.
+If a big jump comes from a tiny prior-year sample (Bayut shows the volume change), keep the band
+result but add a note, and cross-check Property Monitor's area price index.
 
 ## 4. Premium factors
 Check each with the evidence named in `rules.md` (metro distance, airport distance + noise,
@@ -79,9 +87,10 @@ Ask before bulk-downloading if the user hasn't asked for photos.
 Headless Chrome (print CSS already hides controls/what-ifs and shows the recommended view):
 ```bash
 "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless=new --disable-gpu \
-  --no-pdf-header-footer --user-data-dir=/tmp/chrome-pdf --print-to-pdf="$PWD/<Name>-client.pdf" \
+  --no-pdf-header-footer --user-data-dir=/tmp/chrome-pdf --virtual-time-budget=4000 --print-to-pdf="$PWD/<Name>-client.pdf" \
   "file://$PWD/<name>.html"    # the process may hang after writing: kill it once the file exists
 ```
+Keep `--virtual-time-budget` under 5000 (ms) so the slideshow hasn't moved past the first photo.
 Set `pdf:"<Name>-client.pdf"` in the data file so the "Download PDF" button links to it.
 
 ## 11. Share
