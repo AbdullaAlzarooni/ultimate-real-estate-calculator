@@ -153,11 +153,14 @@ details.fold>summary:focus-visible{outline:2px solid var(--accent);outline-offse
 .check .bl{margin:2px 0 0;padding-left:16px;display:flex;flex-direction:column;gap:3px}
 .ruler{position:relative;height:124px;margin:14px 8px 4px}
 .ruler .line{position:absolute;left:0;right:0;top:58px;height:8px;border-radius:4px;background:linear-gradient(90deg,var(--good-soft),var(--warn-soft) 60%,var(--bad-soft))}
-.ruler .mk{position:absolute;top:0;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;width:140px;text-align:center}
-.ruler .mk .lb{font:500 12px var(--f-body);color:var(--muted);height:30px;display:flex;align-items:flex-end;justify-content:center;line-height:1.2}
-.ruler .mk .pin{width:3px;height:30px;background:var(--muted);border-radius:2px;margin:3px 0}
+.ruler .mk{position:absolute;bottom:calc(100% - 59px);transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;width:140px;text-align:center}
+.ruler .mk .txt{display:flex;flex-direction:column;align-items:inherit;gap:1px}
+.ruler .mk .lb{font:500 12px var(--f-body);color:var(--muted);display:flex;justify-content:center;line-height:1.2}
+.ruler .mk .pin{width:3px;height:22px;background:var(--muted);border-radius:2px;margin:4px 0 0}
 .ruler .mk .v{font:600 13px var(--f-display);font-variant-numeric:tabular-nums}
-.ruler .mk.low{top:60px;flex-direction:column-reverse}
+.ruler .mk.low{bottom:auto;top:65px;flex-direction:column-reverse}
+.ruler .mk.low .pin{margin:0 0 4px}
+.ruler .mk.low .txt{flex-direction:column-reverse}
 .ruler .mk.low .lb{align-items:flex-start}
 .ruler .mk.multi{width:170px}
 .ruler .mk.edge-l{transform:translateX(-2px);align-items:flex-start;text-align:left}
@@ -693,7 +696,7 @@ function renderDeal(){
  const pos=p=>(p.v-lo)/(hi-lo)*100, edge=p=>pos(p)<18?"edge-l":pos(p)>82?"edge-r":"";
  $("#ruler").innerHTML='<div class="line"></div>'+mg.map((p,i)=>p.items.length>1
   ?`<div class="mk multi ${edge(p)} ${p.you?"you":""} ${i%2?"low":""}" style="left:${pos(p).toFixed(1)}%"><span class="lb">${p.items.map(q=>`<span class="row"><span>${q.l}</span><b>${fmt(q.v/1000)}K</b></span>`).join("")}</span><span class="pin"></span></div>`
-  :`<div class="mk ${edge(p)} ${p.you?"you":""} ${i%2?"low":""}" style="left:${pos(p).toFixed(1)}%"><span class="lb">${p.l}</span><span class="pin"></span><span class="v">${fmt(p.v/1000)}K</span></div>`).join("");
+  :`<div class="mk ${edge(p)} ${p.you?"you":""} ${i%2?"low":""}" style="left:${pos(p).toFixed(1)}%"><span class="txt"><span class="lb">${p.l}</span><span class="v">${fmt(p.v/1000)}K</span></span><span class="pin"></span></div>`).join("");
  $("#cases").innerHTML=[0,1,2].map(i=>{const ps=casePsf(S,i),q=allQ[i];return `<div class="sc ${i===CI?"base":""}"><span class="n">${caseNames[i]} · ${fmt(ps)} / sqft today</span><span class="p ${q.profit>=0?"good":"bad"}">${aed(q.sell)}</span><span class="s"><b>${q.profit>=0?"+":"−"}${aed(Math.abs(q.profit))}</b> profit (${sgn(q.life)}) · ${sgn(q.coc)} on your cash</span>${S.main&&D.cases?`<span class="s">${D.cases[i].why}</span>`:""}</div>`}).join("");
  $("#rlist").innerHTML=pts.map(p=>`<li class="${p.you?"you":""}"><span>${p.l}</span><b>${aed(p.v)}</b></li>`).join("");
  $("#rscen").innerHTML=[0,1,2,3].map(i=>{const g=rgOf(i),q=calc(NC,G,g),on=i===RI;return `<div class="sc rpick ${on?"base":""}${i===2?" rec":""}" role="button" tabindex="0" data-ri="${i}" aria-pressed="${on}">${i===2?REC:""}<span class="n">${g===0?"If rents don't rise":g<0?`If rents fall ${-g}% a year`:`If rents rise ${+g.toFixed(1)}% a year`}${on?" · selected":""}</span><span class="p">${aed(q.net)}</span><span class="s">net rent / year · ${ypct(q.yld)} yield (${yLabel(q.yld)[1].toLowerCase()})</span></div>`}).join("");
