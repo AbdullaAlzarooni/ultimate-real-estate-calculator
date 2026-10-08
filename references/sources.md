@@ -66,4 +66,7 @@ community) → apply growth bands (`rules.md`).
 - Property Monitor community supply tracker + market statistics (above).
 - Optional zone sheet: DSC (Dubai Statistics Center) population by community 2022–2025, projected to
   the horizon year; existing + new units (PM / DXB Interact). Ratio = units ÷ (population ÷ people per home).
+- **Project unit breakdown** (units per type – studio/1BR/2BR… – and size ranges, for "This building"):
+  Property Monitor project page → Unit configuration. **No PM access → Reelly** project →
+  "Units & Availability" (count units per type; note if it shows only available units, not the full building).
 - Without PM: DXB Interact supply pages, or leave the section out (omit `sd` in the data).
