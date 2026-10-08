@@ -36,6 +36,10 @@ node tools/dump.js example-weston-109.html     # renders all 144 scenario combin
 ```
 (The example's photos aren't included; the page works without them.)
 
+## License
+© 2026 Abdulla Alzarooni (Real Estate with Abdulla Alzarooni). Free to use for your own client
+reports; keep the "Report engine ©" credit line on every report; no resale. See [LICENSE](LICENSE).
+
 ## Disclaimer
 Reports are estimates from public/market data and the developer's documents, not financial advice.
 Check each data site's terms of use. Icons: Font Awesome Free brand shapes (CC BY 4.0).

@@ -1,3 +1,5 @@
+# Off-plan Report engine · © 2026 Abdulla Alzarooni. All rights reserved.
+# Licensed under the Off-plan Report License (see LICENSE). Keep this notice.
 """Build a property report:  python3 build.py data/<name>.js   ->  <name>.html (+ <name>.files.txt)
 
 template/report-template.html  layout + maths (do not edit per property)
