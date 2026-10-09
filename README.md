@@ -9,6 +9,16 @@ A set of **Claude skills** that turn Dubai / UAE property deals into **client-re
 real market data, clear verdicts, every calculation shown. Install once, get every calculator,
 and new ones arrive with a single update.
 
+## See it
+An example report (Binghatti Starfall studio, Al Jaddaf). Every number links back to its source and
+all the maths is shown step by step.
+
+<p><img src="docs/images/verdict.jpg" width="420" alt="Verdict: profit at handover and net rent"></p>
+
+<img src="docs/images/deal-checks.jpg" alt="Four deal checks and where the price sits">
+
+More screenshots on the [Off-plan Report page](skills/offplan-report/README.md#see-it).
+
 ## Calculators
 | Calculator | What it does | Version |
 |---|---|---|
@@ -41,9 +51,17 @@ Gets fixes and any new calculators. Your details and reports live in your own wo
 are not touched.
 
 ## What you need
-Claude Code · the **Claude in Chrome** extension · Python 3 · Node.js · Google Chrome.
+- **Claude Code** (Claude desktop app → Code tab, or the `claude` terminal app)
+- the **Claude in Chrome** extension, so Claude can read the data sites in your logged-in Chrome
+- **Python 3** with `pymupdf` and `pillow` (`pip3 install pymupdf pillow`), **Node.js**, **Google Chrome**
+
 Claude checks these on the first run and helps you install anything missing.
+**Tested on macOS.** Windows and Linux should work but haven't been tested yet; please report problems.
 Each calculator's page lists the websites and accounts it uses.
+
+## Feedback
+Found a problem or have an idea? [Open an issue](https://github.com/AbdullaAlzarooni/ultimate-real-estate-calculator/issues/new) or message
+[@abdulla.al.zarooni](https://www.instagram.com/abdulla.al.zarooni) on Instagram.
 
 ## License & credit
 © 2026 Abdulla Alzarooni (Real Estate with Abdulla Alzarooni). All rights reserved.

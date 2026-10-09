@@ -11,6 +11,25 @@ and builds the report.
 
 ---
 
+## See it
+Example: Binghatti Starfall studio, Al Jaddaf (from a brochure).
+
+<p><img src="../../docs/images/verdict.jpg" width="420" alt="Verdict"></p>
+
+**1 · Is it a good deal?** Four quick checks and where the price sits
+
+<img src="../../docs/images/deal-checks.jpg" alt="Deal checks">
+
+**2 · What could happen:** pick the market and rents, see profit and yield
+
+<img src="../../docs/images/what-if.jpg" alt="What-if scenarios">
+
+**3 · Supply & demand:** what buyers want vs what the building offers vs what's coming
+
+<img src="../../docs/images/supply-demand.jpg" alt="Supply and demand">
+
+---
+
 ## What you get
 - **Verdict** — profit if you sell at handover, net rent and net yield, in plain words
 - **4 deal checks** — fair price, how safe (cushion), break-even sale price, rent
@@ -46,12 +65,12 @@ Each report takes a while: Claude visits the data sites and pulls fresh numbers 
 |---|---|
 | **Claude Code** | required (Claude desktop app → Code tab, or the terminal app) |
 | **Claude in Chrome** | browser extension, so Claude can read the data sites in your logged-in Chrome |
-| **Python 3** and **Node.js** | build and check the page (Claude can help you install them) |
+| **Python 3** (+ `pymupdf`, `pillow`) and **Node.js** | build and check the page, read brochure PDFs (Claude helps you install them) |
 | **Google Chrome** | makes the PDF |
 | Data accounts | see below — the free ones are enough to start |
 
 > The claude.ai website also supports skills (upload the ZIP in Settings → Capabilities → Skills),
-> but this skill is **tested in Claude Code only**; browsing, building and checking work best there.
+> but this skill is **tested in Claude Code on macOS only**; browsing, building and checking work best there.
 
 ---
 
@@ -124,3 +143,6 @@ contact [@abdulla.al.zarooni](https://www.instagram.com/abdulla.al.zarooni) on I
 ## Disclaimer
 Reports are estimates based on market data and the developer's documents — **not financial advice**.
 Check each data site's terms of use. Icons: Font Awesome Free brand shapes (CC BY 4.0).
+
+## Feedback
+Found a problem? [Open an issue](https://github.com/AbdullaAlzarooni/ultimate-real-estate-calculator/issues/new) or message [@abdulla.al.zarooni](https://www.instagram.com/abdulla.al.zarooni) on Instagram.
