@@ -1,5 +1,7 @@
 # The Ultimate Real Estate Calculator
 
+[![Latest: v1.0](https://img.shields.io/badge/latest-v1.0-2ea44f)](https://github.com/AbdullaAlzarooni/ultimate-real-estate-calculator/releases/latest)
+
 **Version 1.0** · [Changelog](CHANGELOG.md) · [Releases](https://github.com/AbdullaAlzarooni/ultimate-real-estate-calculator/releases)
 
 by **Abdulla Alzarooni** · Real Estate with Abdulla Alzarooni ·
