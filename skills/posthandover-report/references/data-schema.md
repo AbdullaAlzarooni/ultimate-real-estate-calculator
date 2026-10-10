@@ -32,3 +32,24 @@ After editing: `python3 build.py data/<name>.js` and run the checks in workflow 
 ## viewMap (every report)
 `UNITS.studio.viewMap={plot:"6488712",height:"G+17",svg:"<svg…>"}` — made by `tools/viewmap.py`. Neighbours: green = open space / low-rise (≤G+2, mosque), amber = 6+ floors lower than this building, red = same height or taller. Shown as a card at the top of Location & comfort; hidden when absent.
 Add the satellite image with `sat:"<name>-img/view-sat.jpg"` (made by `tools/satview.py`; build.py publishes it). Outside GIS DDA the object is just `{sat:"…", note:"optional caption"}`.
+
+
+## Post-handover fields (this calculator)
+Same file as the off-plan report, plus:
+| Field | Example | Meaning |
+|---|---|---|
+| `title` | `"Weston by Wadan PHPP"` | browser tab / gallery name (optional) |
+| `label` | `"Studio · 60/40 PHPP"` | unit label in the heading; include the plan |
+| `price` | `690407.87` | price **on the post-handover plan** (usually higher than the standard plan) |
+| `planName` | `"60/40 post-handover"` | plan name in the text |
+| `paidBeforeHandover` | `60` | % paid up to and including handover |
+| `postPct` | `40` | % paid **after** handover |
+| `phppYears` | `3` | length of the post-handover plan, in years (sets the empty-months slider: 3 → 36 months) |
+| `phppEnd` | `"Dec 2031"` | last instalment |
+| `phppByYear` | `[[2029,14],[2030,14],[2031,12]]` | % of price paid in each calendar year after handover (rent-vs-instalments table) |
+| `planRows` | `[["Down payment · 3 Oct 2026",20], …]` | every instalment row with its % |
+| `planBar` | `[["Down payment",20,"pre"], …, ["After handover",40,"post"]]` | timeline bar; phases `pre` / `done` / `post` |
+| `holdYears` | `5.18` | years from today to the last instalment |
+| `priceGrowthTo` | `"handover"` | price growth stops at handover (sell-at-handover valuation) |
+| `vacancyMonths` | `0` | default empty months after handover (the slider starts here; usually 0) |
+| `coverNote` | text | one line under the rent-vs-instalments table |

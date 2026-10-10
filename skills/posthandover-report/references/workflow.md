@@ -135,3 +135,12 @@ Set `pdf:"<Name>-client.pdf"` in the data file so the "Download PDF" button link
 ## 12. Hand-over message
 Short: link, the verdict line, profit at handover, net rent + yield, what you could not verify,
 and any open questions for the developer (exact facade/view, admin fee, phases).
+
+
+## Post-handover differences (this calculator)
+- **Step 1:** read the **whole** schedule from the sales offer: every instalment before handover, the handover payment,
+  and every instalment after handover (dates and %). Fill `planRows`, `planBar`, `postPct`, `phppYears`, `phppEnd`,
+  `phppByYear`, `paidBeforeHandover`. Note the standard-plan price if the developer shows it (plan cost comparison).
+- **Step 5:** valuation is sell-at-handover (`priceGrowthTo:"handover"`).
+- **Step 9:** also run `node tools/sheetcheck-ph.js <name>.html` (post-handover sheet) next to `tools/sheetcheck.js`.
+- Verdict, checks and the rent-vs-plan card follow `design.md`; keep the empty-months slider at 0 in the PDF.

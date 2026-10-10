@@ -1,5 +1,5 @@
 <!--
-  The Ultimate Real Estate Calculator — Off-plan Report v1.2.0
+  The Ultimate Real Estate Calculator — Post-Handover Report v1.0.0
   © 2026 Abdulla Alzarooni (Real Estate with Abdulla Alzarooni). All rights reserved.
   Licensed under The Ultimate Real Estate Calculator License (see LICENSE): free to use for your own client
   reports; keep this notice and the "The Ultimate Real Estate Calculator ©" credit line visible; no resale.
@@ -108,7 +108,8 @@ dl.kv dt:last-of-type,dl.kv dd:last-of-type{border-bottom:0}
 :root[data-theme="dark"] .tabs button[aria-selected="true"]{color:#0c2412}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .tabs button[aria-selected="true"]{color:#0c2412}}
 button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:16px} @media (min-width:1024px){.steps{grid-template-columns:repeat(3,1fr)}.steps>.step:last-child:nth-child(3n+2){grid-column:span 2}.steps>.step:last-child:nth-child(3n+1){grid-column:1/-1}}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:16px}
+@media (min-width:1024px){.steps{grid-template-columns:repeat(3,1fr)}.steps>.step:last-child:nth-child(3n+2){grid-column:span 2}.steps>.step:last-child:nth-child(3n+1){grid-column:1/-1}}
 .step h3{font-size:16px;font-weight:600;display:flex;gap:10px;align-items:baseline;margin-bottom:10px}
 .step h3 .i{font:500 12px var(--f-mono);color:var(--brass)}
 .calc{display:grid;grid-template-columns:1fr auto;column-gap:14px;row-gap:0}
@@ -140,6 +141,19 @@ details.fold[open]>summary::after{content:"Hide"}
 details.fold>summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:12px}
 .fold-body{padding:0 18px 18px;display:flex;flex-direction:column;gap:14px}
 .selrow{display:flex;flex-wrap:wrap;gap:10px}
+.vac{margin-top:14px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:8px}
+.vac-head{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap}
+.vac-t{display:block;font:600 15px var(--f-display)}.vac-s{font-size:12.5px;color:var(--muted);max-width:60ch}
+.vac output{font:700 15px var(--f-display);color:var(--accent);white-space:nowrap}
+.vac input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:8px;border-radius:999px;margin:6px 0 0;cursor:pointer;background:linear-gradient(90deg,var(--accent) var(--p,0%),var(--line) var(--p,0%));outline:none}
+.vac input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:var(--accent);border:3px solid var(--surface);box-shadow:0 0 0 1px var(--accent),0 1px 4px rgba(0,0,0,.25)}
+.vac input[type=range]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;background:var(--accent);border:3px solid var(--surface);box-shadow:0 0 0 1px var(--accent)}
+.vac input[type=range]:focus-visible::-webkit-slider-thumb{box-shadow:0 0 0 4px var(--accent-soft),0 0 0 5px var(--accent)}
+.vac-ticks{position:relative;height:18px;font-size:11.5px;color:var(--muted)}
+.vac-ticks span{position:absolute;top:0;transform:translateX(-50%);white-space:nowrap}.vac-ticks span:first-child{transform:none}.vac-ticks span:last-child{transform:translateX(-100%)}
+.vac-ticks span::before{content:"";position:absolute;left:50%;top:-6px;width:1px;height:5px;background:var(--line)}.vac-ticks span:first-child::before{left:0}.vac-ticks span:last-child::before{left:auto;right:0}
+.vac-impact{font-size:13px;line-height:1.5;background:var(--surface-2);border:1px solid var(--line);border-radius:10px;padding:8px 12px}
+.vac-impact b{font-family:var(--f-display)}.vac-impact .was{color:var(--muted)}
 .seg{display:inline-flex;flex-wrap:wrap;border:1px solid var(--line);border-radius:999px;background:var(--surface);padding:3px;gap:2px}
 .seg button{border:0;background:none;color:var(--muted);font:500 13px var(--f-display);padding:7px 14px;border-radius:999px;cursor:pointer}
 .seg button[aria-pressed="true"]{background:var(--accent);color:var(--surface)}
@@ -243,7 +257,11 @@ tr.grp.show td{background:var(--surface-2);color:var(--ink);text-transform:none;
 .pseg span{font:700 11px var(--f-display);letter-spacing:-.02em;color:var(--bg);white-space:nowrap;overflow:hidden}
 .planleg{display:flex;gap:16px;font-size:12px;color:var(--muted);margin-bottom:8px}
 .planleg i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px}
-.planleg i.a{background:var(--accent)}.planleg i.b{background:color-mix(in srgb,var(--ink) 70%,var(--bg))}
+.planleg i.a{background:var(--accent)}.planleg i.b{background:color-mix(in srgb,var(--ink) 70%,var(--bg))}.planleg i.c{background:var(--demand)}
+.pseg.post{background:var(--demand);opacity:.9}.pseg.post:nth-child(even){opacity:.7}
+#cover-card{margin-top:16px}
+.gtxt{color:var(--good)}.btxt{color:var(--bad)}
+.phtbl{width:100%;border-collapse:collapse;font-size:13px;margin-top:6px}.phtbl th,.phtbl td{padding:6px 8px;border-bottom:1px solid var(--line);text-align:right}.phtbl th:first-child,.phtbl td:first-child{text-align:left}.phtbl tr.tot td{font-weight:700;border-top:2px solid var(--line)}
 .rlist{display:none;list-style:none;margin:6px 0 0;padding:0 0 0 14px;border-left:3px solid;border-image:linear-gradient(var(--good),var(--warn),var(--bad)) 1}
 .rlist li{display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-bottom:1px solid var(--line);font-size:14px;color:var(--muted)}
 .rlist li:last-child{border-bottom:0}
@@ -438,7 +456,7 @@ footer{padding-top:22px}
 
   <header class="hero">
     <div class="hero-top">
-      <div class="eyebrow" id="eyebrow">Off-plan evaluation</div>
+      <div class="eyebrow" id="eyebrow">Post-handover evaluation</div>
       <h1 id="h-title"></h1>
       <p class="metaline" id="h-meta"></p>
     </div>
@@ -453,6 +471,7 @@ footer{padding-top:22px}
     <div class="selrow"><div class="seg" id="sel-type" role="group" aria-label="Unit type"></div></div>
     <div class="selrow"><div class="seg" id="sel-src" role="group" aria-label="Data source"></div><div class="seg" id="sel-case" role="group" aria-label="Case"></div></div>
     <p class="small" id="dc-lede"></p>
+    <div class="vac" id="vacrow"><div class="vac-head"><div><label class="vac-t" for="vac">What if the unit sits empty after handover?</label><div class="vac-s">Drag to how long it takes to find a tenant. The post-handover plan runs <span id="vac-len">36</span> months, so the bar covers all of it.</div></div><output id="vac-out" for="vac">No empty months</output></div><input type="range" id="vac" min="0" max="36" step="1" value="0" aria-describedby="vac-impact"><div class="vac-ticks" id="vac-ticks" aria-hidden="true"></div><div class="vac-impact" id="vac-impact" aria-live="polite"></div></div>
     <div class="pdfrow"><button type="button" class="pdfbtn recbtn" id="rec-btn">★ Recommended view</button><a class="pdfbtn" id="pdf-btn" href="@@PDF@@" download>⬇ Download PDF</a><span class="small" id="pdf-msg"></span></div>
   </div>
 
@@ -467,9 +486,9 @@ footer{padding-top:22px}
     <p class="s2-lede"><span class="recb">★ Recommended</span> marks our analysis. Leave those picked for the main answer, and tap another box only to test a what-if.</p>
     <h3 class="s2-sub">A · If you sell at handover</h3>
     <div class="card"><div class="src-tag">Step 1 · Pick the market <span class="tapchip">☝ Tap to choose</span></div><div class="scen" id="scen"></div></div>
-    <div class="card"><div class="src-tag"><span class="noprint">Step 2 · </span>Your result in that market · conservative, normal and optimistic prices</div><div class="scen cases" id="cases"></div></div>
+    <div class="card"><div class="src-tag"><span class="noprint">Step 2 · </span>Your result in that market · conservative, normal and optimistic prices · the buyer takes over the post-handover plan</div><div class="scen cases" id="cases"></div></div>
     <h3 class="s2-sub s2-b">B · If you keep it and rent it out</h3>
-    <div class="card"><div class="src-tag"><span class="noprint">Pick how rents move <span class="tapchip">☝ Tap to choose</span></span><span class="printonly">Net rent at handover · our analysis</span></div><div class="scen" id="rscen"></div><p class="small" style="margin:8px 0 0">Rents change your yield only. They don't change the resale profit in A.</p></div>
+    <div class="card"><div class="src-tag"><span class="noprint">Pick how rents move <span class="tapchip">☝ Tap to choose</span></span><span class="printonly">Net rent at handover · our analysis</span></div><div class="scen" id="rscen"></div><p class="small" style="margin:8px 0 0">Rents change your yield and how much of the post-handover plan the rent covers. They don't change the resale profit in A.</p></div>
   </section>
 
   <section id="sd">
@@ -493,8 +512,9 @@ footer{padding-top:22px}
   <section id="unit-sec">
     <h2>5 · The unit &amp; payment plan</h2>
     <div class="g2">
-      <div class="card"><div class="src-tag" id="unit-tag">Unit</div><dl class="kv" id="unit"></dl></div>
-      <div class="card"><div class="src-tag" id="plan-tag">Payment plan</div><div class="planbar" id="planbar"></div><div class="planleg"><span><i class="a"></i>Before handover</span><span><i class="b"></i>On completion</span></div><dl class="kv" id="plan"></dl><p class="small" id="dld-note" style="margin:8px 0 0"></p></div>
+      <div><div class="card"><div class="src-tag" id="unit-tag">Unit</div><dl class="kv" id="unit"></dl></div>
+      <div class="card" id="cover-card"><div class="src-tag">Rent vs post-handover instalments · per year</div><div class="tbl-wrap"><table class="phtbl" id="cover-tbl"></table></div><p class="small" id="cover-note" style="margin:8px 0 0"></p></div></div>
+      <div class="card"><div class="src-tag" id="plan-tag">Payment plan</div><div class="planbar" id="planbar"></div><div class="planleg"><span><i class="a"></i>Before handover</span><span><i class="b"></i>On completion</span><span><i class="c"></i>After handover</span></div><dl class="kv" id="plan"></dl><p class="small" id="dld-note" style="margin:8px 0 0"></p></div>
     </div>
   </section>
 
@@ -542,7 +562,7 @@ const REC=`<span class="recb" title="Our analysis · the growth rate from the da
 const ypct=v=>pct(v,2);
 const pct=(n,d=2)=>(n<0?"−":n>0&&false?"+":"")+fmt(Math.abs(n)*100,d)+"%";
 const sgn=n=>(n>0?"+":n<0?"−":"")+fmt(Math.abs(n)*100,2)+"%";
-let SI=null, CI=1, GI=null, RI=null, cur=0;
+let SI=null, CI=1, GI=null, RI=null, cur=0, VM=null;
 function renderAll(){
 const rentF=D.factors.reduce((a,f)=>a+f.v[0],0)/100, appF=D.factors.reduce((a,f)=>a+f.v[1],0)/100;
 
@@ -559,7 +579,12 @@ function calc(s,ga,gr){
   const life=profit/costs, ann=Math.pow(1+life,1/y)-1;
   const cash=D.price*D.paidBeforeHandover/100+dld+D.oqood, coc=profit/cash, cocAnn=Math.pow(Math.max(1+coc,0),1/y)-1;
   const beP=(sell-comm-D.oqood-D.dldAdmin)/(1+D.dldPct/100), mktP=s.psf*VS, y7P=(net/0.06-D.oqood-D.dldAdmin)/(1+D.dldPct/100);
-  return {cash,coc,cocAnn,beP,mktP,y7P,rg,grown,withF,gross,service,mgmt,util,net,dld,total,yld,unitPsf,cgr,mv,ag,mvg,sell,comm,costs,profit,life,ann};
+  /* post-handover plan (sheet: Post-Handover Property Evaluation Form) */
+  const ph=D.phppYears||0, H=D.holdYears||(y+ph), k=D.commission/100*1.05;
+  const vm=VM==null?(D.vacancyMonths||0):VM, rentMonths=Math.max(0,ph*12-vm), rentDuring=net*rentMonths/12, cashNet=total-rentDuring, yCash=net/cashNet, grossY=gross/D.price;
+  const gH=D.priceGrowthTo==="handover"?y:H, agH=Math.pow(1+a,gH), mvgH=mv*agH, sellH=mvgH*(1+appF), commH=sellH*k, costsH=cashNet+commH, profitH=sellH-costsH, lifeH=profitH/costsH, annH=Math.pow(Math.max(1+lifeH,0),1/H)-1;
+  const postAnnual=ph?D.price*(D.postPct||0)/100/ph:0, postTotal=D.price*(D.postPct||0)/100, cover=postTotal?rentDuring/postTotal:null, gapTotal=Math.max(0,postTotal-rentDuring), gapYr=ph?gapTotal/ph:0, beH=cashNet/(1-k);
+  return {cash,coc,cocAnn,beP,mktP,y7P,rg,grown,withF,gross,service,mgmt,util,net,dld,total,yld,unitPsf,cgr,mv,ag,mvg,sell,comm,costs,profit,life,ann,ph,H,gH,vm,rentMonths,postTotal,gapTotal,rentDuring,cashNet,yCash,grossY,agH,mvgH,sellH,commH,costsH,profitH,lifeH,annH,postAnnual,cover,gapYr,beH};
 }
 const R=D.sources.map(s=>({s,r:calc(s)}));
 const yLabel=v=>v>=.06?["good","Good"]:v>=.05?["ok","OK"]:["bad","Low"];
@@ -582,19 +607,23 @@ const head=`<thead><tr><th></th>${RR.map(x=>`<th class="src">${x.s.name}<br><spa
 const groups=[
   ["Rental income",[
     ["Net rental income at handover",x=>aed(x.r.net)],
-    ["Net rental yield",x=>{const[c,t]=yLabel(x.r.yld);return pill(c,pct(x.r.yld)+" · "+t)}]
+    ["Net yield on your cash",x=>{const[c,t]=yLabel(x.r.yCash);return pill(c,pct(x.r.yCash)+" · "+t)}],
+    ["Net rental yield on the full price",x=>{const[c,t]=yLabel(x.r.yld);return pill(c,pct(x.r.yld)+" · "+t)}],
+    ["Rent covers the post-handover plan",x=>x.r.cover==null?"—":pill(x.r.cover>=1?"good":x.r.cover>=.6?"ok":"bad",pct(x.r.cover,0))]
   ]],
-  ["Capital growth &amp; resale",[
+  ["Price today",[
     ["Cost of comparable units (off-plan / sqft)",x=>aed(x.s.psf)],
-    ["Capital growth rate",x=>pill(x.r.cgr>=0?"good":"bad",sgn(x.r.cgr))],
-    ["Net profit across project life cycle",x=>pill(x.r.life>=0?"good":"bad",sgn(x.r.life))],
-    ["Net profit per year",x=>pill(x.r.ann>=0?"good":"bad",sgn(x.r.ann))]
+    ["Below (+) or above (−) market",x=>pill(x.r.cgr>=0?"good":"bad",sgn(x.r.cgr))]
   ]],
-  ["If you sell before handover · "+D.planName+" plan",[
-    ["Cash you paid in",x=>aed(x.r.cash)],
+  ["Sell at handover ("+D.handover+") · the buyer takes over the plan",[
+    ["Selling price",x=>aed(x.r.sell)],
+    ["Net profit",x=>pill(x.r.profit>=0?"good":"bad",(x.r.profit>=0?"+":"−")+aed(Math.abs(x.r.profit)))],
+    ["Net profit on the price",x=>pill(x.r.life>=0?"good":"bad",sgn(x.r.life))],
+    ["Cash you paid in ("+D.paidBeforeHandover+"% + fees)",x=>aed(x.r.cash)],
     ["Profit on your cash",x=>pill(x.r.coc>=0?"good":"bad",sgn(x.r.coc))],
     ["Profit on your cash, per year",x=>pill(x.r.cocAnn>=0?"good":"bad",sgn(x.r.cocAnn))]
   ]]
+
 ];
 $("#results").innerHTML=head+"<tbody>"+`<tr class="grp show"><td colspan="${RR.length+1}">Showing: ${label}</td></tr>`+groups.map(([g,rs])=>`<tr class="grp"><td colspan="${RR.length+1}">${g}</td></tr>`+
   rs.map(([k,f])=>`<tr class="hl"><td class="k">${k}</td>${RR.map(x=>`<td>${f(x)}</td>`).join("")}</tr>`).join("")).join("")+
@@ -605,8 +634,8 @@ $("#legend").innerHTML=`Yield: ${pill("good","Good ≥ 6%")} ${pill("ok","OK 5�
 /* inputs */
 $("#unit-tag").textContent="Unit · "+(D.offer||"GenieMap");$("#plan-tag").textContent="Payment plan · "+D.planName;
 $("#unit").innerHTML=[["Price",aed(D.price)],["Size",fmt(D.size,2)+" sqft"+(D.internal?` (${fmt(D.internal,2)} inside + ${fmt(D.balcony,2)} balcony)`:"")],...(D.valSize?[["Valued at",fmt(D.valSize,0)+" sqft (terrace at 25%)"]]:[]),["Price per sqft",aed(R[0].r.unitPsf)],["Floor",D.floor],["View",D.view],["Furnishing",D.furnText||(D.furnished?"Fully furnished":"Unfurnished")],["Service charge",D.sc+" AED/sqft"],["Handover",D.handover+" ("+D.years+" yrs)"]].map(([k,v])=>`<dt>${k}</dt><dd>${v}</dd>`).join("");
-$("#planbar").innerHTML=D.plan.map(([k,p],i)=>`<div class="pseg${i===D.plan.length-1?" last":""}" style="flex:${p}" title="${k} · ${p}%"><span>${p}%</span></div>`).join("");
-$("#plan").innerHTML=[["DLD "+D.dldPct+"%"+(D.dldAdmin?" + "+D.dldAdmin:""),aed(R[0].r.dld)],["Admin fee",aed(D.oqood)],...D.plan.map(([k,p])=>[k+" · "+p+"%",aed(D.price*p/100)]),["Total cost",`<b>${aed(R[0].r.total)}</b>`]].map(([k,v])=>`<dt>${k}</dt><dd>${v}</dd>`).join("");
+const PB=D.planBar||D.plan;$("#planbar").innerHTML=PB.map(([k,p,ph],i)=>`<div class="pseg${ph==="post"?" post":ph==="done"||(!ph&&i===PB.length-1)?" last":""}" style="flex:${p}" title="${k} · ${p}%"><span>${+p.toFixed?+p.toFixed(1):p}%</span></div>`).join("");
+$("#plan").innerHTML=[["DLD "+D.dldPct+"%"+(D.dldAdmin?" + "+D.dldAdmin:""),aed(R[0].r.dld)],["Admin fee",aed(D.oqood)],...(D.planRows||D.plan).map(([k,p])=>[k+" · "+(+(+p).toFixed(2))+"%",aed(D.price*p/100)]),["Total cost",`<b>${aed(R[0].r.total)}</b>`]].map(([k,v])=>`<dt>${k}</dt><dd>${v}</dd>`).join("");
 $("#dld-note").innerHTML=D.dldNote||"";
 $("#market").innerHTML=`<thead><tr><th>Market data</th><th>Period</th><th>Area rent / yr</th><th>Off-plan / sqft</th><th>Method</th></tr></thead><tbody>`+
  D.sources.map(s=>`<tr><td><b>${s.name}</b><br><span class="small">${s.sample}</span></td><td>${s.period}<br><span class="small">pulled ${s.asOf||D.date}</span></td><td>${aed(s.rent)}${s.sm&&s.sm!==1?`<br><span class="small">${s.smFrom||"other"} sqft deals × ${s.sm.toFixed(4)}</span>`:""}</td><td>${aed(s.psf)}</td><td class="small" style="white-space:normal;text-align:left;min-width:220px">${s.how}</td></tr>`).join("")+"</tbody>";
@@ -656,7 +685,7 @@ function steps(x){
   <div class="answer"><span>Per year</span><strong>${sgn(r.ann)}</strong></div>
   <p class="small" style="margin:8px 0 0">${fmt(r.profit)} ÷ ${fmt(r.costs)} · per year = (1 + ${(r.life*100).toFixed(2)}%)^(1/${D.years}) − 1</p></div>
 
-  <div class="card step"><h3><span class="i">05</span>Profit on your cash (sell before handover)</h3><div class="calc">
+  <div class="card step"><h3><span class="i">05</span>Profit on your cash (sell at handover)</h3><div class="calc">
     ${L("Instalments before handover",`${D.paidBeforeHandover}% × ${fmt(D.price)}`,aed(D.price*D.paidBeforeHandover/100))}
     ${L("DLD + admin fee","paid at booking",aed(r.dld+D.oqood))}
     ${L("Cash you paid in","",aed(r.cash),1)}
@@ -664,7 +693,17 @@ function steps(x){
   </div>
   <div class="answer"><span>On your cash</span><strong>${sgn(r.coc)}</strong></div>
   <div class="answer"><span>Per year</span><strong>${sgn(r.cocAnn)}</strong></div>
-  <p class="small" style="margin:8px 0 0">${fmt(r.profit)} ÷ ${fmt(r.cash)} · the buyer pays the remaining ${100-D.paidBeforeHandover}% to the developer</p></div>`;
+  <p class="small" style="margin:8px 0 0">${fmt(r.profit)} ÷ ${fmt(r.cash)} · the buyer pays the remaining ${100-D.paidBeforeHandover}% to the developer</p></div>`+(r.ph?`
+
+  <div class="card step"><h3><span class="i">06</span>Rent vs the post-handover plan</h3><div class="calc">
+    ${L("Post-handover instalments",`${D.postPct}% × ${fmt(D.price)} ÷ ${(+r.ph.toFixed(1))} years`,aed(r.postAnnual)+" / yr")}
+    ${L("Net rental income","from step 01",aed(r.net)+" / yr")}
+    ${L("You add",`${fmt(r.postAnnual)} − ${fmt(r.net)}`,r.gapYr>0?aed(r.gapYr)+" / yr":"nothing",1)}
+    ${L("Rent earned during the plan",`${fmt(r.net)} × ${fmt(r.rentMonths)} months ÷ 12`+(r.vm?` (${r.vm} empty)`:""),aed(r.rentDuring))}
+    ${L("Cash you put in",`total cost ${fmt(r.total)} − rent during the plan`,aed(r.cashNet),1)}
+  </div><div class="answer"><span>Rent covers</span><strong>${pct(r.cover,0)}</strong></div>
+  <div class="answer"><span>Net yield on your cash</span><strong>${pct(r.yCash)}</strong></div>
+  <p class="small" style="margin:8px 0 0">${fmt(r.net)} ÷ ${fmt(r.cashNet)} · payback ${fmt(1/r.yCash,1)} years</p></div>`:"");
 }
 if(cur>=D.sources.length) cur=0;
 function renderTabs(){
@@ -688,22 +727,25 @@ function renderDeal(){
  const S=D.sources[SI], G=gOf(GI), RG=rgOf(RI), NC={...S,psf:casePsf(S,CI)}, r=calc(NC,G,RG), P=D.price, k=D.commission/100*1.05;
  const beSell=(P*(1+D.dldPct/100)+D.dldAdmin+D.oqood)/(1-k), drop=1-beSell/r.mktP, below=1-P/r.mktP;
  const allQ=[0,1,2].map(i=>calc({...S,psf:casePsf(S,i)},G,RG));
+ const yLab7=yLabel;
+ const mo=Math.round(r.gapYr/12/100)*100, end=D.phppEnd||"the plan ends";
  const headline=r.profit<0?"Loss at handover in this case":drop>=.05?"Profitable at handover, with a cushion":"Profitable at handover, not before";
  const caveat=r.profit<0?`Selling at handover would mean a loss in this case.`:drop>=.05?`Even selling early, you have a ${pct(drop,0)} cushion.`:drop>0?`Selling before handover would only about break even today.`:`Selling early would mean a loss: prices must rise ${pct(-drop,1)} first.`;
  $("#verdict").innerHTML=`<div class="vhead">${headline}</div><div class="vcav">${caveat}</div>
  <div class="stat"><div class="lab">Sell at handover</div><div class="big">${r.profit>=0?"+":"−"}${aed(Math.abs(r.profit))}</div><div class="sub">profit · ${sgn(r.life)} on the price · ${sgn(r.coc)} on your cash</div></div>
- <div class="stat last"><div class="lab">Rent it out</div><div class="big">${aed(r.net)}<small> / year</small></div><div class="sub">net rent · ${ypct(r.yld)} yield (${yLabel(r.yld)[1].toLowerCase()})</div>${S.sm&&S.sm!==1?`<div class="est">Estimated rent: ${S.smFrom||"other"} sqft units × ${S.sm.toFixed(2)} size multiplier (too few deals at ${fmt(D.size,0)} sqft)</div>`:""}</div>
+ <div class="stat last"><div class="lab">Rent it out</div><div class="big">${aed(r.net)}<small> / year</small></div><div class="sub">net rent · ${ypct(r.yCash)} yield on your cash (${yLabel(r.yCash)[1].toLowerCase()}) · ${ypct(r.yld)} on the full price${r.cover!=null&&r.cover<1?` · covers ${pct(r.cover,0)} of the post-handover instalments`:""}</div>${S.sm&&S.sm!==1?`<div class="est">Estimated rent: ${S.smFrom||"other"} sqft units × ${S.sm.toFixed(2)} size multiplier (too few deals at ${fmt(D.size,0)} sqft)</div>`:""}</div>
  <div class="vbase">Based on ${S.name} · ${caseNames[CI].toLowerCase()} case · market ${mktName(GI)}/yr · rents ${rName(RI)}/yr</div>`;
  $("#dc-lede").innerHTML=`${S.name} · ${caseNames[CI]} case (${fmt(NC.psf)} AED/sqft today) · market ${mktName(GI)} a year · rents ${rName(RI)} a year until handover · data pulled ${S.asOf||D.date}. Green means the deal passes.`+(S.main?"":` <span class="small">For this source, conservative and normal apply Property Monitor's resale discount (−${pct(1-ratio,0)}).</span>`);
  $("#sel-src").innerHTML=D.sources.map((s,i)=>`<button id="src-${s.k}" aria-pressed="${i===SI}" data-si="${i}">${s.name}</button>`).join("");
  $("#sel-case").innerHTML=caseNames.map((n,i)=>`<button id="case-${i}" aria-pressed="${i===CI}" data-ci="${i}">${n}</button>`).join("");
+ const bd=Math.abs(below)<.01?1:0;
  const C=[
-  [below>=0?"good":"bad","Is the price fair?", below>=0?`Yes. You pay <b>${aed(P)}</b>; similar units are worth <b>${aed(r.mktP)}</b> today — <b>${pct(below,0)} below market</b>.`:`No. Similar units are worth <b>${aed(r.mktP)}</b> — you'd pay <b>${pct(-below,0)} above market</b>.`],
-  [drop>=.05?"good":drop>0?"ok":"bad","How safe is it?", (drop>=.05?`Prices can fall <b>${pct(drop,0)}</b> from today and you still don't lose.`:drop>0?`Thin cushion today: prices can only fall <b>${pct(drop,1)}</b> before you lose, so the profit depends on growth until handover.`:`Prices must <b>rise ${pct(-drop,1)}</b> just to get your money back.`)+(r.sell>beSell?` At the expected handover price, you have a <b>${pct(1-beSell/r.sell,0)}</b> cushion.`:` Even at the expected handover price, you'd lose.`)],
-  [P<=r.beP?"good":"bad","Break-even", `Sell for at least <b>${aed(beSell)}</b> and you don't lose.<br>You could pay up to <b>${aed(r.beP)}</b> and still not lose.`],
-  [r.yld>=.06?"good":r.yld>=.05?"ok":"bad","Is the rent good?", r.yld>=.06?`Yes — <b>${ypct(r.yld)}</b> a year after costs (good is 6%+; Dubai net yields are usually 5–6.5%).`:`<b>${ypct(r.yld)}</b> a year after costs. To reach a good 6%, the price would need to be <b>${aed(r.y7P)}</b> or less.`]
+  [below>=0?"good":"bad","Is the price fair?", below>=0?`Yes. You pay <b>${aed(P)}</b>; similar units are worth <b>${aed(r.mktP)}</b> today — <b>${pct(below,bd)} below market</b>.`:`No. Similar units are worth <b>${aed(r.mktP)}</b> — you'd pay <b>${pct(-below,bd)} above market</b> (the post-handover plan costs more than paying on completion).`],
+  [drop>=.05?"good":drop>0?"ok":"bad","How safe is it?", (drop>=.05?`Prices can fall <b>${pct(drop,0)}</b> from today and you still don't lose.`:drop>0?`Thin cushion today: prices can only fall <b>${pct(drop,1)}</b> before you lose, so the profit depends on growth until handover.`:`Prices must <b>rise ${pct(-drop,1)}</b> just to get your money back.`)+` Break-even sale: <b>${aed(beSell)}</b>.`+(r.sell>beSell?` At the expected handover price you have a <b>${pct(1-beSell/r.sell,0)}</b> cushion.`:` Even at the expected handover price, you'd lose.`)],
+  [r.cover==null?"ok":r.cover>=1?"good":r.cover>=.6?"ok":"bad","Does the rent cover the plan?", r.cover==null?"No post-handover payments.":`Net rent <b>${aed(r.net)}</b> a year vs post-handover instalments of <b>${aed(r.postAnnual)}</b> a year for ${+r.ph.toFixed(1)} years`+(r.vm?`, with the first ${r.vm} month${r.vm>1?"s":""} empty`:"")+`.`+(r.cover>=1?` Rent pays them all.`:` If you keep it, you top up about <b>${aed(mo)} a month</b> (${aed(r.gapTotal)} in total).`)],
+  [yLabel(r.yCash)[0],"Is the rent good?", `<b>${ypct(r.yCash)}</b> a year on your cash (rent ÷ total cost minus the rent earned during the plan; good is 6%+). On the full price it is ${ypct(r.yld)}.`]
  ];
- const FIG=[pct(Math.abs(below),0)+(below>=0?" below market":" above market"),drop>0?pct(drop,1)+" cushion today":"needs "+pct(-drop,1)+" rise",aed(beSell),ypct(r.yld)+" net yield"];
+ const FIG=[pct(Math.abs(below),bd)+(below>=0?" below market":" above market"),drop>0?pct(drop,1)+" cushion today":"needs "+pct(-drop,1)+" rise",r.cover==null?"—":pct(r.cover,0)+" covered",ypct(r.yCash)+" on your cash"];
  $("#checks").innerHTML=C.map(([c,q,a],i)=>`<div class="check ${c}"><div class="chead"><div class="ic">${c==="good"?"✓":c==="ok"?"~":"✕"}</div><div class="q">${q}</div></div><div class="fig">${FIG[i]}</div><div class="a">${a}</div></div>`).join("");
  const pts=[{l:"Price for 6% rent",v:r.y7P},{l:"You pay",v:P,you:1},{l:"Worth today",v:r.mktP},{l:"Break-even sale",v:beSell},{l:"Expected at handover",v:r.sell}].sort((a,b)=>a.v-b.v);
  const lo=pts[0].v, hi=pts[pts.length-1].v, mg=[];
@@ -713,8 +755,22 @@ function renderDeal(){
   ?`<div class="mk multi ${edge(p)} ${p.you?"you":""} ${i%2?"low":""}" style="left:${pos(p).toFixed(1)}%"><span class="lb">${p.items.map(q=>`<span class="row"><span>${q.l}</span><b>${fmt(q.v/1000)}K</b></span>`).join("")}</span><span class="pin"></span></div>`
   :`<div class="mk ${edge(p)} ${p.you?"you":""} ${i%2?"low":""}" style="left:${pos(p).toFixed(1)}%"><span class="txt"><span class="lb">${p.l}</span><span class="v">${fmt(p.v/1000)}K</span></span><span class="pin"></span></div>`).join("");
  $("#cases").innerHTML=[0,1,2].map(i=>{const ps=casePsf(S,i),q=allQ[i];return `<div class="sc ${i===CI?"base":""}"><span class="n">${caseNames[i]} · ${fmt(ps)} / sqft today</span><span class="p ${q.profit>=0?"good":"bad"}">${aed(q.sell)}</span><span class="s"><b>${q.profit>=0?"+":"−"}${aed(Math.abs(q.profit))}</b> profit (${sgn(q.life)}) · ${sgn(q.coc)} on your cash</span>${S.main&&D.cases?`<span class="s">${D.cases[i].why}</span>`:""}</div>`}).join("");
+
+ {const Y=D.phppByYear||[];$("#cover-card").hidden=!Y.length;if(Y.length){let ti=0,tr=0,tg=0;
+  let vleft=r.vm;const rows=Y.map(([yr,pc,mos])=>{const m0=mos==null?12:mos,vac=Math.min(vleft,m0);vleft-=vac;const inst=P*pc/100,rent=r.net*(m0-vac)/12,gap=Math.max(0,inst-rent);ti+=inst;tr+=rent;tg+=gap;return `<tr><td>${yr}</td><td>${aed(inst)}</td><td>${aed(rent)}</td><td>${gap>0?aed(gap):"—"}</td></tr>`}).join("");
+  $("#cover-tbl").innerHTML=`<thead><tr><th>Year</th><th>Instalments</th><th>Net rent</th><th>You add</th></tr></thead><tbody>${rows}<tr class="tot"><td>Total</td><td>${aed(ti)}</td><td>${aed(tr)}</td><td>${tg>0?aed(tg):"—"}</td></tr></tbody>`;
+  $("#cover-note").innerHTML=`Net rent from the picks above (${S.name}, ${caseNames[CI].toLowerCase()} case, rents ${rName(RI)}/yr) · ${r.vm?`first ${r.vm} month${r.vm>1?"s":""} without a tenant (empty-months slider at the top)`:"tenant from the first month after handover (change it with the empty-months slider at the top)"}.`;}}
+ {const v=$("#vac"),o=$("#vac-out");if(v&&v.setAttribute){const mx=Math.round((D.phppYears||0)*12),m=Math.min(mx,VM==null?(D.vacancyMonths||0):VM);v.max=mx;v.value=m;v.style.setProperty("--p",(mx?m/mx*100:0)+"%");
+ const y=m/12;o.textContent=m===0?"No empty months":(m===1?"1 month empty":m+" months empty")+(m>=12?` · ${+y.toFixed(1)} yr${y===1?"":"s"}`:"");$("#vac-len").textContent=mx;
+ $("#vac-ticks").innerHTML=[0,...Array.from({length:Math.round(D.phppYears||0)},(_,i)=>(i+1)*12)].filter(t=>t<=mx).map(t=>`<span style="left:${mx?t/mx*100:0}%">${t===0?"Handover":t===mx?`Year ${t/12} · plan ends`:`Year ${t/12}`}</span>`).join("");
+ const keep=VM;VM=0;const r0=calc(NC,G,RG);VM=keep;const mo0=Math.round(r0.gapYr/12/100)*100,was=(a,b)=>m?` <span class="was">(${b} with no empty months)</span>`:"";
+ $("#vac-impact").innerHTML=r.cover==null?"":(()=>{const ph=D.phppYears,yrs=ph===1?"1 year":ph+" years",plan=Math.round(r.postAnnual/12/100)*100,rentM=Math.round(r.rentDuring/(ph*12)/100)*100,rentM0=Math.round(r0.rentDuring/(ph*12)/100)*100;
+  return `<div>After handover you still pay about <b>${aed(plan)} a month</b> for ${yrs} (the last ${D.postPct}% of the price).</div>`+
+  `<div>${m?`With the first <b>${m} month${m===1?"":"s"}</b> empty, the`:"With a tenant from the first month, the"} rent brings in about <b>${aed(rentM)} a month</b> on average${m?` <span class="was">(${aed(rentM0)} with no empty months)</span>`:""}, so it covers <b>${pct(r.cover,0)}</b> of it.</div>`+
+  `<div>You add about <b>${aed(mo)} a month</b> from your own pocket${m?` <span class="was">(${aed(mo0)} with no empty months)</span>`:""}. Return on the cash you put in: <b>${ypct(r.yCash)}</b> a year.</div>`;})();}
+ $("#vacrow").hidden=!(D.phppYears>0);}
  $("#rlist").innerHTML=pts.map(p=>`<li class="${p.you?"you":""}"><span>${p.l}</span><b>${aed(p.v)}</b></li>`).join("");
- $("#rscen").innerHTML=[0,1,2,3].map(i=>{const g=rgOf(i),q=calc(NC,G,g),on=i===RI;return `<div class="sc rpick ${on?"base":""}${i===2?" rec":""}" role="button" tabindex="0" data-ri="${i}" aria-pressed="${on}">${i===2?REC:""}<span class="n">${g===0?"If rents don't rise":g<0?`If rents fall ${-g}% a year`:`If rents rise ${+g.toFixed(1)}% a year`}${on?" · selected":""}</span><span class="p">${aed(q.net)}</span><span class="s">net rent / year · ${ypct(q.yld)} yield (${yLabel(q.yld)[1].toLowerCase()})</span></div>`}).join("");
+ $("#rscen").innerHTML=[0,1,2,3].map(i=>{const g=rgOf(i),q=calc(NC,G,g),on=i===RI;return `<div class="sc rpick ${on?"base":""}${i===2?" rec":""}" role="button" tabindex="0" data-ri="${i}" aria-pressed="${on}">${i===2?REC:""}<span class="n">${g===0?"If rents don't rise":g<0?`If rents fall ${-g}% a year`:`If rents rise ${+g.toFixed(1)}% a year`}${on?" · selected":""}</span><span class="p">${aed(q.net)}</span><span class="s">net rent / year · ${ypct(q.yCash)} on your cash · covers ${q.cover==null?"—":pct(q.cover,0)} of the plan</span></div>`}).join("");
  const lbl=`${caseNames[CI]} case · market ${mktName(GI)} a year · rents ${rName(RI)} a year`;
  renderResults(D.sources.map(s=>{const cs={...s,psf:casePsf(s,CI)};return {s:cs,r:calc(cs,G,RG)}}),lbl);
  $("#tabs").innerHTML=`<span class="showing">Showing: <b>${S.name}</b> · ${lbl}</span>`;
@@ -773,7 +829,7 @@ const donut=(svg,leg,mix,mine,extra,pal,suffix)=>{cols=PAL[pal];const tot=mix.re
 $("#sel-type").parentElement.hidden=Object.keys(UNITS).length<2;
 $("#sel-type").innerHTML=Object.entries(UNITS).map(([k,u])=>`<button id="type-${k}" aria-pressed="${u===D}" data-ui="${k}">${u.label}</button>`).join("");
 document.title=D.title||`${D.project} · ${D.label}`;
-$("#eyebrow").textContent=(AGENT.name?AGENT.name+" · ":"")+"Off-plan evaluation";
+$("#eyebrow").textContent=(AGENT.name?AGENT.name+" · ":"")+"Post-handover evaluation";
 document.querySelectorAll&&document.querySelectorAll("section > h2").forEach(h=>{const m=h.firstChild&&h.firstChild.nodeType===3&&h.firstChild.textContent.match(/^\s*(\d+)\s*·\s*/);if(m){h.firstChild.textContent=h.firstChild.textContent.slice(m[0].length);h.insertAdjacentHTML("afterbegin",`<span class="num">${m[1]}</span>`)}});
 {const f=$("#hero-img");const sl=f.querySelectorAll?[...f.querySelectorAll(".gslide")]:[];
  if(!sl.length)f.hidden=true;else{let gi=0,timer=null;const dots=$("#gdots");
@@ -795,7 +851,7 @@ document.querySelectorAll&&document.querySelectorAll("section > h2").forEach(h=>
   let lx=null;lb.addEventListener("touchstart",e=>lx=e.touches[0].clientX,{passive:true});lb.addEventListener("touchend",e=>{if(lx==null)return;const dx=e.changedTouches[0].clientX-lx;if(Math.abs(dx)>40)lbShow(li+(dx<0?1:-1));lx=null});
   if(sl.length<2)f.classList.add("single");show(0);if(!matchMedia("(prefers-reduced-motion: reduce)").matches&&sl.length>1)restart();}}
 document.addEventListener("click",e=>{if(!e.target.closest||!e.target.closest("#rec-btn"))return;
-  SI=Math.max(0,D.sources.findIndex(s=>s.main));CI=1;GI=D.scenarios.findIndex(s=>s.g==null);RI=2;window.__rd();
+  SI=Math.max(0,D.sources.findIndex(s=>s.main));CI=1;GI=D.scenarios.findIndex(s=>s.g==null);RI=2;VM=null;window.__rd();
 });
 /* Download PDF: inside the claude.ai viewer, files are saved through the downloads capability; elsewhere the plain link works */
 let DL=null;if(window.claude&&window.claude.use)window.claude.use("downloads").then(d=>{DL=d}).catch(()=>{});
@@ -812,7 +868,7 @@ const ico=k=>`<svg class="bico" viewBox="0 0 ${ICO[k][0]} 512" aria-hidden="true
 const wa=AGENT.whatsapp.replace(/[^0-9]/g,"");
 $("#foot").innerHTML=`<div class="agent"><div class="sig"><img class="logo l-dark" src="@@LOGO_DARK@@" alt="${AGENT.company||""}"><img class="logo l-light" src="@@LOGO_LIGHT@@" alt="${AGENT.company||""}"><img class="avatar" src="@@AVATAR@@" alt="${AGENT.name}"><div><span class="by">Prepared by</span><b>${AGENT.name}</b>${AGENT.brn?` · BRN ${AGENT.brn}`:""}</div></div>${wa?`<a class="wa" href="https://wa.me/${wa}?text=${encodeURIComponent("Hi "+(AGENT.name||"").split(" ")[0]+", I am interested to invest in "+D.project)}" target="_blank" rel="noopener">${ico("whatsapp")} WhatsApp me about this project</a>`:""}${(()=>{const S=AGENT.socials||{},N={instagram:"Instagram",facebook:"Facebook",tiktok:"TikTok",youtube:"YouTube",threads:"Threads",x:"X (Twitter)",linkedin:"LinkedIn",snapchat:"Snapchat"},I={instagram:"fa-instagram",facebook:"fa-facebook-f",tiktok:"fa-tiktok",youtube:"fa-youtube",threads:"fa-threads",x:"fa-x-twitter",linkedin:"fa-linkedin-in",snapchat:"fa-snapchat"};const on=Object.keys(N).filter(k=>S[k]);return on.length?`<div class="socials">${on.map(k=>`<a class="soc" href="${S[k]}" target="_blank" rel="noopener" aria-label="${N[k]}" title="${N[k]}">${ico(k)}</a>`).join("")}</div><div class="pcontact printonly">${wa?`<a href="https://wa.me/${wa}">${ico("whatsapp")}<span>${AGENT.whatsapp}</span></a>`:""}${on.map(k=>{const h=S[k].replace(/[?#].*$/,"").replace(/\/+$/,"").split("/").pop();return `<a href="${S[k]}">${ico(k)}<span>${/^(facebook|linkedin)$/.test(k)||h.startsWith("@")?h:"@"+h}</span></a>`}).join("")}</div>`:""})()}</div>
 <p><b>Disclaimer:</b> estimates based on market data as of ${D.date} (DXB Interact, Bayut, Property Monitor, GenieMap, Google Maps) and the developer's sales offer. Prices, rents and fees can change; past growth does not guarantee future growth. Not financial advice. Confirm fees and the payment plan with the developer and DLD before buying.</p>
-<p>Prepared ${D.date} · ${AGENT.formulas||""}</p><p class="credit">The Ultimate Real Estate Calculator · Off-plan Report v1.2 © 2026 Abdulla Alzarooni · Real Estate with Abdulla Alzarooni</p>`;
+<p>Prepared ${D.date} · ${AGENT.formulas||""}</p><p class="credit">The Ultimate Real Estate Calculator · Post-Handover Report v1.0 © 2026 Abdulla Alzarooni · Real Estate with Abdulla Alzarooni</p>`;
 }
 renderAll();
 document.addEventListener("click",e=>{
@@ -825,5 +881,6 @@ document.addEventListener("click",e=>{
   if(b.dataset.ri!=null) RI=+b.dataset.ri;
   window.__rd();
 });
+document.addEventListener("input",e=>{if(e.target&&e.target.id==="vac"){VM=+e.target.value;window.__rd();}});
 document.addEventListener("keydown",e=>{const b=e.target.closest&&e.target.closest(".sc.pick,.sc.rpick");if(b&&(e.key==="Enter"||e.key===" ")){e.preventDefault();if(b.dataset.gi!=null)GI=+b.dataset.gi;if(b.dataset.ri!=null)RI=+b.dataset.ri;window.__rd();}});
 </script>

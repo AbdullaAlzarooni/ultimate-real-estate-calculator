@@ -105,3 +105,19 @@ Rent only: the resale price is already price-per-sqft × the unit's size, so it 
 multiplier to price would count the size twice). Smaller units usually rent and sell at a higher psf, so borrowed
 numbers from larger units are slightly conservative; say so. Always show it: in the source's `how`
 ("rent of 670 sqft units × 0.67 size multiplier, too few 450 sqft deals") and as an "estimated" note in the report.
+
+
+## Post-handover maths (this calculator)
+Matches the master tab "Post-Handover Properties Evaluation Form" (`tools/sheetcheck-ph.js` re-implements it; diff must be ≈ 0).
+- **Total cost** = price + DLD (4%) + admin/Oqood (as off-plan).
+- **Net rent** as off-plan (gross − service charge − management − utilities − furniture).
+- **Rent during the plan** = net rent × months with a tenant ÷ 12, months = phppYears × 12 − empty months.
+- **Cash you put in** = total cost − rent during the plan. **Yield on your cash** = net rent ÷ that cash
+  (label Good ≥ 6% · OK 5–6% · Low < 5%); also show the yield on the full price.
+- **Post-handover instalments** = price × postPct; per year ÷ phppYears. **Rent covers** = rent during the plan ÷ instalments.
+  **Top-up** = instalments − rent during the plan (shown per month, rounded to AED 100, and in total).
+- **Sell at handover** (main resale case): off-plan method, price growth only **until handover**; the buyer takes over the plan.
+- Compare the plan price with the standard plan price when known (e.g. 690k vs 645k = 7% more); say what that costs
+  per year, like a loan (e.g. "about 18% a year").
+- The **empty-months slider** runs from 0 to the plan length; it changes rent during the plan, cash, yield on cash,
+  cover and top-up only, never the selling price.

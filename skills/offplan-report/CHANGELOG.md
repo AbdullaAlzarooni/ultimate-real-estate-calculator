@@ -1,5 +1,29 @@
 # Changelog — Off-plan Report
 
+## 1.2.0 — 10 Oct 2026
+**Views & location**
+- **GIS DDA check**: finds the building's plot from its Google Maps location and reads the maximum allowed height and
+  land use of every neighbouring plot (`tools/dda-plots.js`). Used to judge the view and shade.
+- **View map card** in Location & comfort: GIS DDA plot map and Google Maps satellite view in two tabs; every 5° slice
+  coloured by what it faces (green open / G+2 or lower, amber 6+ floors lower, red same height or taller); summary
+  line, compass chips, a side list measured from the plot edge, building names, and a tap-a-direction arrow with
+  "Your unit" (`tools/viewmap.py`, `tools/satview.py`).
+- Outside GIS DDA: Google Maps method (satellite, zoom in for project pins, Street View, project sites, floor counts).
+- **Height chip** at the top with the full building layout (e.g. 2B+G+4P+14+R · 19 floors).
+
+**Data & rules**
+- **Size multiplier** fallback when there are too few size-matched rents (unit size ÷ comparable size, applied to the
+  whole gross rent, as in the evaluation sheet); shown in the verdict, the sources table and the calculations.
+- **Developer premium**: Emaar, Sobha, Meraas, Ellington, Omniyat at least +1% rent / +2.5% price; every developer can
+  earn more from evidence of its handed-over buildings in the same community (halved, capped, never negative).
+- **DXB Interact**: non-market transfers (share transfers, gifts) are removed with a minimum price/sqft, only when they appear.
+
+**Design**
+- Yields always shown to 2 decimals; optional custom report title; tidier step-by-step layout.
+
+**Examples & docs**
+- Both examples show the new features; README has the view-map screenshots and the new install guide.
+
 ## 1.1.0 — 9 Oct 2026
 **Data & sources**
 - Demand chart uses the **same categories as the building** (e.g. Studio · 1 Bed · 2 Bed · Retail) so

@@ -1,10 +1,10 @@
 # Off-plan Report
 
-[![Latest: v1.1.0](https://img.shields.io/badge/latest-v1.1.0-2ea44f)](CHANGELOG.md)
+[![Latest: v1.2.0](https://img.shields.io/badge/latest-v1.2.0-2ea44f)](CHANGELOG.md)
 
 Part of **[The Ultimate Real Estate Calculator](../../README.md)**.
 
-**Version 1.1.0** · [Changelog](CHANGELOG.md) · Version history: [all off-plan versions](https://github.com/AbdullaAlzarooni/ultimate-real-estate-calculator/tags) · [collection releases](https://github.com/AbdullaAlzarooni/ultimate-real-estate-calculator/releases) · by **Abdulla Alzarooni** (Real Estate with Abdulla Alzarooni)
+**Version 1.2.0** · [Changelog](CHANGELOG.md) · Version history: [all off-plan versions](https://github.com/AbdullaAlzarooni/ultimate-real-estate-calculator/tags) · [collection releases](https://github.com/AbdullaAlzarooni/ultimate-real-estate-calculator/releases) · by **Abdulla Alzarooni** (Real Estate with Abdulla Alzarooni)
 
 Turn any Dubai / UAE off-plan unit into a **client-ready evaluation report** (web page + PDF) in one
 conversation with Claude. Give it a **sales offer**, a **brochure**, or a project link from
@@ -30,6 +30,13 @@ Example: Binghatti Starfall studio, Al Jaddaf (from a brochure).
 
 <img src="../../docs/images/supply-demand.jpg" alt="Supply and demand">
 
+**4 · View map:** what each side of the building faces. GIS DDA allowed heights and a Google Maps satellite view
+(tap a direction to point the arrow). Example: Weston by Wadan, DLRC.
+
+<img src="../../docs/images/view-map-gis.jpg" alt="View map, GIS DDA tab">
+
+<img src="../../docs/images/view-map-satellite.jpg" alt="View map, Google Maps tab">
+
 ---
 
 ## What you get
@@ -39,6 +46,8 @@ Example: Binghatti Starfall studio, Al Jaddaf (from a brochure).
 - **Conservative / normal / optimistic** cases, up to 3 data sources side by side
 - **Supply & demand** — what's selling, the building's unit breakdown, handovers by year
 - **Payment plan** timeline, **location & comfort** (sun, shade, noise, flooding)
+- **View map** — what each side of the building faces: GIS DDA allowed heights + Google Maps satellite, tap a direction for the arrow
+- **Height** of the building (full layout, e.g. 2B+G+4P+14+R)
 - **The calculations** step by step, so the client can check every number
 - **Photo gallery** with full-screen viewer
 - **Your footer** — logo, photo, name, BRN, WhatsApp button (pre-filled message), social icons
@@ -50,7 +59,7 @@ Example: Binghatti Starfall studio, Al Jaddaf (from a brochure).
 This skill is built for **[Claude Code](https://claude.com/claude-code)** — the Code tab in the Claude
 desktop app, or the `claude` terminal app.
 
-**1. Install** — see [Install](../../README.md#install) (one install gives you every calculator).
+**1. Install** — see the [install guide](../../README.md#install-guide-step-by-step) (one install gives you every calculator).
 
 **2. Make a report** — attach the sales offer PDF (or paste a project link) and say:
 > Make an off-plan report for this unit
@@ -87,7 +96,8 @@ Each report takes a while: Claude visits the data sites and pulls fresh numbers 
 | [Bayut market analysis](https://www.bayut.com/property-market-analysis/) | off-plan sales & rents, 12-month growth | public |
 | Property Finder / Bayut new projects | backup project facts | public |
 | [Property Finder transactions](https://www.propertyfinder.ae/en/transactions) | what's selling: studios, 1-beds… and shops vs offices | public |
-| Google Maps | facing, distances to metro & airport | public |
+| Google Maps (satellite, Street View, project pins) | facing, distances, what is built or planned next to the building | public |
+| [GIS DDA](https://gis.dda.gov.ae/DIS/) | plot of the building and maximum allowed height of every neighbouring plot (DDA areas: Dubailand, DLRC, Al Jaddaf, Sports City…) | public |
 | [SunCalc](https://www.suncalc.org) · [ShadeMap](https://shademap.app) | sun and shade | public |
 | [Noise-map](https://noise-map.com) | aircraft noise (dB) | public |
 | [Windy](https://www.windy.com) | wind & sea exposure (every report; detailed for beachfront) | public |
@@ -109,7 +119,7 @@ Claude fills these for you on the first run, or edit them yourself:
 ---
 
 ## Updating
-See [Updating](../../README.md#updating).
+See [Keep it updated](../../README.md#step-5--keep-it-updated).
 
 ---
 
