@@ -4,3 +4,7 @@ skills/*/kit/*.pdf
 skills/*/kit/*.files.txt
 skills/*/kit/data/*-img/
 .DS_Store
+# example reports ship with their photos
+!skills/offplan-report/kit/data/starfall-studio-img/
+!skills/offplan-report/kit/data/weston-109-img/
+!skills/posthandover-report/kit/data/weston-109-img/

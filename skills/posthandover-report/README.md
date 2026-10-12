@@ -1,10 +1,10 @@
 # Post-Handover Report
 
-[![Latest: v1.0.0](https://img.shields.io/badge/latest-v1.0.0-2ea44f)](CHANGELOG.md)
+[![Latest: v1.1.0](https://img.shields.io/badge/latest-v1.1.0-2ea44f)](CHANGELOG.md)
 
 Part of **[The Ultimate Real Estate Calculator](../../README.md)**.
 
-**Version 1.0.0** · [Changelog](CHANGELOG.md) · Version history: [all versions](https://github.com/AbdullaAlzarooni/ultimate-real-estate-calculator/tags) · [collection releases](https://github.com/AbdullaAlzarooni/ultimate-real-estate-calculator/releases) · by **Abdulla Alzarooni** (Real Estate with Abdulla Alzarooni)
+**Version 1.1.0** · [Changelog](CHANGELOG.md) · Version history: [all versions](https://github.com/AbdullaAlzarooni/ultimate-real-estate-calculator/tags) · [collection releases](https://github.com/AbdullaAlzarooni/ultimate-real-estate-calculator/releases) · by **Abdulla Alzarooni** (Real Estate with Abdulla Alzarooni)
 
 For units sold on a **post-handover payment plan** (60/40, 50/50 and similar): you keep paying after
 handover, so the real questions are **does the rent cover those instalments, how much do I add each

@@ -5,7 +5,7 @@ description: Build a client-ready Dubai/UAE post-handover payment plan (PHPP) ev
 
 # Post-handover evaluation report
 
-Version **1.0.0** (see `VERSION` and `CHANGELOG.md`).
+Version **1.1.0** (see `VERSION` and `CHANGELOG.md`).
 
 Same report as the Off-plan Report (verdict, deal checks, what-if scenarios, supply & demand, view maps,
 location comfort, step-by-step maths, photos, client PDF) plus everything a **post-handover payment plan**
@@ -44,6 +44,7 @@ cp data/example-weston-109-ph.js data/<project>-<unit>.js                       
 # ...fill the data file following workflow.md...
 python3 build.py data/<project>-<unit>.js          # -> <project>-<unit>.html
 node tools/domtest.js <project>-<unit>.html </dev/null   # must print the summary, no errors
+# then: every image must load (workflow.md step 9) – never deliver a report with a missing photo
 node tools/dump.js <project>-<unit>.html                  # must print: bad 0 []
 node tools/sheetcheck-ph.js <project>-<unit>.html         # post-handover sheet check, diff ≈ 0
 ```
@@ -60,7 +61,15 @@ Then make the PDF and publish/share (workflow steps 10–11).
 1. Ask once, then save into `config/agent.js` of their working folder (and remember it):
 name, company, BRN, WhatsApp number, social links, optional formulas credit line; optional files in `brand/`:
 `logo-dark.png` + `logo-light.png` and `agent.jpg` (square headshot). Anything left empty is simply hidden.
-2. Ask which data accounts they have (Property Monitor, DXB Interact, Reelly, GenieMap) –
+2. Ask which data accounts they have (DXB Interact, Reelly, GenieMap) –
 this decides which sources and fallbacks to use (no paid accounts → Reelly + DXB Interact + Bayut).
+**Never use Property Monitor**, even if they have an account: it prohibits AI / automated use (`sources.md`).
+2b. **Ask about the optional Developer section** before collecting any data, in these words or close:
+"The *Developer* section is optional and takes a long time to build. Would you like it? If yes, it shows every
+project by this developer – ready, under construction and planned – each with photos, completion date and DLD
+target, % built, unit mix, rented % or absorption rate, and price / rent premium vs its area for each unit type
+(off-plan premium for projects not finished yet), with area and unit-type filters and a search box."
+If no, build the report without it. If yes, tell them it adds a lot of time, then follow
+`references/developer-section.md` (data format: `data-schema.md` → Developer section).
 3. Then ask for the first property (sales offer PDF with the full payment plan, brochure, or a project link)
    and follow `workflow.md`. Tell them what you are doing as you go and what each step needs from them.

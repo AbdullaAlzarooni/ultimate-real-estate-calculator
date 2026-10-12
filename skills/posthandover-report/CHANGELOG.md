@@ -1,5 +1,29 @@
 # Changelog — Post-Handover Report
 
+## 1.1.0 — 12 Oct 2026
+**Property Monitor removed** (it does not allow AI / automated use)
+- Claude never opens or reads Property Monitor, even if you have an account.
+- **DXB Interact is the main source**, size-matched ±10% with its size filter (`P74_MIN_SIZE` / `P74_MAX_SIZE`);
+  optimistic = all off-plan sales, conservative = off-plan resales ("Sold by" Individual).
+- **Supply** from DXB Interact Supply → Total units (Active and Finished, every page, by DLD year; late projects shown
+  as "Target passed", 2009–2016 stalled projects left out). **What's selling** from the area's Beds chart (counts per
+  type) + Type = Commercial. **Building unit breakdown** from the DXB Interact project page + Beds chart (size ranges).
+- Area price / rent trend: DXB Interact's 12- and 6-month change boxes.
+- Disclaimer and README updated.
+- Example reports: Property Monitor figures and links removed, DXB Interact is the main source; their
+  Supply & demand sections (built on Property Monitor data) are left out.
+
+**Developer section (optional)**
+- **New section: The developer** (optional, same as the Ready Report). Claude asks at the start; if yes, the report
+  shows every project by the developer in Ready / Under construction / Planned tabs with photos, completion and DLD
+  dates, % built, unit mix, rented % or absorption rate, price / rent premium per unit type (off-plan premium for
+  projects not finished), area dropdown, unit-type chips and search (`references/developer-section.md`).
+- Section numbers and the top menu now skip sections that are not shown.
+- Developer section has no "All types" chip: it opens on the unit's own type, and the summary line and card order
+  follow the selected type.
+- **Every image must load** before a report is delivered (new check in workflow step 9); a broken image shows a
+  "Photo not available" box instead of a broken icon. The example reports now ship with their photos.
+
 ## 1.0.0 — 10 Oct 2026
 First release, as part of **The Ultimate Real Estate Calculator** v1.1.
 - Report for post-handover payment plans: verdict (sell at handover, rent, yield on your cash, plan coverage),

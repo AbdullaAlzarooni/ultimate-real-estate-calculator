@@ -65,20 +65,20 @@ Caps: 5% rent / 10% appreciation. Skip a factor if the comparables already inclu
 
 ## Valuation cases
 Conservative = size-matched off-plan **resale** psf · Optimistic = all off-plan psf · Normal = midpoint.
-Default view = the size-matched source (Property Monitor) + **normal** case + our-analysis growth.
-Non-PM sources reuse PM's resale ÷ all ratio (state it on the page).
+Default view = the size-matched source (DXB Interact) + **normal** case + our-analysis growth.
+Bayut reuses DXB Interact's resale ÷ all ratio (state it on the page).
 
 ## Which source wins (counts)
 For **counts** (sales by type for the demand chart, supply pipeline), when sources disagree use the one
 with the **fuller, checkable record**: the higher count **if** its rows are real named deals (building +
 unit number) and it is higher across categories, not just one. In Al Jaddaf 2026 that was DXB Interact
-(509 vs 346 studios; 19 shops + 22 offices vs PM's 6 retail, 0 offices).
+(509 studios; 19 shops + 22 offices).
 - Order to try: **DXB Interact** (homes by bedroom + commercial split into Shop = retail / Office) →
-  Property Monitor (residential + commercial sales) → Property Finder transactions.
+  Property Finder transactions. Never Property Monitor.
 - Take every category of one chart from the **same** source; put the other source's figure in the note
   when the gap is big.
-- This rule is for counts only. **Prices and rents** keep their own rules (size-matched PM is the main
-  source; all sources shown side by side).
+- This rule is for counts only. **Prices and rents** keep their own rules (size-matched DXB Interact is the
+  main source; all sources shown side by side).
 
 ## Supply wording
 Present oversupply as an **estimate** ("supply risk to watch"), never a verdict. Zone ratios are

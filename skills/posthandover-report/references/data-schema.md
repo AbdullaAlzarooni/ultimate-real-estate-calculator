@@ -22,7 +22,7 @@ Start from `kit/data/example-weston-109.js` (a complete real example). One unit 
 | cases | `[{n:"Conservative",psf,why},{n:"Normal",...},{n:"Optimistic",...}]` | 1351 / 1431.75 / 1512.5 |
 | scenarios | keep as in the example (−5, 0, base, strong) | |
 | factors | `[{n,v:[rent%,appr%],on:true?,why}]` all 9 factors, 0 when not applicable | Metro 0.5/1.5 … |
-| sources | `[{k,name,rent,psf,sample,period,asOf,how,main?}]` 1–3 sources; `main:true` on the size-matched one | DXB / Bayut / PM |
+| sources | `[{k,name,rent,psf,sample,period,asOf,how,main?}]` 1–3 sources; `main:true` on the size-matched one | DXB / Bayut |
 | comfort | `[{k,v,d,src:[[label,url]],tone}]` cards (tone good/warn/neutral) | 8 cards |
 | notes | Things-to-know bullets (HTML allowed, short, no repeated numbers) | 7 notes |
 | sd | Supply & demand (omit to hide the section): `area, period, takeaway, match, mix:[[type,count]], mine, mixNote, bldg:{name,total,mix:[[type,count,"min–max"]],note}, ready, uc, years:[[year,units]], peak, points:[{fig,tone,t,d}], src:[[label,url]]` | see example |
@@ -53,3 +53,31 @@ Same file as the off-plan report, plus:
 | `priceGrowthTo` | `"handover"` | price growth stops at handover (sell-at-handover valuation) |
 | `vacancyMonths` | `0` | default empty months after handover (the slider starts here; usually 0) |
 | `coverNote` | text | one line under the rent-vs-instalments table |
+
+## Developer section (optional · `UNITS.studio.dev`)
+Only when the client said yes (SKILL.md step 2b). Leave it out and the section, its menu link and its number disappear.
+```js
+UNITS.studio.dev={
+  name:"Binghatti",                       // developer name
+  areas:{ jvc:{label:"JVC",               // one entry per area key used by ready buildings
+    psf3:1460, rS3:45000, r13:63500,      // area, last 3 months, all types: sale median /sqft, studio rent, 1-bed rent
+    types:{ "Studio":{psf:1460,tx:296,rent:45000,rn:1854}, "1 Bed":{…} },   // area, last 3 months, per type
+    tw:{ "6":{"2 Beds":{psf:1130,tx:301,rent:100000,rn:1394}}, "12":{…} } } },  // area at a widened window (months)
+  ready:[{ n:"Binghatti Azure", a:"jvc", img:"<name>-img/dev/binghatti-azure.jpg",
+    comp:"2025", cd:"2025-06-11", plan:"2024-12-31", cdSrc:"DLD",   // completed date (DLD 100% inspection), DLD target
+    units:650, rented:351, mix:[["Studio",343],["1 Bed",179],["2 Beds",62],["Commercial",66]],
+    psf3:1440, tx3:17, rent3:45000, rn3:56, rk:"RS",                 // building, last 3 months (summary line)
+    types:[{t:"Studio",psf:1670,tx:7,rent:45000,rn:56},               // building per type, last 3 months …
+           {t:"2 Beds",psf:1230,tx:11,sw:12,rent:103000,rn:7,rw:6}] }],  // … sw/rw = widened window (months)
+  uc:[{ n:"Binghatti Ruby", loc:"JVC District 16", st:"uc", comp:"Q4 2027", fl:"25", img:"…",
+    dld:{t:"2026-02-28", d:"2026-07-23", p:46.43},                    // DLD target, last inspection date, % built
+    mix:[["Studio",319],…], ab:{total:628, sold:596, pct:94.9, psf:1970, launch:"Apr 2025", hand:"Feb 2026"},
+    opArea:"JVC", op:[{t:"Studio", w:3, psf:1600, tx:6, apsf:1790, atx:508}] }],   // off-plan: building vs area, window w
+  planned:[ /* same fields as uc, st:"pl"; note:"…" for anything to explain */ ],
+  note:"<b>Sources:</b> …"                 // shown under the cards
+};
+```
+Optional per project: `area` (dropdown name, default = first part of `loc`), `noPlan:true` (invalid DLD target → "N/A"),
+`opNote` (e.g. "no DXB Interact sales page yet"), `compSrc` (where the date came from if not DLD).
+The subject project (`n` equal to `D.project`) is marked "This project" / "This building" and listed first;
+the section opens on the tab it belongs to. Photos go in `data/<name>-img/dev/` (about 70 KB each).

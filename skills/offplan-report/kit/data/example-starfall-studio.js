@@ -28,9 +28,8 @@ UNITS.studio={height:"2B+G+4P+14+R · 19 floors · 77.5 m", label:"Studio",
     {n:"Other infrastructure",v:[0,0],why:"Nothing new confirmed beyond the existing metro and roads"}
   ],
   sources:[
-    {k:"dxb",name:"DXB Interact",rent:50000,psf:2350,sample:"239 new rentals · 109 off-plan sales",period:"Jul–Sep 2026",asOf:"9 Oct 2026",how:"All studio sizes · new-rental average · off-plan median"},
+    {k:"dxb",name:"DXB Interact",rent:50000,psf:2350,sample:"239 new rentals · 109 off-plan sales",period:"Jul–Sep 2026",asOf:"9 Oct 2026",how:"All studio sizes · new-rental average · off-plan median",main:true},
     {k:"bayut",name:"Bayut",rent:48359,psf:2338,sample:"150 rentals · 95 off-plan sales",period:"Last 3 months (3 Jul – 7 Oct 2026)",asOf:"9 Oct 2026",how:"All studio sizes · average yearly rent · off-plan average"},
-    {k:"pm",name:"Property Monitor",rent:50000,psf:2422,sample:"21 new contracts · 57 Oqood sales",period:"9 Jul – 9 Oct 2026",asOf:"9 Oct 2026",how:"Size-matched 313–383 sqft (±10%) · new contracts only · Oqood median",main:true}
   ],
   comfort:[
     {k:"Facing",v:"Not chosen yet · courtyard or road side",d:"The brochure plans put most studios on the inner side, facing the podium pool deck. Outer units face the neighbouring plots and the main road. GIS DDA: Starfall is plot 3261491 (G+14, mixed use) in Sama Al Jadaf. The plots on the S (26 m), E (48 m), SE, N, NW, W and SW are all zoned G+14 too, so outer views will face towers of similar height once they are built. The only low plot is a local mosque to the east (G+1, 51 m), a lower outlook on that side; expect prayer calls. Ask for the exact unit before booking.",src:[["GIS DDA (plot 3261491 + neighbours)", "https://gis.dda.gov.ae/DIS/"], ["Binghatti brochure (studio & floor plans)", "https://www.binghatti.com"], ["Google Maps", "https://www.google.com/maps/place/Binghatti+Starfall/@25.2247013,55.3296454,17z"]],tone:"neutral"},
@@ -44,33 +43,14 @@ UNITS.studio={height:"2B+G+4P+14+R · 19 floors · 77.5 m", label:"Studio",
   ],
   notes:[
     "<b>Price used: the brochure's AED 759,999.</b> On 8 Oct 2026 Reelly and GenieMap list the 32 studios still for sale at 348–350 sqft for AED 827,999–834,999, about 9% more. Confirm the price with Binghatti before booking.",
-    "<b>The 10% growth is the cap, not a forecast.</b> Bayut's +41% is inflated: Al Jaddaf had very few off-plan studio sales the year before. Property Monitor's Al Jaddaf price index is down 5.8% over 12 months and 20% over the last 6 months. Look at the Flat and Falling market boxes too.",
-    "<b>No resale track record:</b> no off-plan studio in Al Jaddaf was resold in the last 12 months (Property Monitor), so the conservative case is an estimate.",
-    "<b>Unit not chosen yet:</b> floor, view and the inside / balcony split are unknown, so the service charge (AED 17/sqft from Property Monitor; GenieMap says 16) is applied to the full 348 sqft.",
-    "<b>Handover date:</b> the brochure and Property Monitor say 30 Sep 2028 and GenieMap Q3 2028; Reelly shows Q2 2028. This report uses Sep 2028.",
+    "<b>The 10% growth is the cap, not a forecast.</b> Bayut's +41% is inflated: Al Jaddaf had very few off-plan studio sales the year before. Look at the Flat and Falling market boxes too.",
+    "<b>Unit not chosen yet:</b> floor, view and the inside / balcony split are unknown, so the service charge (about AED 16–17/sqft; GenieMap says 16) is applied to the full 348 sqft.",
+    "<b>Handover date:</b> the brochure says 30 Sep 2028 and GenieMap Q3 2028; Reelly shows Q2 2028. This report uses Sep 2028.",
     "<b>Binghatti is Al Jaddaf's main seller:</b> 58.6% of all Al Jaddaf sales in 2025 and half of 2026 studio sales (brochure). Its other towers here (Cullinan, Wraith) hand over in 2027, before Starfall.",
     "<b>Ask for the studio discount:</b> GenieMap says Binghatti offers up to 2% off studios (about AED 15,200 here). The numbers use the full price.",
     "<b>Rents are cooling:</b> new studio rents in Al Jaddaf were about −9% last quarter on DXB Interact.",
     "<b>Resale before handover</b> is allowed after 40% is paid (GenieMap), and usually costs a developer transfer fee of about AED 5,000 + 5% VAT, not included in the numbers. Profit is measured on the full price and excludes rent earned while holding."
   ]
-};
-/* supply & demand section */
-UNITS.studio.sd={
-  area:"Al Jaddaf", period:"1 Jan – 9 Oct 2026",
-  takeaway:"1-beds, then studios, are what Al Jaddaf buyers want. Starfall adds 771 units in 2028, almost a third of that year's handovers.",
-  match:"<b>Starfall is studio-heavy:</b> 68% of its units are studios vs 31% of Al Jaddaf sales, so many similar units will look for tenants at the same time.",
-  mix:[["Studio",509],["1 Bed",735],["2 Bed",390],["Retail",19]], mine:"Studio",
-  mixNote:"DXB Interact, all sales 1 Jan – 9 Oct 2026 (fullest record). Retail = shops; plus 22 office sales, not shown (Starfall has no offices); 3-bed+ not shown.",
-  bldg:{name:"Starfall",total:771,mix:[["Studio",528,"348–477"],["1 Bed",169,"625–1,006"],["2 Bed",57,"855–1,432"],["Retail",17,"649–3,026"]],
-    note:"754 homes and 17 shops on the ground floor. The 1-bed count includes 1 royal suite and the 2-bed count 2 royal suites (1,826–1,931 sqft). On 8 Oct 2026 Reelly lists 32 studios, 16 one-beds and 31 two-beds still for sale, about 90% sold three weeks after launch, if Reelly shows all of Binghatti's stock."},
-  ready:1882, uc:4554, years:[["2027",2073],["2028",2481]], peak:"2028",
-  points:[
-    {fig:"2,481",tone:"warn",t:"units hand over in 2028, Starfall's year",d:"Starfall is 771 of them, after 2,073 in 2027. Expect competition for tenants in 2027–28."},
-    {fig:"6,100",tone:"warn",t:"units under construction on DXB Interact",d:"More than Property Monitor lists: 1,490 due in 2026 (several late), 2,650 in 2027, 660 in 2028, incl. about 320 shops and offices. Nothing listed after 2028 on either."},
-    {fig:"31%",tone:"good",t:"of 2026 Al Jaddaf sales were studios",d:"509 studios sold this year (DXB Interact), second only to 1-beds (735): a deep buyer pool."},
-    {fig:"~90%",tone:"good",t:"of Starfall already sold",d:"Only 79 of 754 homes still listed on Reelly three weeks after launch."}
-  ],
-  src:[["Property Monitor – Al Jaddaf supply tracker","https://propertymonitor.ae/v2/project-details.php?project_id=4268&prj_emirate=Dubai"],["Property Monitor – Binghatti Starfall","https://propertymonitor.ae/v2/project-details.php?project_id=7956&prj_emirate=Dubai"],["Reelly – Binghatti Starfall","https://find.reelly.io/projects/4047"],["DXB Interact – Al Jaddaf supply","https://dxbinteract.com/dubai-units-supply-analysis"],["DXB Interact – Al Jaddaf sales 2026","https://dxbinteract.com/dubai-house-prices"]]
 };
 /* agent shown in the footer · leave whatsapp/brn empty to hide them */
 

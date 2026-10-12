@@ -13,32 +13,23 @@ read pages in the browser; don't scrape aggressively or bulk-export without the 
 | **Property Finder transactions** – propertyfinder.ae/en/transactions | sales counts by bedroom **and by commercial type (Shop / Office Space / Warehouse)** for the demand chart | Public. YTD default; `?bdr[]=0` studio, `1`, `2`…; Commercial via the Residential dropdown. Read the Transactions box visually (page text shows 0). |
 
 ## Area comparables
-**Property Monitor** – propertymonitor.ae/v2 (paid login). Best source: size-matched.
-- Community names differ from DLD names (e.g. DLRC = "Dubai Residence Complex").
-- Data sources in the search: **Residential sales** (`Sales`), **Commercial sales** (`COMM`: Retail,
-  Office, Land… by Unit Type), **Rentals**.
-- Rent: data source Rentals, last 3 months, Apartment, beds, size ±10%. Results mix
-  "Rental Contracts" and "Active Listings" → use contracts, **New** (not Renewal). Median.
-- Sales: data source Sales; column "Evidence type" Oqood (off-plan) / Title Deed (ready);
-  "Sales recurrence" Initial Sale / Resale. Off-plan = all Oqood (optimistic); Oqood Resale
-  (conservative). Median psf.
-- Gotchas: index table columns **by header text** (columns shift between searches); a hidden
-  Beds filter (`select[name=valu_beds]`) persists between searches → reset to Show All;
-  set rows per page (`select#max_rows`) to 250 and paginate (`insidePagination(n)`).
-  Don't use Export/Download unless the user agrees.
-- Market statistics page (community, year): bedroom mix of all sales; switch the "Oqood" tile
-  for off-plan only; "Total Sales Value per Bedroom" table gives counts/averages.
-- Project page (projects.php → `select#project_id` options map name→id →
-  `project-details.php?project_id=<id>`): community **Units Supply Tracker** (ready, under
-  construction, per-year handovers — read from `Highcharts.charts`) and a building's
-  **Unit configuration** (units per bedroom + size ranges).
-- Community page price/rent index: the bars are **monthly** changes; quote the summary lines below them
-  ("Last 12 / 6 / 3 months change"), never a single month's bar as a period change.
+**Never use Property Monitor.** Property Monitor (propertymonitor.ae) prohibits AI / automated use. Do not open,
+log in to, read or scrape it, even if the user has an account and asks. Everything below comes from DXB Interact,
+Bayut, DLD, Reelly and the developer instead. If the user wants a Property Monitor figure, they look it up
+themselves and type it in; check with Property Monitor that their terms allow showing it to clients.
 
-**DXB Interact** – dxbinteract.com (free tier limited). Community + beds + Apartment;
-Sales → Status Off-plan → period "Last quarter" (picker → Last quarter → Apply → Search) → median
-price/sqft. Rental → "New rentals" average annual rent. All sizes (not size-matched) → note that
-smaller units sell for more per sqft, so it can flatter a larger unit.
+**DXB Interact** – dxbinteract.com (free tier limited). **Main source: size-matched.** Community (or the building)
++ beds + Apartment; Sales → Status Off-plan → period "Last quarter" (picker → Last quarter → Apply → Search) → median
+price/sqft. Rental → "New rentals" average annual rent.
+- **Size-matched (±10% of the unit size):** set `apex.item('P74_MIN_SIZE')` and `apex.item('P74_MAX_SIZE')`
+  (e.g. 313 and 383 for a 348 sqft unit) before Search. Use the shortest window that reaches **5 sales**
+  (3 months → custom start date), same window for rent. Without the size filter DXB covers all sizes, and smaller
+  units sell for more per sqft, so it can flatter a larger unit.
+- **Optimistic vs conservative (off-plan):** all off-plan sales = optimistic; off-plan **resales** only
+  ("Sold by" Individual, not Developer) = conservative. Same size filter for both.
+- **Building age filter:** `P74_AGE` (ready reports: sales by building age).
+- **Price / rent trend (area):** each result box shows the change vs the previous period of the same length
+  (e.g. 6 months vs the 6 before). Quote that box, for 12 and 6 months.
 DXB Interact is an Oracle APEX app; typing in the area box often doesn't stick. What works (in page JS):
 type into `input[type=search]`, wait, then `.click()` the matching `<article>` suggestion → check
 `P74_DLD_LOCATION` (e.g. `al-jaddaf`). Beds = `li[data-value="0"]` "Studio"; status = `li[data-value="Y"]`
@@ -55,7 +46,7 @@ so they compare fairly. Note it in the source's `how` ("sales below AED 500/sqft
 transfers"). No such rows → no filter.
 **Supply page** (`/dubai-units-supply-analysis`): `apex.item('P59_AREA_ID').setValue(<area id>)`,
 `apex.item('P59_STATUS').setValue('ac')` (under construction) → projects with completion date, units by
-bedroom and **commercial** units. Use it to cross-check Property Monitor's handover years.
+bedroom and **commercial** units (see Supply & demand below).
 **Commercial sales:** Type = Commercial; each row says "Offplan/Ready **Shop**" (retail) or "**Office**".
 The list shows 13 rows per page; page links are `#action$paginate?min=14…`; dispatch a real
 `MouseEvent('click')` on each link inside `#report_soldhistory` and read the rows after each.
@@ -88,17 +79,21 @@ community) → apply growth bands (`rules.md`).
 | Flooding | news / Wikipedia (e.g. "2024 UAE floods") + Google search "<community> flooded April 2024" | state how strong the evidence is |
 | Distances (metro, airport) | Google Maps | straight-line from the pin; confirmed lines/stations only |
 
-## Supply & demand
-- Property Monitor community supply tracker + market statistics (above).
+## Supply & demand (DXB Interact)
+- **Supply:** Supply → **Total units** (`/dubai-units-supply-analysis`). Area = the **official DLD name**
+  (JVC = "Al Barsha South Fourth"; type part of it and pick from the list). Status **Active** = not finished,
+  **Finished** = ready. Page through every page ("Next", 15 projects a page) and add up units per type and per
+  DLD completion year. **Ready** = Finished total (note it counts only DLD-registered projects).
+  **Under construction** = Active with a date from 2017 on; show units whose DLD date has already passed as their
+  own bar ("Target passed"), list undated projects separately, and leave out Active projects with 2009–2016 targets
+  (stalled). Handovers per year = the remaining Active units by DLD year.
+- **Demand (what's selling):** the area's sales page, last 12 months → **Beds** button: a table (size range,
+  median price) plus a donut with the **count** per bedroom type. Commercial is not in that chart: Type =
+  Commercial → read the Transactions box (rows say Shop or Office).
+- **This building's unit breakdown:** `dxbinteract.com/projects/<slug>` ("Studio – 53% (343)" per type).
+  Size ranges: the building's sales page → **Beds** button (since launch). New launches not on DXB yet →
+  Reelly "Units & Availability" (note if it shows only available units, not the full building).
 - Optional zone sheet: DSC (Dubai Statistics Center) population by community 2022–2025, projected to
-  the horizon year; existing + new units (PM / DXB Interact). Ratio = units ÷ (population ÷ people per home).
-- **Project unit breakdown** (units per type – studio/1BR/2BR… – and size ranges, for "This building"):
-  Property Monitor project page → Unit configuration. **No PM access → Reelly** project →
-  "Units & Availability" (count units per type; note if it shows only available units, not the full building).
-- **No PM access → DXB Interact.** Build the **same supply section** from DXB Interact
-  (community page): what's selling (off-plan sales by bedrooms → counts), ready vs under-construction
-  units, and handovers by year. Ready/under-construction counts use the supply & demand sheet method:
-  **ready = existing (completed) units** in the community; **under construction = new units handing over
-  up to the horizon year** (the last handover year in the pipeline), split by year. Building unit breakdown → Reelly (above). Same cards, same wording.
+  the horizon year; existing + new units (DXB Interact). Ratio = units ÷ (population ÷ people per home).
   Ratios: if a number looks unreasonable (tiny or booming population, odd totals) show **N/A**, don't force it.
-- If neither PM nor DXB Interact is available, leave the section out (omit `sd` in the data).
+- If DXB Interact is not available, leave the section out (omit `sd` in the data).

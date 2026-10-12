@@ -5,7 +5,7 @@ don't download files unless the user agrees. Record every number with its source
 
 ## 0. Set up (once per machine / person)
 - Copy `kit/` to a working folder. Fill `config/agent.js`; add `brand/` images if given.
-- Note which accounts the user has: Property Monitor (PM), DXB Interact, Reelly, GenieMap.
+- Note which accounts the user has: DXB Interact, Reelly, GenieMap. **Never use Property Monitor** (it prohibits AI use; see `sources.md`).
 
 ## 1. Read the unit (sales offer / brochure / project page)
 Priority: developer **sales offer PDF** > brochure > Reelly/GenieMap/Property Finder listing.
@@ -22,11 +22,11 @@ handover date, DLD amount if shown, admin/Oqood fee, service charge AED/sqft, fu
 - **Image-only PDFs** (most brochures): text extraction returns nothing, so render the pages to images
   (PyMuPDF `fitz`, or `pdftoppm` from poppler) and read them; make a contact sheet to find the key pages.
 
-## 2. Area comparables (3 sources, last 3 months, same bedroom type)
+## 2. Area comparables (2 sources, last 3 months, same bedroom type)
 For each source get **(a) average/median annual rent** and **(b) off-plan price per sqft**:
-- **Property Monitor** (best, size-matched ±10% of the unit size): rent = NEW contracts only,
-  median; off-plan sales = Oqood, median psf of all (optimistic) and of Resales only (conservative).
-- **DXB Interact**: last quarter, Rental "new rentals" average; Sales status Off-plan median psf.
+- **DXB Interact** (main, size-matched ±10% of the unit size with `P74_MIN_SIZE` / `P74_MAX_SIZE`): rent = New
+  rentals, average; off-plan sales median psf of all (optimistic) and of resales only, "Sold by" Individual
+  (conservative). Shortest window that reaches 5 sales, same window for rent.
 - **Bayut**: market analysis, last 3 months (`?time_since_creation=3m`), off-plan transactions
   average psf; rent "average yearly rental".
 Details, URLs and gotchas: `sources.md`. Min 5 deals per figure (widen to 6m/1y → similar projects nearby →
@@ -36,7 +36,7 @@ Details, URLs and gotchas: `sources.md`. Min 5 deals per figure (widen to 6m/1y 
 Bayut market analysis, **last 12 months**: off-plan price change and rent change for that
 bedroom type in that community. Apply the **growth bands** (`rules.md`) → "used" rates.
 If a big jump comes from a tiny prior-year sample (Bayut shows the volume change), keep the band
-result but add a note, and cross-check Property Monitor's area price index.
+result but add a note, and cross-check DXB Interact's 12- and 6-month change for the area.
 
 ## 4. Premium factors
 Check each with the evidence named in `rules.md` (metro distance, airport distance + noise,
@@ -44,9 +44,9 @@ view & obstruction (GIS DDA: this plot's and every neighbouring plot's maximum h
 other confirmed infrastructure). Default 0, never negative, caps apply. One-line "why" each.
 
 ## 5. Valuation cases (selling price at handover)
-- Optimistic = all off-plan sales psf (PM Oqood all, size-matched)
-- Conservative = off-plan **resales** psf (PM Oqood resale, size-matched)
-- Normal = midpoint. Non-PM sources reuse PM's resale/all ratio. No resale data at all →
+- Optimistic = all off-plan sales psf (DXB Interact, size-matched)
+- Conservative = off-plan **resales** psf (DXB Interact, "Sold by" Individual, size-matched)
+- Normal = midpoint. Bayut reuses DXB Interact's resale/all ratio. No resale data at all →
   conservative = optimistic × 0.90, labelled "estimated (no resale data)".
 
 ## 6. Location & comfort cards (notes only — never change numbers)
@@ -62,7 +62,7 @@ low-rise (G+2 or lower, mosque) · **amber** = 6+ floors lower than this buildin
   wedges coloured from the same plots) → add `Object.assign(UNITS.studio.viewMap,{sat:"<name>-img/view-sat.jpg"});`.
 - **Not in GIS DDA:** Google Maps only. Satellite screenshot at 18z centred on the building → for each of the 8
   sides find what is there: zoom right in for project pins on empty plots ("Upcoming New Project", project names),
-  check Street View for a board (note the photo date), then Reelly / GenieMap / Property Monitor / DXB Interact for
+  check Street View for a board (note the photo date), then Reelly / GenieMap / DXB Interact for
   launched projects; Google the names for floor counts (give a range when listings disagree; "est." if unknown).
   Empty plot with nothing found → amber "future height unknown", half the view premium, and "ask the developer"
   in the open questions. **Pizza-slice rule here too:** trace the outline of EVERY building / plot within ~160 m on
@@ -77,19 +77,17 @@ low-rise (G+2 or lower, mosque) · **amber** = 6+ floors lower than this buildin
   (unreliable / not loadable / login only). ShadeMap stays for the shade card only.
 
 ## 7. Supply & demand section
-- Community supply: PM project page for the community (Supply tracker: ready units, under
-  construction, handovers per year) **and** DXB Interact's supply page to cross-check. Show handover years
-  up to the last year either source lists (don't invent later years; say "nothing listed after YYYY yet").
-- **Include retail and offices:** PM splits ready / under-construction units into apartments, retail and
-  offices; the building's shops go in its unit mix (e.g. `["Retail",17,"649–3,026"]`).
+- Community supply: DXB Interact Supply → Total units, Active and Finished, every page (`sources.md`).
+  Show handover years up to the last year DXB lists (don't invent later years; say "nothing listed after YYYY yet").
+- **Include retail and offices:** DXB's supply table has a Commercial column; the building's shops and offices go
+  in its unit mix (e.g. `["Commercial",17,"649–3,026"]`).
 - What's selling: current-year sales **in the same categories as the building** (e.g. Studio · 1 Bed ·
   2 Bed · Retail) so the two donuts compare side by side. Source: follow **"Which source wins
   (counts)"** in rules.md — normally **DXB Interact** (homes by Beds; Type = Commercial, count rows labelled
-  Shop = retail and Office), else Property Monitor (residential `Sales` + `COMM` commercial sales), else
-  Property Finder transactions (`?bdr[]=0|1|2`, Commercial → Shop). One source per chart; leave out
+  Shop = retail and Office), else Property Finder transactions (`?bdr[]=0|1|2`, Commercial → Shop). One source per chart; leave out
   types the building doesn't have and mention them in the note.
-- This building's unit mix: PM project page "Unit configuration" (units per type + size ranges).
-  Fallback: Reelly project page (Units & availability).
+- This building's unit mix: DXB Interact project page (units per type) + the building's sales page → Beds
+  (size ranges). Fallback for new launches: Reelly project page (Units & availability).
 - Zone oversupply (optional): a supply & demand sheet (existing + new units vs projected
   population ÷ people per home). Show it as a **range** (2–3 people per home), not a verdict.
 - Write: one takeaway sentence, a "matches what's selling" line, 4 short key points.
@@ -113,6 +111,13 @@ Ask before bulk-downloading if the user hasn't asked for photos.
   (re-implements the sheet formulas; max diff must be 0).
 - Look at it: serve the folder (`python3 -m http.server`), check phone width (390px) and desktop,
   dark and light mode: no sideways scroll, nothing overlapping, all photos load.
+- **Every image must appear (hard rule).** Open the built report over http, scroll to the bottom (photos load lazily),
+  then run `[...document.images].filter(i=>i.getAttribute("src")&&(!i.complete||!i.naturalWidth)).map(i=>i.src)` in the
+  page: it must return `[]` (the photo viewer's empty slot has no src and is skipped). Developer cards show 12 at a time, so
+  also check every `img` path in `UNITS.studio.dev` exists under `data/` (a short Python/Node check of the files). Check the top photo gallery, the view map and (if included) every developer card. Any broken image:
+  fix it before delivering (wrong path, file not copied into `data/<name>-img/`, file never downloaded → get it
+  again from the source). Also check the published artifact's file list includes every photo. Never deliver a
+  report with a missing image; the template's grey "Photo not available" box is only a safety net.
 - Re-read all text for contradictions (e.g. "road in front" vs "park in front").
 
 ## 10. Client PDF

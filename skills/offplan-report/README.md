@@ -1,10 +1,10 @@
 # Off-plan Report
 
-[![Latest: v1.2.0](https://img.shields.io/badge/latest-v1.2.0-2ea44f)](CHANGELOG.md)
+[![Latest: v1.3.0](https://img.shields.io/badge/latest-v1.3.0-2ea44f)](CHANGELOG.md)
 
 Part of **[The Ultimate Real Estate Calculator](../../README.md)**.
 
-**Version 1.2.0** · [Changelog](CHANGELOG.md) · Version history: [all off-plan versions](https://github.com/AbdullaAlzarooni/ultimate-real-estate-calculator/tags) · [collection releases](https://github.com/AbdullaAlzarooni/ultimate-real-estate-calculator/releases) · by **Abdulla Alzarooni** (Real Estate with Abdulla Alzarooni)
+**Version 1.3.0** · [Changelog](CHANGELOG.md) · Version history: [all off-plan versions](https://github.com/AbdullaAlzarooni/ultimate-real-estate-calculator/tags) · [collection releases](https://github.com/AbdullaAlzarooni/ultimate-real-estate-calculator/releases) · by **Abdulla Alzarooni** (Real Estate with Abdulla Alzarooni)
 
 Turn any Dubai / UAE off-plan unit into a **client-ready evaluation report** (web page + PDF) in one
 conversation with Claude. Give it a **sales offer**, a **brochure**, or a project link from
@@ -89,10 +89,9 @@ Each report takes a while: Claude visits the data sites and pulls fresh numbers 
 | Website | Used for | Account |
 |---|---|---|
 | Developer sales offer / brochure (PDF) | price, sizes, payment plan, DLD, fees | – |
-| [Reelly](https://find.reelly.io) | project facts, unit breakdown (if no Property Monitor), full-size photos | free login |
+| [Reelly](https://find.reelly.io) | project facts, unit breakdown for new launches, full-size photos | free login |
 | [GenieMap](https://geniemap.net) | project info, payment plans, photos (most is also on Reelly) | paid, optional |
-| [Property Monitor](https://propertymonitor.ae) | size-matched rents & sales, supply, project unit breakdown | paid, optional |
-| [DXB Interact](https://dxbinteract.com) | off-plan price/sqft, new rents, supply (if no Property Monitor) | free tier |
+| [DXB Interact](https://dxbinteract.com) | size-matched off-plan price/sqft and rents, supply, what's selling, unit breakdown | free tier |
 | [Bayut market analysis](https://www.bayut.com/property-market-analysis/) | off-plan sales & rents, 12-month growth | public |
 | Property Finder / Bayut new projects | backup project facts | public |
 | [Property Finder transactions](https://www.propertyfinder.ae/en/transactions) | what's selling: studios, 1-beds… and shops vs offices | public |
@@ -104,7 +103,7 @@ Each report takes a while: Claude visits the data sites and pulls fresh numbers 
 | News / Wikipedia | flooding history (e.g. April 2024) | public |
 | Dubai Statistics Center | population, for supply vs demand (optional) | public |
 
-**No paid accounts?** Use Reelly instead of GenieMap, and DXB Interact instead of Property Monitor.
+**No paid accounts?** Use Reelly instead of GenieMap. **Property Monitor is never used:** it does not allow AI use.
 **Minimum for a report:** the sales offer + Bayut. Every extra source makes it stronger.
 Full details per site: [references/sources.md](references/sources.md).
 

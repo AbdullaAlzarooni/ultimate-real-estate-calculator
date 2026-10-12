@@ -1,6 +1,6 @@
 # The Ultimate Real Estate Calculator
 
-[![Latest: v1.1](https://img.shields.io/badge/latest-v1.1-2ea44f)](https://github.com/AbdullaAlzarooni/ultimate-real-estate-calculator/releases/latest)
+[![Latest: v1.2](https://img.shields.io/badge/latest-v1.2-2ea44f)](https://github.com/AbdullaAlzarooni/ultimate-real-estate-calculator/releases/latest)
 
 **Version 1.1** · [Changelog](CHANGELOG.md) · [Releases](https://github.com/AbdullaAlzarooni/ultimate-real-estate-calculator/releases)
 
@@ -26,8 +26,8 @@ More screenshots on the [Off-plan Report page](skills/offplan-report/README.md#s
 ## Calculators
 | Calculator | What it does | Version |
 |---|---|---|
-| [**Off-plan Report**](skills/offplan-report/README.md) | Sales offer / brochure / Reelly or GenieMap link → full off-plan evaluation (profit at handover, yield, what-ifs, supply & demand, payment plan, view map, location, PDF) | 1.2.0 |
-| [**Post-Handover Report**](skills/posthandover-report/README.md) | Units on a post-handover payment plan (60/40, 50/50…) → everything in the off-plan report plus: does the rent cover the instalments after handover, monthly top-up, yield on your cash, empty-months slider | 1.0.0 |
+| [**Off-plan Report**](skills/offplan-report/README.md) | Sales offer / brochure / Reelly or GenieMap link → full off-plan evaluation (profit at handover, yield, what-ifs, supply & demand, optional developer section, payment plan, view map, location, PDF) | 1.3.0 |
+| [**Post-Handover Report**](skills/posthandover-report/README.md) | Units on a post-handover payment plan (60/40, 50/50…) → everything in the off-plan report plus: does the rent cover the instalments after handover, monthly top-up, yield on your cash, empty-months slider | 1.1.0 |
 | Ready property | coming soon | – |
 | Mortgage | coming soon | – |
 | Airbnb / holiday home | coming soon | – |
@@ -55,11 +55,12 @@ any folder. Everything below works the same.
 </details>
 
 ### Step 2 · Connect Claude to your Chrome
-Claude reads the property data sites (Property Monitor, DXB Interact, Bayut, Reelly, GenieMap, Google Maps,
+Claude reads the property data sites (DXB Interact, Bayut, DLD, Reelly, GenieMap, Google Maps,
 GIS DDA) in **your own Chrome**, where you are already logged in.
 1. Install [Google Chrome](https://www.google.com/chrome/) if you don't have it.
 2. Add the **Claude in Chrome** extension from the Chrome Web Store and sign in with the same Claude account.
-3. Log in to the data sites you pay for (Property Monitor, DXB Interact, Reelly…) in that Chrome.
+3. Log in to the data sites you use (DXB Interact, Reelly…) in that Chrome. The calculators never use
+   Property Monitor: it does not allow AI use.
    You type your own passwords; Claude never does.
 
 ### Step 3 · Install the calculators
