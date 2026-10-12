@@ -51,5 +51,6 @@ html = html.replace("@@HERO_SLIDES@@", slides)
 out = here / (data.stem + ".html")
 out.write_text(html)
 extra = re.findall(r'\bsat:"([^"]+)"', src)   # view-map satellite image (tools/satview.py)
+extra += re.findall(r'"img":"([^"]+)"', src)   # developer section photos
 (here / (data.stem + ".files.txt")).write_text("\n".join("data/" + f for f in [p for p, _ in pairs] + extra))
 print("built", out.name)

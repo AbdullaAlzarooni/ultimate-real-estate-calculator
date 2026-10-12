@@ -2,6 +2,20 @@
 
 The collection has its own version; each calculator also has its own version and changelog.
 
+## v1.3 — 12 Oct 2026
+| Calculator | Version |
+|---|---|
+| Off-plan Report | 1.3.1 ([changelog](skills/offplan-report/CHANGELOG.md)) |
+| Post-Handover Report | 1.1.1 ([changelog](skills/posthandover-report/CHANGELOG.md)) |
+| **Ready Property Report** (new) | 1.0.0 ([changelog](skills/ready-report/CHANGELOG.md)) |
+| Mortgage · Airbnb / holiday home · Distressed deal | coming soon |
+
+- New calculator: **Ready Property Report**: ready units on the resale market, cash or mortgage (buyer type,
+  1st / 2nd mortgage, fixed rate then EIBOR + margin), price vs size-matched recent sales, yield on your cash,
+  sell after 1–10 years with a building-age discount, supply & demand, optional developer section.
+- Developer section screenshots in the READMEs; the Starfall and Binghatti Azure examples include it with photos.
+- Fix: empty logo / agent photo slots no longer show "Photo not available".
+
 ## v1.2 — 12 Oct 2026
 | Calculator | Version |
 |---|---|

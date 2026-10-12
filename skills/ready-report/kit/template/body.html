@@ -1,0 +1,518 @@
+<script>document.addEventListener("error",e=>{const i=e.target;if(i&&i.tagName==="IMG"&&i.getAttribute("src")&&!i.dataset.f){i.dataset.f=1;const d=document.createElement("div");d.className="noimg";d.textContent="Photo not available";d.style.cssText="display:flex;align-items:center;justify-content:center;min-height:140px;background:var(--surface-2);color:var(--muted);font-size:12px;border-radius:inherit;width:100%;height:100%";i.replaceWith(d)}},true);</script>
+<style>
+/* ready report additions */
+.seg-lab{font:600 11px var(--f-display);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);align-self:center;margin-right:2px}
+.selrow{align-items:center;flex-wrap:wrap}
+.seg-lab{min-width:44px}
+.ev{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+@media (max-width:860px){.ev{grid-template-columns:minmax(0,1fr)}}
+.ev .card{display:flex;flex-direction:column;gap:6px}
+.ev .fig{font:700 24px/1.15 var(--f-display);font-variant-numeric:tabular-nums}
+.ev .d{font-size:13px;color:var(--muted)}
+.furn{border-left:3px solid var(--accent);padding:2px 0 2px 12px;margin:0;font-size:14px;color:var(--muted)}
+.furn b{color:var(--ink)}
+.tag-on{display:inline-block;font:700 10px var(--f-display);letter-spacing:.05em;text-transform:uppercase;background:var(--accent);color:var(--bg);border-radius:999px;padding:2px 8px;margin-left:6px;vertical-align:2px}
+td.l{text-align:left}
+.mrow{gap:14px}.sl{display:flex;align-items:center;gap:8px;font:500 13px var(--f-display);color:var(--muted)}.sl b{color:var(--ink);min-width:62px;font-variant-numeric:tabular-nums}.sl input{accent-color:var(--accent);width:160px}.sl input.num{width:76px;padding:5px 8px;border:1px solid var(--line);border-radius:8px;background:var(--surface-2);color:var(--ink);font:500 13px var(--f-body)}#mort-box{display:flex;flex-direction:column;gap:8px}#mort-box[hidden]{display:none}@media (max-width:560px){.sl{width:100%}.sl input{flex:1;width:auto}}
+@media print{.s2-b{break-before:auto!important;margin-top:18px!important}.ev{grid-template-columns:repeat(3,minmax(0,1fr))!important}.g2{grid-template-columns:repeat(2,minmax(0,1fr))!important}.g2:has(#sales){grid-template-columns:minmax(0,1fr)!important}#sd{break-before:page}#yrs{grid-template-columns:repeat(4,minmax(0,1fr))!important}.card:has(#scen){display:none!important}#rscen{grid-template-columns:minmax(0,1fr)!important}.vm-chips{display:none}#details{display:none!important}.hero-img{min-height:260px}}
+.yr{display:flex;flex-direction:column;margin-top:6px;font-size:12px}.yr .k{color:var(--muted);margin-top:6px}.yr b{font:700 16px var(--f-display);font-variant-numeric:tabular-nums;white-space:nowrap}.yr b.good{color:var(--good)}.yr b.bad{color:var(--bad)}.yr .m{color:var(--muted)}.yr .k.t{font-weight:700;color:var(--ink);border-top:1px solid var(--line);padding-top:6px;margin-top:8px}.yr b.t{font-size:21px}.yr .m.t{color:var(--ink)}
+.dev-tabs{display:flex;gap:6px;flex-wrap:wrap;margin:12px 0}.dev-tab{border:1.5px solid var(--line);background:var(--surface-2);color:var(--ink);border-radius:999px;padding:6px 14px;font:600 13px var(--f-display);cursor:pointer}.dev-ut{padding:4px 12px;font-size:12px}.dev-tab[aria-pressed="true"]{border-color:var(--good);background:color-mix(in srgb,var(--good) 18%,transparent)}.dev-tab[aria-selected="true"]{border-color:var(--accent);background:var(--accent-soft)}
+.dev-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}.dcard{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--surface-2);display:flex;flex-direction:column}.dcard.me{border:2px solid var(--accent)}.dcard img{width:100%;aspect-ratio:4/3;object-fit:cover;background:var(--line);display:block}.dcard .noimg{aspect-ratio:4/3;display:grid;place-items:center;color:var(--muted);font-size:12px;background:var(--line)}.dcard .b{padding:10px 12px;display:flex;flex-direction:column;gap:3px;font-size:12.5px}.dcard .t{font:700 14.5px var(--f-display)}.dcard .loc{color:var(--muted)}.dcard .row{display:flex;justify-content:space-between;gap:8px;border-top:1px solid var(--line);padding-top:5px;margin-top:3px}.dcard .row span:first-child{color:var(--muted)}.dcard .v{text-align:right;font-variant-numeric:tabular-nums}.dcard .v b.good{color:var(--good)}.dcard .v b.bad{color:var(--bad)}.dcard .na{color:var(--muted);font-style:italic}.dev-pages{grid-column:1/-1;display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin-top:6px}.dbar{height:7px;border-radius:3px;background:var(--line);overflow:hidden;margin:2px 0}.dbar i{display:block;height:100%;background:var(--good)}.dtype{display:flex;align-items:center;justify-content:space-between;gap:6px;border-top:1px solid var(--line);padding-top:6px;margin-top:3px}.dtype b{font:700 13px var(--f-display)}.dtype button{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:8px;width:28px;height:26px;cursor:pointer;font-size:12px}.dtype button:hover{border-color:var(--accent)}.dmix{display:flex;height:6px;border-radius:3px;overflow:hidden;margin:3px 0 1px}.dmix i{display:block;height:100%}.dmixl{color:var(--muted);font-size:11.5px;line-height:1.4}.dev-select{border:1.5px solid var(--line);background:var(--surface-2);color:var(--ink);border-radius:999px;padding:6px 32px 6px 14px;font:600 13px var(--f-display);cursor:pointer;appearance:none;background-image:linear-gradient(45deg,transparent 50%,currentColor 50%),linear-gradient(135deg,currentColor 50%,transparent 50%);background-position:calc(100% - 17px) 50%,calc(100% - 12px) 50%;background-size:5px 5px;background-repeat:no-repeat}.dev-search{display:flex;align-items:center;gap:6px;border:1.5px solid var(--line);background:var(--surface-2);border-radius:999px;padding:4px 12px;margin-left:auto;min-width:200px}.dev-search input{border:0;background:transparent;color:var(--ink);font:13px var(--f-body,inherit);outline:none;width:100%}.dev-search svg{flex:none;color:var(--muted)}
+.dcard .me-tag{align-self:flex-end;background:var(--accent);color:var(--bg);border-radius:999px;padding:1px 8px;font:700 11px var(--f-display)}
+@media print{.dev-grid{grid-template-columns:repeat(4,minmax(0,1fr))!important}.dcard{break-inside:avoid}}
+</style>
+
+<div class="wrap">
+  <nav class="toc" aria-label="Sections">
+    <a href="#hero-row">Verdict</a><a href="#deal">Deal check</a><a href="#outcomes">What could happen</a><a href="#market">Market evidence</a><a href="#sd">Supply &amp; demand</a><a href="#dev">Developer</a><a href="#know">Things to know</a><a href="#unit-sec">Unit &amp; costs</a><a href="#comfort-sec">Location</a><a href="#details">Calculations</a>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-top">
+      <div class="eyebrow" id="eyebrow">Ready property evaluation</div>
+      <h1 id="h-title"></h1>
+      <p class="metaline" id="h-meta"></p>
+    </div>
+    <div class="hero-row" id="hero-row">
+      <figure class="hero-img" id="hero-img">@@HERO_SLIDES@@<button type="button" class="gnav gprev" aria-label="Previous photo">‹</button><button type="button" class="gnav gnext" aria-label="Next photo">›</button><div class="gdots" id="gdots"></div><figcaption id="hero-credit"></figcaption></figure>
+      <aside class="verdict" id="verdict"></aside>
+    </div>
+  </header>
+
+  <div class="controls">
+    <span class="ctl-lab">Show results using</span>
+    <div class="selrow"><span class="seg-lab">Rent</span><div class="seg" id="sel-furn" role="group" aria-label="Rent"></div></div>
+    <div class="selrow"><span class="seg-lab">Data</span><div class="seg" id="sel-src" role="group" aria-label="Data source"></div></div>
+    <div class="selrow"><span class="seg-lab">Mortgage</span><div class="seg" id="sel-mg" role="group" aria-label="Mortgage"></div></div>
+    <div class="selrow" id="buy-row" hidden><span class="seg-lab">Buyer</span><div class="seg" id="sel-buy" role="group" aria-label="Buyer status"></div><div class="seg" id="sel-mort" role="group" aria-label="Mortgage" hidden></div></div>
+    <div id="mort-box" hidden>
+    <div class="selrow mrow"><span class="seg-lab">Loan</span><label class="sl">Fixed rate <input class="num" type="number" id="rate-n" step="0.01" min="0" max="15"> %<input type="range" id="rate" min="2.5" max="7" step="0.05"></label><label class="sl">Term <input class="num" type="number" id="term-n" step="1" min="1" max="25"> yrs<input type="range" id="term" min="1" max="25" step="1"></label><button type="button" class="pdfbtn" id="mort-reset">Reset</button></div>
+    <div class="selrow mrow"><span class="seg-lab"></span><span class="sl">Fixed for</span><div class="seg" id="sel-fy" role="group" aria-label="Fixed period"></div></div>
+    <div class="selrow mrow"><span class="seg-lab"></span><span class="sl">Then EIBOR</span><div class="seg" id="sel-ten" role="group" aria-label="EIBOR period"></div><label class="sl">+ bank margin <input class="num" type="number" id="marg" step="0.05" min="0" max="5"> %</label></div>
+    <p class="small" id="pay-line" style="margin:0 0 0 54px"></p>
+    </div>
+    <p class="small" id="dc-lede"></p>
+    <div class="pdfrow"><button type="button" class="pdfbtn recbtn" id="rec-btn">★ Recommended view</button><a class="pdfbtn" id="pdf-btn" href="@@PDF@@" download>⬇ Download PDF</a><span class="small" id="pdf-msg"></span></div>
+  </div>
+
+  <section id="deal">
+    <h2>1 · Is it a good deal? <small>four quick checks</small></h2>
+    <div class="checks" id="checks"></div>
+    <div class="card"><div class="src-tag">Where the price sits</div><div class="ruler" id="ruler"></div><ol class="rlist" id="rlist"></ol><p class="small" style="margin:6px 0 0">"Worth today" = what buyers actually paid for similar studios. "Sellers ask" = what other owners want on Bayut, not deals.</p></div>
+  </section>
+
+  <section id="outcomes">
+    <h2>2 · What could happen <small>sell later or keep renting</small></h2>
+    <p class="s2-lede"><span class="recb">★ Recommended</span> marks our analysis. Tap another box only to test a what-if.</p>
+    <h3 class="s2-sub">A · If you sell later</h3>
+    <div class="card"><div class="src-tag">Step 1 · When you sell <span class="tapchip">☝ Tap to choose</span></div><div class="scen" id="yrs"></div><p class="small noprint" style="margin:8px 0 0"><label class="sl" style="display:inline-flex">Or type the years: <input class="num" type="number" id="yrs-n" step="1" min="1" max="10"></label> <span id="yrs-hint"></span></p></div>
+    <div class="card"><div class="src-tag">Step 2 · How prices move until then <span class="tapchip">☝ Tap to choose</span></div><div class="scen" id="scen"></div><p class="small" id="scen-note" style="margin:8px 0 0"></p></div>
+    <h3 class="s2-sub s2-b">B · If you keep it and rent it out</h3>
+    <div class="card"><div class="src-tag">Next year's rent · pick how rents move <span class="tapchip">☝ Tap to choose</span></div><div class="scen" id="rscen"></div><p class="small" style="margin:8px 0 0">Today: <b id="r-today"></b>. Yield = net rent ÷ the cash you put in (price or down payment + fees). Good ≥ 6% · OK 5–6% · Low < 5%. Rents change the yield only, not the resale profit.</p></div>
+  </section>
+
+  <section id="market">
+    <h2>3 · Market evidence <small id="mk-sub"></small></h2>
+    <div class="ev" id="ev"></div>
+    <div class="g2">
+      <div class="card"><div class="src-tag" id="sales-tag">Recent sales in the building</div><p class="swipe-hint">Swipe sideways →</p><div class="tbl-wrap" style="border:0"><table id="sales"></table></div><p class="small" id="sales-note" style="margin:8px 0 0"></p></div>
+      <div class="card"><div class="src-tag">Furnished vs unfurnished · every Bayut listing</div><div class="tbl-wrap" style="border:0"><table id="furn"></table></div><p class="small" id="furn-note" style="margin:8px 0 0"></p></div>
+    </div>
+  </section>
+
+  <section id="sd">
+    <h2>4 · Supply &amp; demand <small id="sd-sub"></small></h2>
+    <p class="sd-take" id="sd-take"></p>
+    <div class="sd-grid">
+      <div class="card"><div class="sdtag demand">Demand</div><div class="sdh" id="mix-tag"></div><div class="donutwrap"><svg class="donut" id="donut" viewBox="0 0 160 160" role="img" aria-label="Sales by bedroom type"></svg><ul class="dleg" id="dleg"></ul></div><p class="small" id="mix-note" style="margin:10px 0 0"></p></div>
+      <div class="card" id="bldg-card"><div class="sdtag bldg">This building</div><div class="sdh" id="bldg-tag"></div><div class="donutwrap"><svg class="donut" id="bdonut" viewBox="0 0 160 160" role="img" aria-label="Units in the building by type"></svg><ul class="dleg" id="bleg"></ul></div><p class="small" id="bldg-note" style="margin:10px 0 0"></p></div>
+      <div class="card"><div class="sdtag supply">Supply</div><div class="sdh">Units handing over in <span id="sd-area"></span> <small>by year</small></div><div class="yrbars" id="sd-bars"></div><p class="small" id="sd-stock" style="margin:4px 0 0"></p></div>
+    </div>
+    <p class="sd-match" id="sd-match"></p>
+    <div class="sd-pts" id="sd-pts"></div>
+    <p class="small srcline" id="sd-src"></p>
+  </section>
+
+  <section id="dev">
+    <h2>5 · The developer <small id="dev-sub"></small></h2>
+    <p class="sd-take" id="dev-take"></p>
+    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:6px"><div class="dev-tabs noprint" role="tablist" id="dev-tabs"></div><span class="noprint" id="dev-areas-w" style="margin-left:auto"><select id="dev-areas" aria-label="Area" class="dev-select"></select></span><label class="dev-search noprint" style="margin-left:0"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="dev-q" type="search" placeholder="Search a project or area" aria-label="Search projects"></label></div>
+        <div class="dev-tabs noprint" id="dev-types" aria-label="Unit type" style="margin-top:0"></div>
+    <p class="small" id="dev-tabnote" style="margin:0 0 10px"></p>
+    <div class="dev-grid" id="dev-grid"></div>
+    <p class="small srcline" id="dev-src"></p>
+  </section>
+
+  <section id="know">
+    <h2>6 · Things to know</h2>
+    <div class="card"><ul class="notes" id="notes"></ul></div>
+  </section>
+
+  <section id="unit-sec">
+    <h2>7 · The unit &amp; your costs</h2>
+    <div class="g2">
+      <div class="card"><div class="src-tag" id="unit-tag">Unit</div><dl class="kv" id="unit"></dl><p class="small noprint" id="unit-int" style="margin:8px 0 0"></p></div>
+      <div class="card"><div class="src-tag" id="cost-tag">Buying costs</div><dl class="kv" id="costs"></dl><p class="small" id="cost-note" style="margin:8px 0 0"></p></div>
+    </div>
+  </section>
+
+  <section id="comfort-sec">
+    <h2>8 · Location &amp; comfort <small>notes only · no effect on numbers</small></h2>
+    <div class="card viewmap" id="viewmap" hidden></div>
+    <div class="comfort" id="comfort"></div>
+  </section>
+
+  <section id="details">
+    <h2>9 · The calculations <small>for anyone who wants to check</small></h2>
+    <details class="fold">
+      <summary>Market comparison · each data source</summary>
+      <div class="fold-body">
+        <p class="lede">The same unit and the same rules, run with each source's own rent and price per sqft for this building. Growth rates and premiums are shared.<br><b>Note:</b> this table follows the rent, buyer and sale year you picked above.</p>
+        <p class="swipe-hint">Swipe sideways to see all sources →</p><div class="tbl-wrap"><table id="srcs"></table></div>
+        <p class="small" id="legend"></p>
+        <div class="card"><div class="src-tag">Price per sqft · this unit vs the market</div><div id="bars" class="bars"></div></div>
+      </div>
+    </details>
+    <details class="fold">
+      <summary>How we calculated it · growth, premiums &amp; step-by-step maths (follows your picks)</summary>
+      <div class="fold-body">
+        <div class="tbl-wrap"><table id="growth"></table></div>
+        <div class="factors" id="factors"></div>
+        <span class="showing" id="showing"></span>
+        <div class="steps" id="steps"></div>
+      </div>
+    </details>
+  </section>
+
+  <footer id="foot"></footer>
+  <div class="pv" id="lb" hidden role="dialog" aria-modal="true" aria-label="Photo viewer"><button type="button" class="pv-x" aria-label="Close">×</button><button type="button" class="pv-nav pv-prev" aria-label="Previous photo">‹</button><img id="lb-img" alt=""><button type="button" class="pv-nav pv-next" aria-label="Next photo">›</button><div class="pv-cap" id="lb-cap"></div></div>
+</div>
+
+<script>
+/*@@DATA@@*/
+let D=UNITS.studio;
+const $=s=>document.querySelector(s);
+const fmt=(n,d=0)=>(n<0?"−":"")+Math.abs(n).toLocaleString("en-US",{minimumFractionDigits:d,maximumFractionDigits:d});
+const aed=n=>(n<0?"−AED ":"AED ")+fmt(Math.abs(n));
+const pct=(n,d=2)=>(n<0?"−":"")+fmt(Math.abs(n)*100,d)+"%";
+const sgn=(n,d=2)=>(n>0?"+":n<0?"−":"")+fmt(Math.abs(n)*100,d)+"%";
+const REC=`<span class="recb" title="Our analysis">★ Recommended · our analysis</span>`;
+/* picks: F = furnished rent on/off, B = buyer (0 cash, 1.. mortgage profiles), Y = years index, G = market index */
+const defF=()=>D.furnished?1:0;
+let RATE=null, TERM=null, FY=null, MARG=null, TEN=null, F=defF(), B=0, MT=1, Y=null, G=null, S=null, RI=null;
+const rgOf=i=>{const b=D.growth.rent.used;return [-5,0,b,+Math.max(8,b+3).toFixed(2)][i]};
+const mainSrc=()=>Math.max(0,D.sources.findIndex(x=>x.main));
+
+/* ===== formulas: Abdulla Alzarooni Ready Property Evaluation Form (sheet rows in brackets) ===== */
+const varRate=()=>D.eibor.rates[TEN]+(+MARG||0);
+const rateTxt=()=>FY?`${(+RATE).toFixed(2)}% fixed for ${FY} yr${FY>1?"s":""}, then ${TEN} EIBOR + ${(+MARG||0).toFixed(2)}% (${varRate().toFixed(2)}% today)`:`variable: ${TEN} EIBOR ${D.eibor.rates[TEN].toFixed(2)}% + ${(+MARG||0).toFixed(2)}% = ${varRate().toFixed(2)}%`;
+const bAge=()=>{if(!D.completedDate)return 0;const [y,m]=D.completedDate.split("-").map(Number),t=D.date?new Date(D.date):new Date();return Math.max(0,(t-new Date(y,m-1,15))/3.156e10)};
+function calc(o={}){
+  const src=D.sources[o.S??S], P=o.price??D.price, fu=o.F??F, b=D.buyers[o.B??B], yrs=o.y??D.years, a=(o.g??D.growth.price.used)/100, rentF=D.factors.reduce((t,f)=>t+f.v[0],0)/100, appF=D.factors.reduce((t,f)=>t+f.v[1],0)/100, rentUp=(o.ru??D.growth.rent.used)/100+rentF;
+  const LT=b.ltv1?((o.MT??MT)===2?b.ltv2:b.ltv1):null, ltv=LT?(P<5e6?LT[0]:LT[1])/100:0;   /* Status Sheet */
+  const dp=P*(1-ltv);                                                     /* C21 */
+  const fees=(P>=500000?4200:2100)+0.04*P+580+0.02*P*1.05;                /* C22 */
+  const loan=P-dp;                                                         /* C24 */
+  const madm=ltv?0.0025*loan+290+0.01*loan*1.05+3150:0;                   /* C23 */
+  const equity=dp+fees+madm;                                               /* C27 */
+  const fy=o.fy??FY??D.mortgage.fixedYears, r1=(o.rate??RATE??D.mortgage.rate), rv=D.eibor.rates[o.ten??TEN??D.eibor.tenor]+(+(o.marg??MARG??D.varDefaults.margin)), r=(fy?r1:rv)/100/12, n=(o.term??TERM??D.mortgage.term)*12;
+  const emi=loan?loan*r/(1-Math.pow(1+r,-n)):0;                            /* C34 */
+  const k=Math.min(fy*12,n), rr=rv/100/12, bal=loan?loan*Math.pow(1+r,k)-emi*(Math.pow(1+r,k)-1)/r:0, emi2=fy&&loan&&k<n?bal*rr/(1-Math.pow(1+rr,-(n-k))):emi;   /* payment after the fixed period */
+  const life=D.mortgage.lifePct/100*loan, prop=loan?D.mortgage.propPct/100*P:0;   /* C35, C36 */
+  const mMonth=emi+life+prop, mYear=mMonth*12;                             /* C37, C38 */
+  const furnPrem=fu?D.furn.prem:0;
+  const sm=src.sm||1, rent=(src.rent+furnPrem)*sm;                       /* sm: size multiplier when too few deals at this size */                                              /* C12/C43 */
+  const sc=(D.internal?D.sc*(D.internal+D.balcony*0.25):D.size*D.sc)*1.05; /* C44 */
+  const net=rent-sc-mYear, cf=net/12, yld=net/equity;                      /* C46, C47, C50 */
+  const mYear2=(emi2+life+prop)*12, netAfter=rent-sc-mYear2, yldAfter=netAfter/equity;   /* after the fixed period, at EIBOR + margin */
+  const rent2=rent*(1+rentUp), net2=rent2-sc-mYear, yld2=net2/equity;      /* C57, C60, C64 */
+  const unitPsf=P/D.size, comp=src.psf;                                  /* C70, C71 */
+  const cgr=(comp-unitPsf)/unitPsf;                                        /* C72 */
+  const furnVal=fu?Math.min(D.furn.prem*D.furn.years,D.furn.cost):0;
+  const fair=comp*D.size+furnVal, fairGap=(fair-P)/P;
+  const furnLeft=fu?furnVal*Math.max(0,1-yrs/D.furn.years):0;
+  const A=D.growth.age||{}, ag=(A.rate||0)/100, ag2=(A.rate2??A.rate??0)/100, age0=bAge();
+  const yrsYoung=Math.max(0,Math.min(yrs,(A.after??99)-age0)), yrsOld=yrs-yrsYoung, ageF=Math.pow(1-ag,yrsYoung)*Math.pow(1-ag2,yrsOld);
+  const gY1=Math.min(yrs,5), gY2=Math.max(0,yrs-5), a2=a>0?Math.min(a/2,0.03):a, growF=Math.pow(1+a,gY1)*Math.pow(1+a2,gY2);   /* long holds: from year 6 growth = half, max 3% a year (falls stay as they are) */
+  const sellBase=comp*D.size*growF*ageF*(1+appF);       /* C82, C80 = growth net of building age */
+  const sell=sellBase+furnLeft;
+  const comm=0.02*sell*1.05;
+  const profit=sell-(dp+fees+madm+loan)-comm;                              /* C85 */
+  const ret=profit/(equity+D.extraCapital), retY=Math.pow(Math.max(1+ret,0),1/yrs)-1;   /* C88, C89 */
+  /* "with the rent collected": rent grows each year; mortgage cost = fixed payment, then the EIBOR payment */
+  let rentSum=0;for(let i=1;i<=Math.ceil(yrs);i++){const ri=rent*Math.pow(1+rentUp,i-1),mc=loan?(fy&&i>fy&&k<n?mYear2:mYear):0;rentSum+=(ri-sc-mc)*Math.min(1,yrs-i+1)}
+  /* loan still owed at the sale, principal repaid, and the early settlement fee (UAE cap: 1% of the balance, max AED 10,000) */
+  const m=Math.min(Math.round(yrs*12),n), balAt=t=>t<=k?loan*Math.pow(1+r,t)-emi*(Math.pow(1+r,t)-1)/r:bal*Math.pow(1+rr,t-k)-emi2*(Math.pow(1+rr,t-k)-1)/rr;
+  const balSale=loan?Math.max(0,balAt(m)):0, repaid=loan-balSale, settle=loan&&balSale>0?Math.min(0.01*balSale,10000):0, release=loan?D.mortgage.releaseFee:0;
+  const withRent=profit+rentSum+repaid-settle-release, retR=withRent/equity, retRY=Math.pow(Math.max(1+retR,0),1/yrs)-1;
+  return {a2,gY1,gY2,growF,ag,ag2,age0,yrsYoung,yrsOld,ageF,rentSum,balSale,repaid,settle,release,emi2,fy,mYear2,netAfter,yldAfter,src,P,b,ltv,dp,fees,loan,madm,equity,emi,life,prop,mMonth,mYear,furnPrem,rent,sc,net,cf,yld,rent2,net2,yld2,unitPsf,comp,cgr,furnVal,fair,fairGap,furnLeft,sellBase,sell,comm,profit,ret,retY,withRent,retR,retRY,yrs,a};
+}
+/* price at which a target is met (bisection on price) */
+const solve=(f,t)=>{let lo=D.price*0.3,hi=D.price*2;for(let i=0;i<60;i++){const m=(lo+hi)/2;f(calc({price:m}))>t?lo=m:hi=m}return (lo+hi)/2};
+const tri=(v,good,ok)=>v>=good?"good":v>=ok?"ok":"bad";
+const word=c=>c==="good"?"Good":c==="ok"?"OK":"Low";
+
+function render(){
+if(S==null)S=mainSrc(); if(RI==null)RI=2; if(RATE==null)RATE=D.mortgage.rate; if(TERM==null)TERM=D.mortgage.term; if(FY==null)FY=D.mortgage.fixedYears; if(TERM<FY)TERM=FY; if(MARG==null)MARG=D.varDefaults.margin; if(TEN==null)TEN=D.eibor.tenor;
+const r=calc({ru:rgOf(RI??2)}), yrsList=D.yearsList, bg=D.growth.price.used, Gs=[{g:-5},{g:0},{g:bg,base:true},{g:+Math.max(8,bg+3).toFixed(2)}];
+if(Y==null)Y=D.years; if(G==null)G=Gs.findIndex(m=>m.base);
+const yrs=Y, g=+Gs[G].g.toFixed(2), rs=calc({y:yrs,g,ru:rgOf(RI)});
+const SRC=D.sources[S], bname=D.buyers[B].n+(B?(MT===2?" · 2nd mortgage":" · 1st mortgage"):""), fname=F?"Furnished rent (+"+fmt(D.furn.prem)+")":"Unfurnished rent";
+
+/* hero */
+$("#h-title").textContent=`${D.project} — ${D.label}`;
+$("#h-meta").innerHTML=`<span class="loc">📍 ${D.area}${D.emirate?", "+D.emirate:""}</span><span class="facts">${[["Unit",D.unit],["Size",fmt(D.size)+" sqft"+(D.internal?` · ${fmt(D.internal)} inside + ${fmt(D.balcony)} balcony`:"")],["Height",D.height],["Price",aed(D.price)],["Completed",(()=>{if(!D.completedDate)return "";const [y,m]=D.completedDate.split("-").map(Number),now=new Date(),mo=(now.getFullYear()-y)*12+(now.getMonth()+1-m),age=mo<12?`${mo} months old`:`${Math.floor(mo/12)} yr${mo>=24?"s":""}${mo%12?" "+(mo%12)+" mo":""} old`;return new Date(y,m-1).toLocaleString("en-GB",{month:"short",year:"numeric"})+" · "+age})()],["Status",D.status]].filter(([k,v])=>v).map(([k,v])=>`<span class="chip">${k} <b>${v}</b></span>`).join("")}</span>`;
+const above=r.fairGap<0;
+const head=above?`Priced ${pct(-r.fairGap,0)} above recent sales`:`Priced ${pct(r.fairGap,0)} below recent sales`;
+$("#verdict").innerHTML=`<div class="vhead">${head}</div><div class="vcav">${r.yld>=.06?"Rent beats the 6% target.":r.yld>=.05?"Rent is close to the 6% target.":"Rent is below the 6% target."} Similar units sell for about ${aed(r.fair)}${F?" incl. furniture":""}. ${Math.abs(rs.retY)<.01?`Selling after ${yrs} year${yrs>1?"s":""} about breaks even`:rs.profit>0?`Selling after ${yrs} year${yrs>1?"s":""} makes a small profit`:`Selling after ${yrs} year${yrs>1?"s":""} loses money`}${rs.withRent>Math.abs(rs.profit)?", so most of the return is the rent":""}.</div>
+ <div class="stat"><div class="lab">Rent it out · ${bname.toLowerCase()}</div><div class="big">${aed(r.net)}<small> / year</small></div><div class="sub">net rent · ${aed(r.cf)} a month · <b>${pct(r.yld)}</b> on your cash of ${aed(r.equity)}${r.ltv&&r.fy&&r.fy<TERM?` · after the ${r.fy}-year fixed period: <b>${aed(r.netAfter)}</b> a year, <b>${pct(r.yldAfter)}</b> (${TEN} EIBOR + ${(+MARG).toFixed(2)}%)`:""}</div>${SRC.sm&&SRC.sm!==1?`<div class="est">Estimated rent: ${SRC.smFrom||"other"} sqft units × ${SRC.sm.toFixed(2)} size multiplier (too few deals at ${fmt(D.size)} sqft)</div>`:""}</div>
+ <div class="stat last"><div class="lab">Sell after ${yrs} year${yrs>1?"s":""} · market ${g>0?"+":""}${g}%/yr${rs.ag?` · building age −${+(rs.ag*100).toFixed(2)}%`:""}</div><div class="big">${rs.profit>=0?"+":"−"}${aed(Math.abs(rs.profit))}</div><div class="sub">sale: ${sgn(rs.ret)} total · ${sgn(rs.retY)} a year<br>with rent: ${rs.withRent>=0?"+":"−"}${aed(Math.abs(rs.withRent))} · ${sgn(rs.retRY)} a year</div></div>
+ <div class="vbase">Based on ${fname.toLowerCase()} · ${bname} · ${SRC.name} · ${SRC.period}</div>`;
+
+/* controls */
+$("#sel-furn").innerHTML=[["Unfurnished · "+aed(SRC.rent)+(D.furnished?"":" ★"),0],["Furnished · "+aed(SRC.rent+D.furn.prem)+" (+"+fmt(D.furn.prem)+")"+(D.furnished?" ★":""),1]].map(([t,v])=>`<button aria-pressed="${F===v}" data-f="${v}">${t}</button>`).join("");
+$("#sel-src").innerHTML=D.sources.map((x,i)=>`<button aria-pressed="${S===i}" data-s="${i}">${x.name}${x.main?" ★":""}</button>`).join("");
+{const el=$("#yrs-n");if(document.activeElement!==el)el.value=Y;}$("#yrs-hint").innerHTML=(Y===D.years?"(recommended · your form uses "+D.years+")":"")+(Y>7?`<span class="pill bad" style="margin-left:6px">⚠ Long hold (max 10 years): less certain. Prices can fall for years, and buildings older than ${D.growth.age?.after??6} lose value faster (−${D.growth.age?.rate2??3}% a year here).</span>`:"");
+$("#sel-mg").innerHTML=[[0,"No"],[1,"Yes"]].map(([v,t])=>`<button aria-pressed="${(B?1:0)===v}" data-mg="${v}">${t}</button>`).join("");
+$("#buy-row").hidden=!B;
+$("#sel-buy").innerHTML=D.buyers.map((x,i)=>i?`<button aria-pressed="${B===i}" data-b="${i}">${x.n}</button>`:"").join("");
+$("#sel-mort").hidden=!B;$("#mort-box").hidden=!B;$("#rate").value=RATE;$("#term").min=FY;$("#term").value=TERM;{const a=$("#rate-n"),b=$("#term-n");if(document.activeElement!==a)a.value=(+RATE).toFixed(2);if(document.activeElement!==b){b.value=TERM;}b.min=FY;}
+$("#rate").disabled=!FY;$("#sel-fy").innerHTML=[[1,"1 yr"],[2,"2 yrs"],[3,"3 yrs"],[4,"4 yrs"],[5,"5 yrs"]].map(([v,t])=>`<button aria-pressed="${FY===v}" data-fy="${v}">${t}</button>`).join("");
+$("#sel-ten").innerHTML=Object.entries(D.eibor.rates).map(([k,v])=>`<button aria-pressed="${TEN===k}" data-ten="${k}">${k} · ${v.toFixed(2)}%</button>`).join("");{const el=$("#marg");if(document.activeElement!==el)el.value=(+MARG).toFixed(2);}
+$("#pay-line").innerHTML=r.ltv?(FY>=TERM?`Monthly loan payment: <b>${aed(r.emi)}</b> at ${(+RATE).toFixed(2)}% fixed for the whole ${TERM}-year term (the fixed period covers it).`:FY?`Monthly loan payment: <b>${aed(r.emi)}</b> for the first ${FY} year${FY>1?"s":""} (${(+RATE).toFixed(2)}% fixed), then about <b>${aed(r.emi2)}</b> at ${TEN} EIBOR + ${(+MARG).toFixed(2)}% = ${varRate().toFixed(2)}% (if EIBOR stays where it is).`:`Monthly loan payment: <b>${aed(r.emi)}</b> at ${varRate().toFixed(2)}%, moving with EIBOR.`)+` EIBOR: <a href="${D.eibor.src}" target="_blank" rel="noopener">Central Bank of the UAE</a>, ${D.eibor.date}. EIBOR period = how often your rate resets (1M monthly, 3M every 3 months…). Margins differ by bank and client: default 1.50%; the lowest published is about 1.00%, most are 1.25–1.99%. Type your bank's.`:"";$("#sel-mort").innerHTML=[[1,"1st mortgage"],[2,"2nd mortgage"]].map(([v,t])=>`<button aria-pressed="${MT===v}" data-mt="${v}">${t}</button>`).join("");
+$("#dc-lede").innerHTML=`${fname} · ${bname}${r.ltv?` (${pct(r.ltv,0)} loan at ${rateTxt()} over ${TERM} years)`:""} · ${SRC.name} (${SRC.sample}, ${SRC.period}) · data pulled ${SRC.asOf||D.date}. Green means the check passes.`;
+
+/* checks */
+const y7=solve(x=>x.yld,.06);
+const C=[
+ [r.fairGap>=.1?"good":r.fairGap>=.07?"ok":"bad","Is the price fair?",(r.fairGap>=0?pct(r.fairGap,0)+" below market":pct(-r.fairGap,0)+" above market"),`${SRC.name} sales put this unit at <b>${aed(r.comp*D.size)}</b> (${fmt(r.comp)} AED/sqft × ${fmt(D.size)} sqft)${F?` + <b>${aed(r.furnVal)}</b> furniture`:""} = <b>${aed(r.fair)}</b>. You pay <b>${aed(D.price)}</b>. Target: 10% below market.`],
+ [tri(r.yld,.06,.05),"Is the rent good?",pct(r.yld)+" net yield",`<b>${aed(r.net)}</b> a year after service charge${r.ltv?" and mortgage":""}, on your cash of <b>${aed(r.equity)}</b>. Target 6%. ${r.yld<.06?`To reach 6% the price would need to be <b>${aed(y7)}</b> or less.`:""}${r.ltv&&r.fy&&r.fy<TERM?`<br>After the ${r.fy}-year fixed period (${TEN} EIBOR + ${(+MARG).toFixed(2)}% = ${varRate().toFixed(2)}%): <b>${aed(r.netAfter)}</b> a year, <b>${pct(r.yldAfter)}</b>.`:""}`],
+ [tri(r.yld2,.06,.05),(u=>u<0?`If rents fall ${-u}%`:u===0?"If rents stay flat":`If rents rise ${+u.toFixed(2)}%`)(rgOf(RI)),pct(r.yld2)+" net yield",`Rent <b>${aed(r.rent2)}</b> → net <b>${aed(r.net2)}</b> a year. ${word(tri(r.yld2,.06,.05))} yield (good is 6%+).`],
+ [rs.retY>=D.targets.ret/100?"good":"bad","Sell after "+yrs+" yr"+(yrs>1?"s":""),sgn(rs.retY)+" a year",`Sale at <b>${aed(rs.sell)}</b> → <b>${rs.profit>=0?"+":"−"}${aed(Math.abs(rs.profit))}</b> after all costs (${sgn(rs.ret)} on your cash). Target 10% a year. With the rent collected: <b>${sgn(rs.retRY)}</b> a year.`]
+];
+$("#checks").innerHTML=C.map(([c,q,f,a])=>`<div class="check ${c}"><div class="chead"><div class="ic">${c==="good"?"✓":c==="ok"?"~":"✕"}</div><div class="q">${q}</div></div><div class="fig">${f}</div><div class="a">${a}</div></div>`).join("");
+
+/* ruler */
+const pts=[{l:"Price for 6% yield",v:y7},{l:"Worth today (recent sales)",v:r.comp*D.size},...(F?[{l:"Worth today + furniture",v:r.fair}]:[]),{l:"You pay",v:D.price,you:1},{l:"Other furnished sellers ask (Bayut)",v:D.furn.sale.Fpsf*D.size}].sort((a,b)=>a.v-b.v);
+const lo=pts[0].v,hi=pts[pts.length-1].v,mg=[];
+for(const p of pts){const last=mg[mg.length-1];if(last&&(p.v-last.v)/(hi-lo)<0.08){last.items.push(p);last.you=last.you||p.you}else mg.push({...p,items:[p]})}
+const pos=p=>(p.v-lo)/(hi-lo||1)*100, edge=p=>pos(p)<18?"edge-l":pos(p)>82?"edge-r":"";
+$("#ruler").innerHTML='<div class="line"></div>'+mg.map((p,i)=>p.items.length>1
+ ?`<div class="mk multi ${edge(p)} ${p.you?"you":""} ${i%2?"low":""}" style="left:${pos(p).toFixed(1)}%"><span class="lb">${p.items.map(q=>`<span class="row"><span>${q.l}</span><b>${fmt(q.v/1000)}K</b></span>`).join("")}</span><span class="pin"></span></div>`
+ :`<div class="mk ${edge(p)} ${p.you?"you":""} ${i%2?"low":""}" style="left:${pos(p).toFixed(1)}%"><span class="txt"><span class="lb">${p.l}</span><span class="v">${fmt(p.v/1000)}K</span></span><span class="pin"></span></div>`).join("");
+$("#rlist").innerHTML=pts.map(p=>`<li class="${p.you?"you":""}"><span>${p.l}</span><b>${aed(p.v)}</b></li>`).join("");
+
+/* outcomes */
+const pm=n=>(n>=0?"+":"−")+aed(Math.abs(n)), gb=n=>n>=0?"good":"bad";
+const yrRows=q=>`<div class="yr"><span class="k">From the sale</span><b class="${gb(q.profit)}">${pm(q.profit)}</b><span class="m">${sgn(q.ret)} total · ${sgn(q.retY)} a year</span><span class="k">From rent</span><b class="${gb(q.withRent-q.profit)}">${pm(q.withRent-q.profit)}</b>${q.ltv?`<span class="m">rent after costs + loan paid off</span>`:""}<span class="k t">Grand total</span><b class="t ${gb(q.withRent)}">${pm(q.withRent)}</b><span class="m t">${sgn(q.retR)} total · ${sgn(q.retRY)} a year</span></div>`;
+$("#yrs").innerHTML=(yrsList.includes(Y)?yrsList:[...yrsList,Y].sort((a,b)=>a-b)).map((y,i)=>{const q=calc({y,g});const on=y===Y,rec=y===D.years;return `<div class="sc pick ${on?"base":""}${rec?" rec":""}" role="button" tabindex="0" data-y="${y}" aria-pressed="${on}">${rec?REC:""}<span class="n">Sell after ${y} year${y>1?"s":""}${on?" · selected":""}</span>${yrRows(q)}</div>`}).join("");
+$("#scen").innerHTML=Gs.map((m,i)=>{const q=calc({y:yrs,g:m.g});const on=i===G;return `<div class="sc pick ${on?"base":""}${m.base?" rec":""}" role="button" tabindex="0" data-g="${i}" aria-pressed="${on}">${m.base?REC:""}<span class="n">${m.g===0?"If prices don't move":m.g<0?`If prices fall ${-m.g}% a year`:`If prices rise ${m.g}% a year`}${on?" · selected":""}</span><span class="p ${q.profit>=0?"good":"bad"}">${aed(q.sell)}</span><span class="s"><b>${q.profit>=0?"+":"−"}${aed(Math.abs(q.profit))}</b> after costs · ${sgn(q.retY)} a year</span></div>`}).join("");
+$("#scen-note").innerHTML=D.marketNote||"";
+$("#rscen").innerHTML=[0,1,2,3].map(i=>{const u=rgOf(i),q=calc({ru:u}),on=i===RI;return `<div class="sc rpick ${on?"base":""}${i===2?" rec":""}" role="button" tabindex="0" data-ri="${i}" aria-pressed="${on}">${i===2?REC:""}<span class="n">${u===0?"If rents don't move":u<0?`If rents fall ${-u}%`:`If rents rise ${+u.toFixed(2)}%`}${on?" · selected":""}</span><span class="p">${aed(q.net2)}</span><span class="s">net next year · ${aed(q.rent2)} rent · <b>${pct(q.yld2)}</b> yield (${word(tri(q.yld2,.06,.05))})</span></div>`}).join("");
+
+$("#r-today").textContent=`${aed(r.net)} net (${pct(r.yld)})`;
+/* market evidence */
+const M=D.market;
+{const pl=(c,t)=>`<span class="pill ${c}"><i class="dot"></i>${t}</span>`;const qs=D.sources.map((x,i)=>({x,q:calc({S:i,y:yrs,g,ru:rgOf(RI)})}));
+$("#srcs").innerHTML=`<thead><tr><th></th>${qs.map(({x})=>`<th class="src">${x.name}${x.main?" ★":""}<br><span class="small" style="font-weight:400">${x.period}</span></th>`).join("")}</tr></thead><tbody>`+
+ `<tr class="grp show"><td colspan="${qs.length+1}">Showing: ${fname.toLowerCase()} · ${bname} · sell after ${yrs} yr · market ${g>0?"+":""}${g}%/yr</td></tr>`+
+ [["Rental income",[["Rent / year",({q})=>aed(q.rent)],["Net rent / year",({q})=>aed(q.net)],["Net yield",({q})=>pl(tri(q.yld,.06,.05),pct(q.yld)+" · "+word(tri(q.yld,.06,.05)))],["Future net yield",({q})=>pl(tri(q.yld2,.06,.05),pct(q.yld2)+" · "+word(tri(q.yld2,.06,.05)))]]],
+  ["Price & resale",[["Sales price / sqft",({x})=>fmt(x.psf)],["Capital growth (target 10%)",({q})=>pl(q.cgr>=.1?"good":q.cgr>=.07?"ok":"bad",sgn(q.cgr))],["Net profit if you sell",({q})=>aed(q.profit)],["Per year (target 10%)",({q})=>pl(q.retY>=.1?"good":"bad",sgn(q.retY))]]]
+ ].map(([gname,rows])=>`<tr class="grp"><td colspan="${qs.length+1}">${gname}</td></tr>`+rows.map(([k,f])=>`<tr class="hl"><td class="k">${k}</td>${qs.map(o=>`<td>${f(o)}</td>`).join("")}</tr>`).join("")).join("")+
+ `<tr class="grp"><td colspan="${qs.length+1}">Data</td></tr><tr><td class="k">Sample</td>${qs.map(({x})=>`<td><span class="small">${x.sample}</span></td>`).join("")}</tr><tr><td class="k">Method</td>${qs.map(({x})=>`<td class="small" style="white-space:normal;text-align:left;min-width:180px">${x.how}</td>`).join("")}</tr></tbody>`;
+$("#legend").innerHTML=`Targets: net yield ${pl("good","Good ≥ 6%")} ${pl("ok","OK 5–6%")} ${pl("bad","Low < 5%")} · capital growth (bought below market) ${pl("good","10%+")} ${pl("ok","7–10%")} · resale ${pl("good","10%+ a year")}`;}
+$("#mk-sub").textContent=D.project+" studios · "+SRC.name+" (tap Data to switch) · "+D.date;
+const EV=SRC.ev||{sales:[],rent:"",note:""};
+$("#ev").innerHTML=[
+ ["Sales · "+SRC.name,fmt(SRC.psf)+" AED/sqft",`${SRC.sample.split(" · ")[1]||""}, ${SRC.period}. DXB Interact 12 months: ${fmt(M.psf12)} (${M.n12} sales); prices have eased since late 2025.`],
+ ["Rent · "+SRC.name,aed(SRC.rent),`${EV.rent}, ${SRC.period}. Bayut unfurnished asking: ${aed(D.furn.Umed)}.`],
+ ["Service charge",D.sc+" AED/sqft",`${aed(r.sc)} a year incl. VAT, on ${fmt(D.internal)} sqft inside + 25% of the ${fmt(D.balcony)} sqft balcony (your form's rule).`]
+].map(([k,f,d])=>`<div class="card"><div class="src-tag">${k}</div><div class="fig">${f}</div><div class="d">${d}</div></div>`).join("");
+const bars=[{l:"This unit",v:r.unitPsf,u:1},...D.sources.map(x=>({l:x.name,v:x.psf})),{l:"DXB Interact · 12 months",v:M.psf12},{l:"Bayut asking · unfurnished",v:D.furn.sale.Upsf},{l:"Bayut asking · furnished",v:D.furn.sale.Fpsf}];
+const bmax=Math.max(...bars.map(b=>b.v))*1.04,bmin=Math.min(...bars.map(b=>b.v))*0.85;
+$("#bars").innerHTML=bars.map(b=>`<div class="bar ${b.u?"unit":""}"><span class="lab">${b.l}</span><span class="track"><span class="fill" style="width:${((b.v-bmin)/(bmax-bmin)*100).toFixed(1)}%"></span></span><span class="val">${fmt(b.v)}</span></div>`).join("")+`<p class="small" style="margin:4px 0 0">AED per sqft. Bars start at ${fmt(bmin)} to make the gap visible. Asking prices are what sellers want, not what buyers paid.</p>`;
+$("#sales-tag").textContent=`Studio sales · ${SRC.name} · ${SRC.period}`;
+{const hasN=EV.sales.some(x=>x[4]);
+$("#sales").innerHTML=`<thead><tr><th>Date</th><th>Unit</th><th>Sqft</th><th>Price</th><th>/sqft</th>${hasN?"<th>Note</th>":""}</tr></thead><tbody>`+EV.sales.map(x=>`<tr><td style="white-space:nowrap">${x[0]}</td><td>${x[1]}</td><td>${x[2]}</td><td>${fmt(x[3])}</td><td><b>${fmt(x[3]/x[2])}</b></td>${hasN?`<td class="small" style="text-align:left;white-space:normal;min-width:90px">${x[4]}</td>`:""}</tr>`).join("")+`<tr class="hl"><td colspan="4">Median used</td><td>${fmt(SRC.psf)}</td>${hasN?"<td></td>":""}</tr></tbody>`;
+$("#sales-note").innerHTML=EV.note+'<span class="noprint"> Tap Data at the top to see another platform\'s deals.</span>';}
+const Fm=D.furn;
+$("#furn").innerHTML=`<thead><tr><th></th><th>Furnished</th><th>Unfurnished</th><th>Gap</th></tr></thead><tbody>
+ <tr><td class="k">Rent asking · median</td><td>${aed(Fm.Fmed)}<br><span class="small">${Fm.Fn} listings</span></td><td>${aed(Fm.Umed)}<br><span class="small">${Fm.Un} listings</span></td><td><b>+${fmt(Fm.Fmed-Fm.Umed)}</b></td></tr>
+ <tr><td class="k">Rent range</td><td>${Fm.Frange}</td><td>${Fm.Urange}</td><td></td></tr>
+ <tr><td class="k">Same size (330–360 sqft)</td><td>${aed(Fm.Fsm[0])}<br><span class="small">${Fm.Fsm[1]} listings</span></td><td>${aed(Fm.Usm[0])}<br><span class="small">${Fm.Usm[1]} listings</span></td><td><b>+${fmt(Fm.Fsm[0]-Fm.Usm[0])}</b></td></tr>
+ <tr><td class="k">Sale asking · median</td><td>${fmt(Fm.sale.Fpsf)} /sqft<br><span class="small">${Fm.sale.Fn} listings</span></td><td>${fmt(Fm.sale.Upsf)} /sqft<br><span class="small">${Fm.sale.Un} listings</span></td><td><b>+${fmt(Fm.sale.Fpsf-Fm.sale.Upsf)}</b></td></tr>
+ <tr><td class="k">Sale range /sqft</td><td>${Fm.sale.Frange}</td><td>${Fm.sale.Urange}</td><td></td></tr></tbody>`;
+$("#furn-note").innerHTML=Fm.note;
+
+/* notes, unit, costs */
+$("#notes").innerHTML=D.notes.map(n=>`<li>${n}</li>`).join("");
+$("#unit-tag").textContent="Unit · "+D.source;
+$("#unit").innerHTML=[["Price",aed(D.price)],["Size",`${fmt(D.size)} sqft (${fmt(D.internal)} inside + ${fmt(D.balcony)} balcony)`+(D.sizeNote?`<br><span class="small">${D.sizeNote}</span>`:"")],["Price per sqft",fmt(r.unitPsf)+" AED"],["Type",D.unit],["Furnishing",D.furnText],["Building",D.height],["Completed",D.completed],["Service charge",D.sc+" AED/sqft"],["Parking",D.parking],...(D.sizes?[["Unit sizes in the building",D.sizes]]:[])].map(([k,v])=>`<dt>${k}</dt><dd>${v}</dd>`).join("");
+$("#unit-int").innerHTML=D.listing?`Internal: <a href="${D.listing}" target="_blank" rel="noopener">the listing</a> (not shown in the client PDF)`:"";
+$("#cost-tag").textContent="Buying costs · "+bname;
+$("#costs").innerHTML=[[r.ltv?`Down payment (${pct(1-r.ltv,0)})`:"Price",aed(r.dp)],["DLD 4%",aed(0.04*D.price)],["Trustee fee + VAT",aed(D.price>=500000?4200:2100)],["DLD admin",aed(580)],["Agency 2% + VAT",aed(0.02*D.price*1.05)],...(r.ltv?[["Mortgage costs",aed(r.madm)],["Loan",aed(r.loan)],["Monthly payment + insurance",aed(r.mMonth)]]:[]),["Your cash in",`<b>${aed(r.equity)}</b>`]].map(([k,v])=>`<dt>${k}</dt><dd>${v}</dd>`).join("");
+$("#cost-note").innerHTML=r.ltv?`Mortgage costs: 0.25% registration + AED 290 + 1% bank fee + VAT + AED 3,150 valuation. Loan limit for ${bname}: ${pct(r.ltv,0)} under AED 5M (your Status Sheet). Loan above the AED 250,000 most banks need: <b>${r.loan>250000?"Yes":"No"}</b>. Insurance: life ${D.mortgage.lifePct}% of the loan and property ${D.mortgage.propPct}% of the price a month.`:"Cash purchase: no mortgage costs. Tap a mortgage option above to compare.";
+
+$("#growth").innerHTML=`<thead><tr><th>Growth rate</th><th>Last 12 months</th><th>Band rule</th><th>Used</th></tr></thead><tbody>`+[["Rent",D.growth.rent],["Price",D.growth.price]].map(([k,g])=>`<tr><td class="l"><b>${k}</b><br><span class="small">${g.src}</span></td><td>${g.raw.toFixed(1)}%</td><td class="small">${g.rule}</td><td><b>${g.used.toFixed(2)}%</b></td></tr>`).join("")+(D.growth.age?(()=>{const A=D.growth.age,q=calc({y:Y}),net=(Math.pow(q.growF*q.ageF,1/Y)-1)*100;return `<tr><td class="l"><b>Building age</b><br><span class="small">${A.src}.<br>${A.bands}</span></td><td>−${A.rate.toFixed(1)}%</td><td class="small">${A.rule}</td><td><b>−${A.rate.toFixed(2)}%</b><br><span class="small">then −${(A.rate2??A.rate).toFixed(2)}%</span></td></tr><tr><td class="l"><b>Price, net of building age (${Y} yr${Y>1?"s":""})</b><br><span class="small">Building is ${q.age0.toFixed(1)} yrs old today → ${(q.age0+Y).toFixed(1)} at the sale: ${q.yrsYoung>0?`${+q.yrsYoung.toFixed(2)} yrs at −${A.rate}%`:""}${q.yrsYoung>0&&q.yrsOld>0?" + ":""}${q.yrsOld>0?`${+q.yrsOld.toFixed(2)} yrs at −${A.rate2}%`:""}. Average with the market +${D.growth.price.used}%${q.gY2?` for 5 yrs, then +${+(q.a2*100).toFixed(2)}% (half, max 3%) for ${+q.gY2.toFixed(2)} yrs`:""} · this goes in your form's C80${q.age0+Y>10?`. After age 10 the sales data shows a slower drop (about −1.2% a year), so −3% is on the cautious side`:""}</span></td><td></td><td></td><td><b>${net.toFixed(2)}%</b></td></tr>`})():"")+"</tbody>";
+{const rf=D.factors.reduce((t,f)=>t+f.v[0],0),af=D.factors.reduce((t,f)=>t+f.v[1],0);
+$("#factors").innerHTML=D.factors.map(f=>`<div class="factor ${f.v[0]||f.v[1]?"on":"off"}"><div class="n">${f.n}</div><div class="v">${f.v[0]||f.v[1]?`+${f.v[0]}% rent · +${f.v[1]}% appreciation`:"0%"}</div><div class="why">${f.why}</div></div>`).join("")+`<div class="factor"><div class="n">Total premium</div><div class="v">+${rf}% rent · +${af}% appreciation</div><div class="why">Your form's "other factors". Caps: 5% rent · 10% appreciation.</div></div>`;}
+/* steps */
+const L=(label,formula,res,tot)=>`<div class="f ${tot?"tot":""}"><b>${label}</b>${formula}</div><div class="r ${tot?"tot":""}">${res}</div>`;
+const x=rs;
+$("#showing").innerHTML=`Showing: <b>${fname}</b> · ${bname} · sell after ${yrs} yr · market ${g>0?"+":""}${g}%/yr`;
+$("#steps").innerHTML=`
+ <div class="card step"><h3><span class="i">01</span>Cash you put in</h3><div class="calc">
+  ${L(r.ltv?"Down payment":"Price",r.ltv?`${fmt(D.price)} × (1 − ${pct(r.ltv,0)})`:"cash purchase",aed(r.dp))}
+  ${L("Buying fees",`${D.price>=500000?"4,200":"2,100"} + 4% × ${fmt(D.price)} + 580 + 2% × ${fmt(D.price)} × 1.05`,aed(r.fees))}
+  ${r.ltv?L("Mortgage costs",`0.25% × ${fmt(r.loan)} + 290 + 1% × ${fmt(r.loan)} × 1.05 + 3,150`,aed(r.madm)):""}
+  ${L("Cash in","",aed(r.equity),1)}</div></div>
+ ${r.ltv?`<div class="card step"><h3><span class="i">02</span>Mortgage</h3><div class="calc">
+  ${L("Loan",`${fmt(D.price)} − ${fmt(r.dp)}`,aed(r.loan))}
+  ${L("Monthly payment"+(r.fy?" (fixed years)":""),`${r.fy?(+RATE).toFixed(2)+"% fixed":rateTxt()} · ${TERM} years`,aed(r.emi))}
+  ${r.fy&&r.fy<TERM?L("After "+r.fy+" yr"+(r.fy>1?"s":""),`${TEN} EIBOR ${D.eibor.rates[TEN].toFixed(2)}% + ${(+MARG).toFixed(2)}% on the remaining balance`,aed(r.emi2)):""}
+  ${L("Life insurance",`${D.mortgage.lifePct}% × ${fmt(r.loan)}`,aed(r.life))}
+  ${L("Property insurance",`${D.mortgage.propPct}% × ${fmt(D.price)}`,aed(r.prop))}
+  ${L("Per year","× 12",aed(r.mYear),1)}</div></div>`:""}
+ <div class="card step"><h3><span class="i">${r.ltv?"03":"02"}</span>Net rent today</h3><div class="calc">
+  ${L("Rent",`${SRC.name}, ${SRC.period}`+(F?` + ${fmt(D.furn.prem)} furnished`:""),aed(r.rent))}
+  ${L("Service charge + VAT",`− ${D.sc} × (${fmt(D.internal)} + 25% × ${fmt(D.balcony)}) × 1.05`,"− "+fmt(r.sc))}
+  ${r.ltv?L("Mortgage + insurance","per year","− "+fmt(r.mYear)):""}
+  ${L("Net rent","",aed(r.net),1)}</div>
+  <div class="answer"><span>Net yield</span><strong>${pct(r.yld)}</strong></div><p class="small" style="margin:8px 0 0">${fmt(r.net)} ÷ cash in ${fmt(r.equity)} · ${aed(r.cf)} a month</p></div>
+ <div class="card step"><h3><span class="i">${r.ltv?"04":"03"}</span>Future rent</h3><div class="calc">
+  ${L("Rent next year",`${fmt(r.rent)} × (1 ${rgOf(RI)<0?"−":"+"} ${Math.abs(rgOf(RI))}% + ${D.factors.reduce((t,f)=>t+f.v[0],0)}% factors)`,aed(r.rent2))}
+  ${L("Net rent",`− service charge${r.ltv?" − mortgage":""}`,aed(r.net2),1)}</div>
+  <div class="answer"><span>Net yield</span><strong>${pct(r.yld2)}</strong></div></div>
+ <div class="card step"><h3><span class="i">${r.ltv?"05":"04"}</span>Price vs market</h3><div class="calc">
+  ${L("Unit price per sqft",`${fmt(D.price)} ÷ ${fmt(D.size)}`,fmt(r.unitPsf))}
+  ${L("Sales per sqft",`${SRC.name}, ${(SRC.sample.match(/\d+ sales?/)||[SRC.sample])[0]}, median`,fmt(r.comp))}
+  ${L("Capital growth rate",`(${fmt(r.comp)} − ${fmt(r.unitPsf)}) ÷ ${fmt(r.unitPsf)}`,sgn(r.cgr),1)}
+  ${F?L("Furniture value",`min(${fmt(D.furn.prem)} × ${D.furn.years} yrs, ${fmt(D.furn.cost)})`,aed(r.furnVal)):""}
+  ${L("Fair price",`${fmt(r.comp)} × ${fmt(D.size)}`+(F?" + furniture":""),aed(r.fair),1)}</div>
+  <div class="answer"><span>${r.fairGap<0?"Above market":"Below market"}</span><strong>${pct(Math.abs(r.fairGap))}</strong></div></div>
+ <div class="card step"><h3><span class="i">${r.ltv?"06":"05"}</span>Sell after ${yrs} year${yrs>1?"s":""}</h3><div class="calc">
+  ${L("Selling price",`${fmt(r.comp)} × ${fmt(D.size)} × (1 ${g<0?"−":"+"} ${Math.abs(g)}%)^${+x.gY1.toFixed(2)}${x.gY2?` × (1 ${x.a2<0?"−":"+"} ${+Math.abs(x.a2*100).toFixed(2)}%)^${+x.gY2.toFixed(2)}`:""}${x.ag?(x.yrsYoung>0?` × (1 − ${+(x.ag*100).toFixed(2)}%)^${+x.yrsYoung.toFixed(2)}`:"")+(x.yrsOld>0?` × (1 − ${+(x.ag2*100).toFixed(2)}%)^${+x.yrsOld.toFixed(2)}`:""):""} × (1 + ${D.factors.reduce((t,f)=>t+f.v[1],0)}%)`,aed(x.sellBase))}
+  ${F?L("Furniture left",yrs>=D.furn.years?`worn out after ${D.furn.years} years`:`${fmt(x.furnVal)} × (1 − ${yrs}/${D.furn.years})`,aed(x.furnLeft)):""}
+  ${L("Price + fees"+(x.ltv?" + mortgage costs":""),`${fmt(D.price)} + ${fmt(x.fees)}${x.ltv?" + "+fmt(x.madm):""}`,"− "+fmt(D.price+x.fees+x.madm))}
+  ${L("Agency 2% + VAT on the sale",`${fmt(x.sell)} × 2% × 1.05`,"− "+fmt(x.comm))}
+  ${L("Net profit","",aed(x.profit),1)}</div>
+  <div class="answer"><span>On your cash</span><strong>${sgn(x.ret)}</strong></div>
+  <div class="answer"><span>Per year</span><strong>${sgn(x.retY)}</strong></div>
+  <p class="small" style="margin:8px 0 0">${fmt(x.profit)} ÷ ${fmt(x.equity)} · per year = (1 + return)^(1/${yrs}) − 1. Like your form, this leaves out the rent collected${x.ltv?" and the loan repaid":""}.</p>
+  <div class="calc" style="margin-top:8px">${L("+ Net rent collected",`${yrs} yr${yrs>1?"s":""}, rent growing ${(+(rgOf(RI))).toFixed(2)}% a year${x.ltv?" · after mortgage payments"+(x.fy&&yrs>x.fy&&x.fy<TERM?` (EIBOR payment after year ${x.fy})`:""):""}`,aed(x.rentSum))}${x.ltv?L("+ Loan repaid",`${fmt(x.loan)} − ${fmt(x.balSale)} still owed at the sale`,aed(x.repaid))+L("− Early settlement fee","1% of the balance, max AED 10,000 (UAE cap)","− "+fmt(x.settle))+L("− Mortgage release (DLD)","removing the mortgage from the title deed","− "+fmt(x.release)):""}${L("Total gain with the rent","",aed(x.withRent),1)}</div>
+  <div class="answer"><span>With the rent, per year</span><strong>${sgn(x.retRY)}</strong></div></div>`;
+
+/* comfort + view map */
+$("#comfort").innerHTML=D.comfort.map(c=>`<div class="cf ${c.tone}"><div class="k">${c.k}</div><div class="v">${c.v}</div><div class="d">${c.d}</div>${c.src?`<div class="srcs"><span>Source:</span> ${c.src.map(([t,u])=>u?`<a href="${u}" target="_blank" rel="noopener">${t}</a>`:t).join(" · ")}</div>`:""}</div>`).join("");
+}
+
+/* view map (Google Maps method outside GIS DDA) */
+function renderMap(){const vm=$("#viewmap"),m=D.viewMap;if(!m){vm.hidden=true;return}vm.hidden=false;
+const chips=`<div class="vm-chips">${m.sides.map(x=>`<button type="button" class="vm-cp ${x.t}" data-dir="${x.d}" title="Show ${x.d} on the map">${x.d}</button>`).join("")}</div>`;
+const list=`<div class="vm-list">${m.sides.map(x=>`<div class="vm-row" data-dir="${x.d}" role="button" tabindex="0"><span class="vm-dot ${x.t}"></span><b>${x.d}</b><span>${x.text}</span><span class="vm-dist">${x.dist}</span></div>`).join("")}<div class="vm-note">${m.listNote||""}</div></div>`;
+const sat=`<figure data-pane="sat"><div class="vm-satwrap"><img src="data/${m.sat}" alt="Satellite view with each direction coloured by what it faces" loading="lazy"><svg class="vm-ov" viewBox="0 0 ${m.satc[2]} ${m.satc[3]}" aria-hidden="true"></svg></div><figcaption>${m.note}</figcaption></figure>`;
+vm.innerHTML=`<div class="k">View map · Google Maps</div><p class="vm-sum">${m.summary}</p>${chips}<div class="vm-grid"><div class="vm-maps">${sat}</div>${list}</div><div class="vm-key"><span class="good">Open space / G+2 or lower</span><span class="warn">6+ floors lower / lower (floors not confirmed)</span><span class="bad">Same height or taller</span><span class="sc">North is up · tap a direction to point the arrow</span></div>`;
+window.__vmSel=dir=>{const DIRS=["N","NE","E","SE","S","SW","W","NW"];vm.querySelectorAll("[data-dir]").forEach(e=>e.classList.toggle("sel",e.dataset.dir===dir));vm.querySelectorAll(".vm-arrow").forEach(e=>e.remove());if(!dir)return;
+ const lab="Facing "+dir,b=DIRS.indexOf(dir)*Math.PI/4,sx=Math.sin(b),sy=-Math.cos(b),svg=vm.querySelector(".vm-ov"),k=1.35,[cx,cy,W,H,R]=m.satc,r0=70,r1=Math.min(R*0.55,170),ink="#141414",paper="#ffffff";
+ const x0=cx+r0*sx,y0=cy+r0*sy,x1=cx+r1*sx,y1=cy+r1*sy,tx=cx+(r1+14*k)*sx,ty=cy+(r1+14*k)*sy,px=-sy,py=sx,w=(lab.length*8.4+20)*k,h=30*k;
+ let lx=tx+30*k*sx-w/2,ly=ty+30*k*sy-h/2;lx=Math.min(Math.max(lx,8*k),W-w-8*k);ly=Math.min(Math.max(ly,8*k),H-h-8*k);
+ svg.insertAdjacentHTML("beforeend",`<g class="vm-arrow"><line x1="${x0}" y1="${y0}" x2="${x1}" y2="${y1}" stroke="${paper}" stroke-width="${8*k}" stroke-linecap="round"/><line x1="${x0}" y1="${y0}" x2="${x1}" y2="${y1}" stroke="${ink}" stroke-width="${4.5*k}" stroke-linecap="round"/><path d="M${tx} ${ty} L${x1+10*k*px} ${y1+10*k*py} L${x1-10*k*px} ${y1-10*k*py} Z" fill="${ink}" stroke="${paper}" stroke-width="${1.5*k}"/><rect x="${lx}" y="${ly}" width="${w}" height="${h}" rx="${h/2}" fill="${ink}" stroke="${paper}" stroke-width="${1.5*k}"/><text x="${lx+w/2}" y="${ly+h/2}" text-anchor="middle" dominant-baseline="central" font-size="${14*k}" font-weight="600" fill="${paper}" font-family="system-ui,sans-serif">${lab}</text></g>`);};
+}
+document.addEventListener("click",e=>{const d=e.target.closest&&e.target.closest(".viewmap [data-dir]");if(!d||!window.__vmSel)return;window.__vmSel(d.classList.contains("sel")?null:d.dataset.dir)});
+document.addEventListener("keydown",e=>{if((e.key==="Enter"||e.key===" ")&&e.target.closest&&e.target.closest(".viewmap .vm-row[data-dir]")){e.preventDefault();e.target.click()}});
+
+render();renderMap();
+{const sd=D.sd,sec=$("#sd");if(!sd){sec.hidden=true}else{
+ const PAL={demand:["var(--demand)","color-mix(in srgb,var(--demand) 72%,var(--surface))","color-mix(in srgb,var(--demand) 52%,var(--surface))","color-mix(in srgb,var(--demand) 36%,var(--surface))","color-mix(in srgb,var(--demand) 24%,var(--surface))","color-mix(in srgb,var(--demand) 14%,var(--surface))","color-mix(in srgb,var(--demand) 7%,var(--surface))"],bldg:["var(--accent)","color-mix(in srgb,var(--accent) 72%,var(--surface))","color-mix(in srgb,var(--accent) 52%,var(--surface))","color-mix(in srgb,var(--accent) 36%,var(--surface))","color-mix(in srgb,var(--accent) 24%,var(--surface))","color-mix(in srgb,var(--accent) 14%,var(--surface))","color-mix(in srgb,var(--accent) 7%,var(--surface))"]},C=2*Math.PI*60;let cols=PAL.demand;
+const donut=(svg,leg,mix,mine,extra,pal,suffix)=>{cols=PAL[pal];const tot=mix.reduce((a,m)=>a+m[1],0);let off=0;
+  const segs=mix.map((m,i)=>{const len=m[1]/tot*C;const el=`<circle cx="80" cy="80" r="60" fill="none" stroke="${cols[i%cols.length]}" stroke-width="${m[0]===mine?26:20}" stroke-dasharray="${len} ${C-len}" stroke-dashoffset="${-off}" transform="rotate(-90 80 80)"><title>${m[0]}: ${fmt(m[1])} (${(m[1]/tot*100).toFixed(1)}%)</title></circle>`;off+=len;return [m[0]===mine,el]}).sort((a,b)=>a[0]-b[0]).map(x=>x[1]).join("");
+  const mm=mix.find(m=>m[0]===mine);
+  $(svg).innerHTML=segs+`<text x="80" y="78" text-anchor="middle" class="dc-big">${Math.round(mm[1]/tot*100)}%</text><text x="80" y="96" text-anchor="middle" class="dc-sm">${mine.toLowerCase()}s</text><text x="80" y="110" text-anchor="middle" class="dc-sm">${suffix}</text>`;
+  $(leg).innerHTML=mix.map((m,i)=>[m,i]).map(([m,i])=>`<li class="${m[0]===mine?"mine "+pal:""}"><i style="background:${cols[i%cols.length]}"></i><span>${m[0]}${m[0]===mine?" · this unit":""}${extra&&m[2]?`<small>${m[2]} sqft</small>`:""}</span><b>${(m[1]/tot*100).toFixed(1)}%</b><em>${fmt(m[1])}</em></li>`).join("")};
+ donut("#donut","#dleg",sd.mix,sd.mine,false,"demand","of sales");
+ $("#mix-tag").innerHTML=`What buyers bought in ${sd.area} <small>${fmt(sd.mix.reduce((a,m)=>a+m[1],0))} sales · ${sd.period}</small>`;$("#mix-note").textContent=sd.mixNote||"";
+ const mx=Math.max(sd.ready,...sd.years.map(y=>y[1]));
+ const rp=Math.round(sd.ready/mx*100);
+ $("#sd-bars").innerHTML=[["Ready today",sd.ready,"r"],...sd.years.map(([y,v])=>[y===sd.peak?y+" · "+(sd.peakLabel||(sd.bldg&&sd.bldg.name)||D.project):y,v,y===sd.peak?"h":""])].map(([l,v,c])=>`<div class="yb ${c}"><span>${l}</span><div class="ybar"><i style="width:${Math.max(2,Math.round(v/mx*100))}%"></i></div><b>${fmt(v)}</b></div>`).join("");
+ $("#sd-stock").innerHTML=sd.stockNote||`${fmt(sd.ready)} ready + ${fmt(sd.uc)} under construction → about ${fmt(Math.round((sd.ready+sd.uc)/100)*100)} units once all are built (${((sd.ready+sd.uc)/sd.ready).toFixed(1)}× today).${(()=>{const y=sd.years.reduce((t,v)=>t+v[1],0),gap=sd.uc-y;return gap>0?` The yearly figures add up to ${fmt(y)}; the other ${fmt(gap)} have no handover year in the tracker or come after ${sd.years[sd.years.length-1][0]}.`:""})()}`;
+ $("#sd-sub").textContent=sd.area+" · "+sd.period;$("#sd-area").textContent=sd.area;
+ $("#sd-take").innerHTML=sd.takeaway||"";$("#sd-take").hidden=!sd.takeaway;
+ $("#sd-match").innerHTML=sd.match||"";$("#sd-match").hidden=!sd.match;
+ if(sd.bldg){const b=sd.bldg;$("#bldg-tag").innerHTML=`Units in ${b.name} <small>${fmt(b.total)} units</small>`;
+  donut("#bdonut","#bleg",b.mix,sd.mine,true,"bldg","of units");
+  $("#bldg-note").textContent=b.note||"";}else{$("#bldg-card").hidden=true}
+ $("#sd-pts").innerHTML=sd.points.map(p=>`<div class="sdp ${p.tone}"><div class="fig">${p.fig}</div><div class="t">${p.t}</div><div class="d">${p.d}</div></div>`).join("");
+ $("#sd-src").innerHTML="<b>Sources:</b> "+sd.src.map(([n,u])=>`<a href="${u}" target="_blank" rel="noopener">${n}</a>`).join(" · ");
+}}
+/* developer track record */
+{const V=D.dev,sec=$("#dev");if(!V){sec.hidden=true}else{
+ const pc=(x,d=0)=>(x>0?"+":x<0?"−":"")+Math.abs(x).toFixed(d)+"%";
+ const cls=x=>x>0?"good":x<0?"bad":"";
+ const MIN=5;
+ const prem=(b,a)=>b&&a?b/a-1:null;
+ const calcB=x=>{const A=V.areas[x.a]||{};const o={A};
+  o.pp=x.tx>=MIN&&A.psf&&x.psf?x.psf/A.psf-1:null;o.pg=x.old&&x.tx>=MIN&&x.psfC!=null&&A.psfC!=null?x.psfC-A.psfC:null;
+  const rs=x.nS>=MIN&&A.rS?x.rS/A.rS-1:null,r1=x.n1>=MIN&&A.r1?x.r1/A.r1-1:null,w=(rs!=null?x.nS:0)+(r1!=null?x.n1:0);
+  o.rp=w?((rs??0)*(rs!=null?x.nS:0)+(r1??0)*(r1!=null?x.n1:0))/w:null;o.rs=rs;o.r1=r1;return o};
+ const ready=V.ready.map(x=>({...x,c:calcB(x)}));
+ const med=a=>{a=a.filter(v=>v!=null).sort((p,q)=>p-q);const n=a.length;return n?(n%2?a[(n-1)/2]:(a[n/2-1]+a[n/2])/2):null};
+ const P3=ready.map(x=>{const A=V.areas[x.a]||{};const ar=x.rk==="R1"?A.r13:A.rS3;return {x,pp:x.tx3>=MIN&&A.psf3&&x.psf3?x.psf3/A.psf3-1:null,rp:x.rn3>=MIN&&ar&&x.rent3?x.rent3/ar-1:null}});
+ const mp=med(P3.map(o=>o.pp)),mr=med(P3.map(o=>o.rp)),nP=P3.filter(o=>o.pp!=null),nR=P3.filter(o=>o.rp!=null);
+ const above=nP.filter(o=>o.pp>0).length,rAbove=nR.filter(o=>o.rp>0).length;
+ $("#dev-sub").textContent=`${V.name} · ${V.ready.length} ready · ${V.uc.length} under construction · ${V.planned.length} planned`;
+ const DL=V.ready.filter(x=>x.plan&&x.cd&&x.cdSrc==="DLD").map(x=>Math.round((new Date(x.cd)-new Date(x.plan))/2.63e9)).sort((a,b)=>a-b),dlMed=DL.length?DL[Math.floor((DL.length-1)/2)]:null,dlOk=DL.filter(m=>m<=3).length;
+ /* summary: take() */
+ const img=x=>x.img?`<img src="data/${x.img}" alt="${x.n}" loading="lazy">`:`<div class="noimg">No official image released yet</div>`;
+ const vs=(p)=>p==null?`<span class="na">not enough deals</span>`:`<b class="${cls(p)}">${pc(p*100)}</b> vs area`;
+ const tl=t=>t==="Commercial"?"Commercial":t==="Studio"?"Studio":t.replace(" Beds","-bed").replace(" Bed","-bed");const UTSof=L=>["Studio","1 Bed","2 Beds","3 Beds","4 Beds","5 Beds","6 Beds","Commercial"].filter(t=>L.some(x=>(x.mix||[]).some(m=>m[0]===t)));
+ const defUT=(()=>{const u=((D.unit||"")+" "+(D.label||"")).toLowerCase();if(/studio/.test(u))return "Studio";const m=u.match(/(\d)\s*-?\s*(bed|br|bhk)/);if(m)return m[1]==="1"?"1 Bed":m[1]+" Beds";if(/shop|office|retail|commercial/.test(u))return "Commercial";return "Studio"})();
+ const tP=(x,k)=>{const t=(x.types||[]).find(t=>t.t===UT),A=V.areas[x.a]||{};if(!t)return null;const w=k==="p"?t.sw:t.rw,a=w?(((A.tw||{})[w]||{})[UT]||{}):((A.types||{})[UT]||{});return k==="p"?(t.tx>=MIN&&a.psf?t.psf/a.psf-1:null):(t.rn>=MIN&&a.rent?t.rent/a.rent-1:null)};
+ const take=()=>{const P=ready.map(x=>tP(x,"p")).filter(v=>v!=null),Rr=ready.map(x=>tP(x,"r")).filter(v=>v!=null),lab=UT==="Commercial"?"commercial units":tl(UT).toLowerCase()+"s",R=ready.filter(x=>x.rented!=null&&x.units&&x.rented>10),T=R.reduce((t,x)=>t+x.units,0),Rn=R.reduce((t,x)=>t+x.rented,0);
+  const s1=P.length?`${V.name}'s ready buildings sold ${lab} for a median <b>${pc(med(P)*100)}</b> vs ${lab} in their area per sqft (${P.filter(v=>v>0).length} of ${P.length} above)`:`Not enough ${lab} sales in ${V.name}'s ready buildings to compare with their areas`;
+  const s2=Rr.length?` and rented them for a median <b>${pc(med(Rr)*100)}</b> vs the area (${Rr.filter(v=>v>0).length} of ${Rr.length} above)`:"";
+  $("#dev-take").innerHTML=`${s1}${s2} (last 3 months, widened up to 12 when there were fewer than 5 deals). ${R.length?`<b>${fmt(Rn)} of ${fmt(T)} units (${Math.round(Rn/T*100)}%)</b> in ${R.length} buildings are rented right now.`:""}${DL.length?` Delivery: DLD confirmed ${dlOk} of ${DL.length} buildings within 3 months of their target (median ${dlMed} month${dlMed===1?"":"s"} after).`:""}`};
+ const dAge=x=>{if(!x.comp)return"";const now=new Date(D.date);if(x.cd){const c=new Date(x.cd);let m=(now.getFullYear()-c.getFullYear())*12+now.getMonth()-c.getMonth();if(now.getDate()<c.getDate())m--;if(m<0)return"";const y=Math.floor(m/12),mo=m%12;return ` <small>(${y?y+(y>1?" yrs":" yr"):""}${y&&mo?" ":""}${mo||!y?mo+" mo":""} old)</small>`}const y=now.getFullYear()-+((x.comp.match(/20\d\d/)||[0])[0]);return y>0?` <small>(~${y} yr${y>1?"s":""} old)</small>`:` <small>(under 1 yr old)</small>`};
+ const mixBlock=x=>{const T=x.mix.reduce((t,m)=>t+m[1],0),CO={"Studio":"var(--accent)","1 Bed":"#e8b04a","2 Beds":"#6aa5e8","3 Beds":"#4fc1c9","4 Beds":"#e87a8b","5 Beds":"#ff7a45","6 Beds":"#c9a96e","Commercial":"#c58be8"},col=x.mix.map(m=>CO[m[0]]||"#8a8f98"),nm=t=>tl(t).toLowerCase();return (`<div class="row" style="flex-direction:column;gap:0"><span>Unit mix · ${fmt(T)} units</span><div class="dmix">${x.mix.map((m,i)=>`<i style="width:${m[1]/T*100}%;background:${col[i]}"></i>`).join("")}</div><span class="dmixl" style="display:flex;flex-direction:column">${x.mix.map((m,i)=>`<span style="display:flex;justify-content:space-between;${m[0]===UT?"color:var(--ink);font-weight:700":""}"><span><b style="color:${col[i]}">■</b> ${nm(m[0])}</span><span>${fmt(m[1])} (${Math.round(m[1]/T*100)}%)</span></span>`).join("")}</span></div>`)};
+ const card=x=>{const A=V.areas[x.a]||{},me=x.n===D.project;if(me&&D.completedDate&&!x._cdFix){x._cdFix=1;x.cdDxb=x.cd;x.cd=D.completedDate+(D.completedDate.length===7?"-01":"");x.comp=D.completedDate.slice(0,4);if(D.plannedDate&&!x.plan)x.plan=D.plannedDate}const head=`<div class="dcard${me?" me":""}">${img(x)}<div class="b"><div style="display:flex;justify-content:space-between;align-items:center;gap:6px"><span class="t">${x.n}</span>${me?`<span class="me-tag" style="flex:none">This building</span>`:""}</div><span class="loc">${A.label||x.loc||""}</span>`+`<div class="row"><span>Completed</span><span class="v">${x.cd?new Date(x.cd).toLocaleString("en-GB",{month:"short"})+" ":""}${x.comp||"—"}${dAge(x)}</span></div>`+(x.noPlan?`<div class="row"><span>DLD target</span><span class="v">N/A</span></div>`:"")+(x.plan?(()=>{const p=new Date(x.plan),c=new Date(x.cd),m=Math.round((c-p)/2.63e9);return `<div class="row"><span>DLD target</span><span class="v">${p.toLocaleString("en-GB",{month:"short",year:"numeric"})} <small class="na" style="font-style:normal">${m<=1?"· on target":`· confirmed ${m} mo after`}</small></span></div>`})():"");
+  const rows=[],na=t=>`<span class="na">${t}</span>`;
+  rows.push(x.mix?mixBlock(x):`<div class="row"><span>Unit mix</span><span class="v"><span class="na">not on DXB Interact</span></span></div>`);
+  if(UT!=="all"){const t=(x.types||[]).find(t=>t.t===UT),a=(A.types||{})[UT]||{},u=(x.mix||[]).find(m=>m[0]===UT),lab=tl(UT);
+   if(!x.mix)rows.push(`<div class="row"><span>${lab}</span><span class="v">${na(x.types?"none in this building":"not on DXB Interact")}</span></div>`);
+   else if(!u)rows.push(`<div class="row"><span>${lab}</span><span class="v">${na("none in this building")}</span></div>`);
+   else if(UT==="Commercial")rows.push(`<div class="row"><span>Commercial</span><span class="v"><b>${fmt(u[1])}</b> units <small>(no premium: few deals)</small></span></div>`);
+   else if(x.types&&!t)rows.push(`<div class="row"><span>${lab}</span><span class="v">${na(`${fmt(u[1])} units · too few to check`)}</span></div>`);
+   else{const TW=(A.tw||{}),aS=t&&t.sw?((TW[t.sw]||{})[UT]||{}):a,aR=t&&t.rw?((TW[t.rw]||{})[UT]||{}):a,wl=w=>w?` · ${w} mo`:" · 3 mo",p=t&&t.tx>=MIN&&aS.psf?t.psf/aS.psf-1:null,r=t&&t.rn>=MIN&&aR.rent?t.rent/aR.rent-1:null;
+    rows.push(`<div class="row"><span>Price premium</span><span class="v">${p==null?na(t&&t.tx?`only ${t.tx} sale${t.tx>1?"s":""} in ${t.sw||3} mo (${fmt(t.psf)}/sqft)`:`no sales in ${t&&t.sw||3} months`):`<b class="${cls(p)}">${pc(p*100)}</b> <small>${fmt(t.psf)} vs ${fmt(aS.psf)}/sqft · ${t.tx} sales${wl(t.sw)}</small>`}</span></div>`);
+    rows.push(`<div class="row"><span>Rent premium</span><span class="v">${r==null?na(t&&t.rn?`only ${t.rn} lease${t.rn>1?"s":""} in ${t.rw||3} mo (${fmt(t.rent)})`:`no leases in ${t&&t.rw||3} months`):`<b class="${cls(r)}">${pc(r*100)}</b> <small>${fmt(t.rent)} vs ${fmt(aR.rent)} · ${t.rn} leases${wl(t.rw)}</small>`}</span></div>`)}
+   if(x.rented!=null){const rr=Math.round(x.rented/x.units*100);rows.push(`<div class="row"><span>Rented</span><span class="v"><b>${rr}%</b> <small>${fmt(x.rented)} of ${fmt(x.units)} units</small></span></div><div class="dbar"><i style="width:${Math.min(100,rr)}%"></i></div>`)}
+   x._pp=x.tx3>=MIN&&A.psf3&&x.psf3?x.psf3/A.psf3-1:null;x._rp=null;return head+rows.join("")+`</div></div>`}
+  const pp=x.tx3>=MIN&&A.psf3&&x.psf3?x.psf3/A.psf3-1:null;
+  rows.push(`<div class="row"><span>Price premium</span><span class="v">${pp==null?na(x.psf3?`only ${x.tx3} sales`:"no recent sales"):`<b class="${cls(pp)}">${pc(pp*100)}</b> <small>${fmt(x.psf3)} vs ${fmt(A.psf3)}/sqft</small>`}</span></div>`);
+  const ar=x.rk==="R1"?A.r13:A.rS3,rp=x.rn3>=MIN&&ar&&x.rent3?x.rent3/ar-1:null,lab=x.rk==="R1"?"1-bed":"studio";
+  rows.push(`<div class="row"><span>Rent premium</span><span class="v">${rp==null?na(x.rent3?`only ${x.rn3} leases`:"no recent leases"):`<b class="${cls(rp)}">${pc(rp*100)}</b> <small>${lab} ${fmt(x.rent3)} vs ${fmt(ar)}</small>`}</span></div>`);
+  if(x.rented!=null){const r=Math.round(x.rented/x.units*100);rows.push(`<div class="row"><span>Rented</span><span class="v"><b>${r}%</b> <small>${fmt(x.rented)} of ${fmt(x.units)} units</small></span></div><div class="dbar"><i style="width:${Math.min(100,r)}%"></i></div>`)}
+  else rows.push(`<div class="row"><span>Rented</span><span class="v">${na("not on DXB Interact")}</span></div>`);
+  x._pp=pp;x._rp=rp;return head+rows.join("")+`</div></div>`};
+ const fmD=v=>v?new Date(v).toLocaleString("en-GB",{day:"numeric",month:"short",year:"numeric"}):"";
+ const dldRows=x=>{const d=x.dld;if(!d)return"";const now=new Date(D.date),late=d.t&&d.p<100&&new Date(d.t)<now;
+  return `<div class="row"><span>Built (DLD)</span><span class="v"><b class="${d.p>=100?"good":""}">${d.p}%</b> <small>${fmD(d.d)}</small></span></div><div class="dbar"><i style="width:${Math.min(100,d.p)}%"></i></div>`+(d.t?`<div class="row"><span>DLD target</span><span class="v">${new Date(d.t).toLocaleString("en-GB",{month:"short",year:"numeric"})}${d.p>=100?` <small class="na" style="font-style:normal">· 100% built</small>`:late?` <small class="na" style="font-style:normal">· target passed</small>`:""}</span></div>`:"")};
+ const card2=x=>{const a=x.ab,d=x.dld,now=new Date(D.date),na=t=>`<span class="na">${t}</span>`,rows=[];
+  const built=d?d.p:a?a.cons:null;
+  rows.push(`<div class="row"><span>Built</span><span class="v">${built==null?na("no data yet"):`<b class="${built>=100?"good":""}">${built}%</b> <small>${d&&d.d?"DLD, "+fmD(d.d):"DXB Interact"}</small>`}</span></div>`+(built!=null?`<div class="dbar"><i style="width:${Math.min(100,built)}%"></i></div>`:""));
+  const tgt=d&&d.t?new Date(d.t):null,cTxt=tgt?tgt.toLocaleString("en-GB",{month:"short",year:"numeric"}):(a&&a.hand)||x.comp||"";
+  rows.push(`<div class="row"><span>Completion date</span><span class="v">${cTxt?cTxt+(tgt?` <small>(DLD)</small>`:a&&a.hand?` <small>(DXB)</small>`:` <small>(${x.compSrc||"Propsearch"})</small>`)+(built>=100?` <small class="na" style="font-style:normal">· 100% built</small>`:tgt&&tgt<now?` <small class="na" style="font-style:normal">· target passed</small>`:""):na(x.st==="uc"?"not announced":"not announced yet")}</span></div>`);
+  rows.push(x.mix?mixBlock(x):`<div class="row"><span>Unit mix</span><span class="v"><span class="na">not on DXB Interact</span></span></div>`);
+  if(UT!=="all"){const o=(x.op||[]).find(v=>v.t===UT),p=o&&o.tx>=MIN&&o.apsf?o.psf/o.apsf-1:null;rows.push(`<div class="row"><span>Price premium <small>(off-plan)</small></span><span class="v">${!o?na(x.opNote||(x.op?"no off-plan sales":x.mix?"not checked yet":"not on DXB Interact")):!o.tx?na(o.w?`no sales in ${o.w} mo`:"no off-plan sales since launch"):p==null?na(`only ${o.tx} sale${o.tx>1?"s":""} in ${o.w} mo (${fmt(o.psf)}/sqft)`):`<b class="${cls(p)}">${pc(p*100)}</b> <small>${fmt(o.psf)} vs ${fmt(o.apsf)}/sqft${x.opArea?" ("+x.opArea+")":""} · ${o.tx} sales · ${o.w} mo${o.atx&&o.tx/o.atx>=0.5?` · this project is ${Math.round(o.tx/o.atx*100)}% of the area's sales, so the gap means little`:""}</small>`}</span></div>`)}
+  rows.push(a?`<div class="row"><span>Absorption rate</span><span class="v"><b class="${a.pct>=80?"good":a.pct<50?"bad":""}">${a.pct.toFixed(1)}%</b> <small>${fmt(a.sold)} of ${fmt(a.total)} units sold</small></span></div><div class="dbar"><i style="width:${Math.min(100,a.pct)}%"></i></div>`:`<div class="row"><span>Absorption rate</span><span class="v">${na("not on DXB Interact yet")}</span></div>`);
+  if(a&&a.psf)rows.push(`<div class="row"><span>Price (DXB)</span><span class="v">${fmt(a.psf)} AED/sqft <small>· launched ${a.launch}</small></span></div>`);
+  if(x.note)rows.push(`<div class="row"><span class="na">${x.note}</span></div>`);
+  const me=x.n===D.project;return `<div class="dcard${me?" me":""}">${img(x)}<div class="b"><div style="display:flex;justify-content:space-between;align-items:center;gap:6px"><span class="t">${x.n}</span>${me?`<span class="me-tag" style="flex:none">This project</span>`:""}</div><span class="loc">${x.loc}</span>${rows.join("")}</div></div>`};
+ const tabs=[["ready",`Ready (${V.ready.length})`],["uc",`Under construction (${V.uc.length})`],["planned",`Planned (${V.planned.length})`]];
+ const ppOf=x=>{const A=V.areas[x.a]||{};return x.tx3>=MIN&&A.psf3&&x.psf3?x.psf3/A.psf3-1:-9};const sortR=[...ready].sort((p,q)=>(q.n===D.project)-(p.n===D.project)||(ppOf(q)-ppOf(p)));
+ let DT="ready",PG=0,Q="",UT=defUT,AR="all";const arL=k=>(V.areas[k]||{}).label||"";const arOf=x=>x.area||(x.loc!==undefined?x.loc.split(",")[0].replace(/ \(.*\)/,"").replace(/ District \d+$/,""):arL(x.a));const tabList=()=>DT==="ready"?V.ready:DT==="uc"?V.uc:V.planned;const draw=()=>{take();$("#dev-tabs").innerHTML=tabs.map(([k,l])=>`<button type="button" class="dev-tab" role="tab" aria-selected="${k===DT}" data-dt="${k}">${l}</button>`).join("");const TL=tabList(),ARS=[...new Set(TL.map(arOf))].map(k=>[k,TL.filter(x=>arOf(x)===k).length]).sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0]));if(AR!=="all"&&!ARS.some(([k])=>k===AR))AR="all";$("#dev-areas").innerHTML=[["all",`All areas (${TL.length})`],...ARS.map(([k,n])=>[k,`${k} (${n})`])].map(([k,l])=>`<option value="${k}"${k===AR?" selected":""}>${l}</option>`).join("");const UTS=UTSof(tabList());if(!UTS.includes(UT))UT=UTS.includes(defUT)?defUT:(UTS[0]||"all");$("#dev-types").hidden=!UTS.length;$("#dev-types").innerHTML=UTS.map(t=>[t,tl(t)]).map(([k,l])=>`<button type="button" class="dev-tab dev-ut" aria-pressed="${k===UT}" data-ut="${k}">${l}</button>`).join("");const hk=x=>{const t=(x.ab&&x.ab.hand)||x.comp||"";const y=(t.match(/20\d\d/)||["9999"])[0],m="JanFebMarAprMayJunJulAugSepOctNovDec".indexOf(t.slice(0,3))/3+1||(t.match(/Q(\d)/)?+t.match(/Q(\d)/)[1]*3:12);return +y*100+m};const all=DT==="ready"?[...ready].sort((p,q)=>(q.n===D.project)-(p.n===D.project)||((tP(q,"p")??-9)-(tP(p,"p")??-9))):[...(DT==="uc"?V.uc:V.planned)].sort((p,q)=>(q.n===D.project)-(p.n===D.project)||hk(p)-hk(q)),q=Q.trim().toLowerCase(),all2=all.filter(x=>(AR==="all"||arOf(x)===AR)&&(UT==="all"||(x.mix||[]).some(m=>m[0]===UT))),list=q?all2.filter(x=>(x.n+" "+(x.loc||(V.areas[x.a]||{}).label||"")).toLowerCase().includes(q)):all2,PS=12,NP=Math.ceil(list.length/PS),show=list.slice(PG*PS,PG*PS+PS);{const ab=list.filter(x=>x.ab),T=ab.reduce((t,x)=>t+x.ab.total,0),S=ab.reduce((t,x)=>t+x.ab.sold,0);$("#dev-tabnote").innerHTML=DT!=="ready"&&UT!=="all"?`Showing projects with ${tl(UT).toLowerCase()} units. Off-plan price premium = the project\'s off-plan ${tl(UT).toLowerCase()} sales per sqft vs off-plan ${tl(UT).toLowerCase()} sales in its area, last 3 months (widened to 6, 9 or 12 months if fewer than 5 deals; DXB Interact).`:DT==="ready"&&UT!=="all"?`${tl(UT)} only: each building's ${tl(UT).toLowerCase()} sales per sqft and rents vs ${tl(UT).toLowerCase()}s in its area, last 3 months, widened to 6, 9 or 12 months when there were fewer than 5 deals (the area uses the same window; DXB Interact). Unit mix: DXB Interact Projects Analysis. ${V.ready.length-V.ready.filter(x=>x.types).length} older buildings are not listed on DXB Interact, so they have no figures.`:DT==="ready"?`Premium = how much more (or less) the building sells and rents for than its area, last 3 months (DXB Interact; 5+ deals needed). Rented = units with an active lease today.`:ab.length?`<b>${(S/T*100).toFixed(1)}%</b> of the ${fmt(T)} units in ${ab.length} of these projects are already sold (DXB Interact absorption rate). Sorted by handover.`:"No sales data on DXB Interact for these yet."}$("#dev-grid").innerHTML=(list.length?"":`<p class="small" style="grid-column:1/-1">No ${DT==="ready"?"ready":DT==="uc"?"under-construction":"planned"} project matches “${Q.replace(/</g,"&lt;")}”. Try another tab or a shorter name.</p>`)+show.map(DT==="ready"?card:card2).join("")+(NP>1?`<div class="dev-pages noprint">${[...Array(NP)].map((_,i)=>`<button type="button" class="dev-tab" data-pg="${i}" aria-selected="${i===PG}">${i+1}</button>`).join("")}</div>`:"")};
+ draw();$("#dev-tabs").addEventListener("click",e=>{const b=e.target.closest("[data-dt]");if(b){DT=b.dataset.dt;PG=0;AR="all";draw()}});$("#dev-areas").addEventListener("change",e=>{AR=e.target.value;PG=0;draw()});$("#dev-types").addEventListener("click",e=>{const b=e.target.closest("[data-ut]");if(b){UT=b.dataset.ut;draw()}});$("#dev-q").addEventListener("input",e=>{Q=e.target.value;PG=0;draw()});$("#dev-grid").addEventListener("click",e=>{const g=e.target.closest("[data-pg]");if(g){PG=+g.dataset.pg;draw();$("#dev-tabs").scrollIntoView({block:"start",behavior:"smooth"})}});
+ $("#dev-src").innerHTML=V.note;
+}}
+document.title=D.title||`${D.project} · ${D.label}`;
+document.querySelectorAll("section > h2").forEach(h=>{const m=h.firstChild&&h.firstChild.nodeType===3&&h.firstChild.textContent.match(/^\s*(\d+)\s*·\s*/);if(m){h.firstChild.textContent=h.firstChild.textContent.slice(m[0].length);h.insertAdjacentHTML("afterbegin",`<span class="num">${m[1]}</span>`)}});
+document.addEventListener("click",e=>{
+ const b=e.target.closest&&e.target.closest("[data-mg],[data-f],[data-b],[data-y],[data-g],[data-s],[data-ri],[data-mt]");if(!b)return;
+ if(b.dataset.mt!=null)MT=+b.dataset.mt;
+ if(b.dataset.ri!=null)RI=+b.dataset.ri;
+ if(b.dataset.s!=null)S=+b.dataset.s;
+ if(b.dataset.mg!=null)B=+b.dataset.mg?(B||1):0;
+ if(b.dataset.f!=null)F=+b.dataset.f; if(b.dataset.b!=null)B=+b.dataset.b; if(b.dataset.y!=null)Y=+b.dataset.y; if(b.dataset.g!=null)G=+b.dataset.g;
+ render();
+});
+document.addEventListener("change",e=>{const id=e.target.id,v=e.target.value;if(id==="yrs-n"&&v!==""){Y=Math.min(10,Math.max(1,Math.round(+v)));e.target.blur();render()}if(id==="rate-n"&&v!==""){RATE=+Math.min(15,Math.max(0,+v)).toFixed(2);e.target.blur();render()}if(id==="term-n"&&v!==""){TERM=Math.min(25,Math.max(FY,Math.round(+v)));e.target.blur();render()}});
+document.addEventListener("input",e=>{const id=e.target.id,v=e.target.value;if(id==="rate"){RATE=+v;render()}if(id==="term"){TERM=+v;render()}if(id==="marg"){MARG=v===""?0:+(+v).toFixed(2);render()}});
+document.addEventListener("click",e=>{const b=e.target.closest&&e.target.closest("[data-fy],[data-ten]");if(!b)return;if(b.dataset.fy)FY=+b.dataset.fy;if(b.dataset.ten)TEN=b.dataset.ten;render()});
+document.addEventListener("click",e=>{if(e.target.closest&&e.target.closest("#mort-reset")){RATE=D.mortgage.rate;TERM=D.mortgage.term;FY=null;MARG=null;TEN=null;render()}});
+document.addEventListener("keydown",e=>{const b=e.target.closest&&e.target.closest(".sc.pick,.sc.rpick");if(b&&(e.key==="Enter"||e.key===" ")){e.preventDefault();b.click()}});
+document.addEventListener("click",e=>{if(!e.target.closest||!e.target.closest("#rec-btn"))return;F=defF();B=0;MT=1;RATE=null;TERM=null;FY=null;MARG=null;TEN=null;Y=null;G=null;S=null;RI=null;render()});
+/* gallery */
+{const f=$("#hero-img");const sl=[...f.querySelectorAll(".gslide")];
+ if(!sl.length)f.hidden=true;else{let gi=0,timer=null;const dots=$("#gdots");
+  const show=i=>{gi=(i+sl.length)%sl.length;[gi+1,gi-1].forEach(n=>{const im=sl[(n+sl.length)%sl.length];if(im.loading==="lazy")im.loading="eager"});sl.forEach((im,k)=>im.classList.toggle("on",k===gi));$("#hero-credit").textContent=(sl[gi].dataset.cap?sl[gi].dataset.cap+" · ":"")+(D.heroCredit||"");dots.querySelectorAll("button").forEach((b,k)=>b.setAttribute("aria-current",k===gi))};
+  dots.innerHTML=sl.map((_,k)=>`<button type="button" aria-label="Photo ${k+1}"></button>`).join("");
+  const restart=()=>{clearInterval(timer);if(sl.length>1)timer=setInterval(()=>show(gi+1),5000)};
+  f.querySelector(".gprev").onclick=()=>{show(gi-1);restart()};f.querySelector(".gnext").onclick=()=>{show(gi+1);restart()};
+  dots.querySelectorAll("button").forEach((b,k)=>b.onclick=()=>{show(k);restart()});
+  const lb=$("#lb"),lbImg=$("#lb-img");let li=0;
+  const lbShow=i=>{li=(i+sl.length)%sl.length;[li+1,li-1].forEach(n=>{const im=sl[(n+sl.length)%sl.length];if(im.loading==="lazy")im.loading="eager"});lbImg.src=sl[li].src;lbImg.alt=sl[li].alt;$("#lb-cap").textContent=`${sl[li].dataset.cap||""} · ${li+1} / ${sl.length}`};
+  const lbClose=()=>{lb.hidden=true;document.body.style.overflow=""};
+  sl.forEach(im=>{im.onclick=()=>{clearInterval(timer);lbShow(gi);lb.hidden=false;document.body.style.overflow="hidden"}});
+  lb.querySelector(".pv-x").onclick=lbClose;lb.querySelector(".pv-prev").onclick=e=>{e.stopPropagation();lbShow(li-1)};lb.querySelector(".pv-next").onclick=e=>{e.stopPropagation();lbShow(li+1)};
+  lb.addEventListener("click",e=>{if(e.target===lb)lbClose()});
+  document.addEventListener("keydown",e=>{if(lb.hidden)return;if(e.key==="Escape")lbClose();if(e.key==="ArrowRight")lbShow(li+1);if(e.key==="ArrowLeft")lbShow(li-1)});
+  let x0=null;f.addEventListener("touchstart",e=>x0=e.touches[0].clientX,{passive:true});f.addEventListener("touchend",e=>{if(x0==null)return;const dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>40){show(gi+(dx<0?1:-1));restart()}x0=null});
+  f.addEventListener("mouseenter",()=>clearInterval(timer));f.addEventListener("mouseleave",restart);
+  if(sl.length<2)f.classList.add("single");show(0);if(!matchMedia("(prefers-reduced-motion: reduce)").matches)restart();}}
+/* PDF: print the recommended view */
+let DL=null;if(window.claude&&window.claude.use)window.claude.use("downloads").then(d=>{DL=d}).catch(()=>{});
+document.addEventListener("click",async e=>{const a=e.target.closest&&e.target.closest("#pdf-btn");if(!a)return;
+ if(a.getAttribute("href")&&DL){e.preventDefault();const name=a.getAttribute("href");try{const r=await fetch(name);if(!r.ok)throw new Error("fetch");await DL.save({filename:name,data:await r.blob()})}catch(err){$("#pdf-msg").textContent=err&&err.code==="declined"?"":" Couldn't download here. Open the page in its own tab and try again."}return}
+ if(!a.getAttribute("href")){e.preventDefault();F=defF();B=0;MT=1;RATE=null;TERM=null;FY=null;MARG=null;TEN=null;Y=null;G=null;S=null;RI=null;render();try{window.print()}catch(err){$("#pdf-msg").textContent=" Use the browser's Print → Save as PDF."}}});
+$("#eyebrow").textContent=(AGENT.name?AGENT.name+" · ":"")+"Ready property evaluation";
+/*@@FOOTER@@*/
+</script>

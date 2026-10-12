@@ -1,10 +1,10 @@
 # Post-Handover Report
 
-[![Latest: v1.1.0](https://img.shields.io/badge/latest-v1.1.0-2ea44f)](CHANGELOG.md)
+[![Latest: v1.1.1](https://img.shields.io/badge/latest-v1.1.1-2ea44f)](CHANGELOG.md)
 
 Part of **[The Ultimate Real Estate Calculator](../../README.md)**.
 
-**Version 1.1.0** · [Changelog](CHANGELOG.md) · Version history: [all versions](https://github.com/AbdullaAlzarooni/ultimate-real-estate-calculator/tags) · [collection releases](https://github.com/AbdullaAlzarooni/ultimate-real-estate-calculator/releases) · by **Abdulla Alzarooni** (Real Estate with Abdulla Alzarooni)
+**Version 1.1.1** · [Changelog](CHANGELOG.md) · Version history: [all versions](https://github.com/AbdullaAlzarooni/ultimate-real-estate-calculator/tags) · [collection releases](https://github.com/AbdullaAlzarooni/ultimate-real-estate-calculator/releases) · by **Abdulla Alzarooni** (Real Estate with Abdulla Alzarooni)
 
 For units sold on a **post-handover payment plan** (60/40, 50/50 and similar): you keep paying after
 handover, so the real questions are **does the rent cover those instalments, how much do I add each
@@ -29,6 +29,10 @@ what happens if the unit sits empty after handover
 **View map:** what each side of the building faces (GIS DDA allowed heights + Google Maps)
 
 <img src="../../docs/images/view-map-gis.jpg" alt="View map">
+
+**The developer (optional):** every project by the developer with photos, delivery record and premiums
+
+<img src="../../docs/images/developer.jpg" alt="Developer section">
 
 ---
 
@@ -75,7 +79,7 @@ node tools/sheetcheck-ph.js example-weston-109-ph.html
 ```
 The first check renders every scenario combination and must print `bad 0 []`; the second compares the
 numbers with the author's Post-Handover Property Evaluation Form (difference ≈ 0; the sheet adds an AED 40
-DLD admin fee). The example's photos aren't included; the page works without them.
+DLD admin fee). The example ships with its photos.
 
 ---
 

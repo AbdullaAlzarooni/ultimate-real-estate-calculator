@@ -1,5 +1,5 @@
 <!--
-  The Ultimate Real Estate Calculator — Post-Handover Report v1.1.0
+  The Ultimate Real Estate Calculator — Post-Handover Report v1.1.1
   © 2026 Abdulla Alzarooni (Real Estate with Abdulla Alzarooni). All rights reserved.
   Licensed under The Ultimate Real Estate Calculator License (see LICENSE): free to use for your own client
   reports; keep this notice and the "The Ultimate Real Estate Calculator ©" credit line visible; no resale.
@@ -453,7 +453,7 @@ footer{padding-top:22px}
 @media print{.dev-grid{grid-template-columns:repeat(4,minmax(0,1fr))!important}.dcard{break-inside:avoid}}
 </style>
 
-<script>document.addEventListener("error",e=>{const i=e.target;if(i&&i.tagName==="IMG"&&!i.dataset.f){i.dataset.f=1;const d=document.createElement("div");d.className="noimg";d.textContent="Photo not available";d.style.cssText="display:flex;align-items:center;justify-content:center;min-height:140px;background:var(--surface-2);color:var(--muted);font-size:12px;border-radius:inherit;width:100%;height:100%";i.replaceWith(d)}},true);</script>
+<script>document.addEventListener("error",e=>{const i=e.target;if(i&&i.tagName==="IMG"&&i.getAttribute("src")&&!i.dataset.f){i.dataset.f=1;const d=document.createElement("div");d.className="noimg";d.textContent="Photo not available";d.style.cssText="display:flex;align-items:center;justify-content:center;min-height:140px;background:var(--surface-2);color:var(--muted);font-size:12px;border-radius:inherit;width:100%;height:100%";i.replaceWith(d)}},true);</script>
 <div class="wrap">
   <nav class="toc" aria-label="Sections">
     <a href="#hero-row">Verdict</a><a href="#deal">Deal check</a><a href="#outcomes">What could happen</a><a href="#sd">Supply &amp; demand</a><a href="#dev">Developer</a><a href="#know">Things to know</a><a href="#unit-sec">Unit &amp; payments</a><a href="#comfort-sec">Location</a><a href="#details">Calculations</a>

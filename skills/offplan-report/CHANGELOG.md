@@ -1,5 +1,11 @@
 # Changelog — Off-plan Report
 
+## 1.3.1 — 12 Oct 2026
+- The Starfall example now includes the **Developer section** (every Binghatti project) with its photos.
+- `build.py` lists the developer photos in `<name>.files.txt`, so they are published with the report.
+- Fix: with no logo or agent photo in `brand/`, the footer showed "Photo not available" boxes; empty slots are
+  hidden again.
+
 ## 1.3.0 — 12 Oct 2026
 **Property Monitor removed** (it does not allow AI / automated use)
 - Claude never opens or reads Property Monitor, even if you have an account.

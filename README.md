@@ -1,8 +1,8 @@
 # The Ultimate Real Estate Calculator
 
-[![Latest: v1.2](https://img.shields.io/badge/latest-v1.2-2ea44f)](https://github.com/AbdullaAlzarooni/ultimate-real-estate-calculator/releases/latest)
+[![Latest: v1.3](https://img.shields.io/badge/latest-v1.3-2ea44f)](https://github.com/AbdullaAlzarooni/ultimate-real-estate-calculator/releases/latest)
 
-**Version 1.1** · [Changelog](CHANGELOG.md) · [Releases](https://github.com/AbdullaAlzarooni/ultimate-real-estate-calculator/releases)
+**Version 1.3** · [Changelog](CHANGELOG.md) · [Releases](https://github.com/AbdullaAlzarooni/ultimate-real-estate-calculator/releases)
 
 by **Abdulla Alzarooni** · Real Estate with Abdulla Alzarooni ·
 [Instagram](https://www.instagram.com/abdulla.al.zarooni)
@@ -21,14 +21,14 @@ all the maths is shown step by step.
 
 <img src="docs/images/view-map-gis.jpg" alt="View map: what each side of the building faces">
 
-More screenshots on the [Off-plan Report page](skills/offplan-report/README.md#see-it).
+More screenshots on the [Off-plan Report](skills/offplan-report/README.md#see-it) and [Ready Property Report](skills/ready-report/README.md#see-it) pages.
 
 ## Calculators
 | Calculator | What it does | Version |
 |---|---|---|
-| [**Off-plan Report**](skills/offplan-report/README.md) | Sales offer / brochure / Reelly or GenieMap link → full off-plan evaluation (profit at handover, yield, what-ifs, supply & demand, optional developer section, payment plan, view map, location, PDF) | 1.3.0 |
-| [**Post-Handover Report**](skills/posthandover-report/README.md) | Units on a post-handover payment plan (60/40, 50/50…) → everything in the off-plan report plus: does the rent cover the instalments after handover, monthly top-up, yield on your cash, empty-months slider | 1.1.0 |
-| Ready property | coming soon | – |
+| [**Off-plan Report**](skills/offplan-report/README.md) | Sales offer / brochure / Reelly or GenieMap link → full off-plan evaluation (profit at handover, yield, what-ifs, supply & demand, optional developer section, payment plan, view map, location, PDF) | 1.3.1 |
+| [**Post-Handover Report**](skills/posthandover-report/README.md) | Units on a post-handover payment plan (60/40, 50/50…) → everything in the off-plan report plus: does the rent cover the instalments after handover, monthly top-up, yield on your cash, empty-months slider | 1.1.1 |
+| [**Ready Property Report**](skills/ready-report/README.md) | Bayut / Property Finder listing of a ready unit → price vs size-matched recent sales in the building, rent (unfurnished / furnished) and yield on your cash, **cash or mortgage** (UAE National / Resident / Non-resident, 1st or 2nd mortgage, fixed rate then EIBOR + margin, insurance and fees), sell after 1–10 years with a building-age discount, supply & demand, optional developer section, view map, PDF | 1.0.0 |
 | Mortgage | coming soon | – |
 | Airbnb / holiday home | coming soon | – |
 | Distressed deal | coming soon | – |
@@ -88,6 +88,8 @@ Ask for a report and attach what you have, for example:
 > Make an off-plan report for this unit *(attach the sales offer PDF, brochure, or a Reelly / GenieMap link)*
 
 > Make a post-handover report for this 60/40 plan *(attach the sales offer)*
+
+> Make a ready property report for this unit *(paste a Bayut or Property Finder listing link)*
 
 The first time, Claude asks a few setup questions and saves the answers so it never asks again:
 - **your details** for the report footer: name, company, BRN, WhatsApp, social links (anything you skip is hidden)

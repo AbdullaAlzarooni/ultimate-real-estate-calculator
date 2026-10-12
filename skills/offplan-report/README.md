@@ -1,10 +1,10 @@
 # Off-plan Report
 
-[![Latest: v1.3.0](https://img.shields.io/badge/latest-v1.3.0-2ea44f)](CHANGELOG.md)
+[![Latest: v1.3.1](https://img.shields.io/badge/latest-v1.3.1-2ea44f)](CHANGELOG.md)
 
 Part of **[The Ultimate Real Estate Calculator](../../README.md)**.
 
-**Version 1.3.0** · [Changelog](CHANGELOG.md) · Version history: [all off-plan versions](https://github.com/AbdullaAlzarooni/ultimate-real-estate-calculator/tags) · [collection releases](https://github.com/AbdullaAlzarooni/ultimate-real-estate-calculator/releases) · by **Abdulla Alzarooni** (Real Estate with Abdulla Alzarooni)
+**Version 1.3.1** · [Changelog](CHANGELOG.md) · Version history: [all off-plan versions](https://github.com/AbdullaAlzarooni/ultimate-real-estate-calculator/tags) · [collection releases](https://github.com/AbdullaAlzarooni/ultimate-real-estate-calculator/releases) · by **Abdulla Alzarooni** (Real Estate with Abdulla Alzarooni)
 
 Turn any Dubai / UAE off-plan unit into a **client-ready evaluation report** (web page + PDF) in one
 conversation with Claude. Give it a **sales offer**, a **brochure**, or a project link from
@@ -29,6 +29,11 @@ Example: Binghatti Starfall studio, Al Jaddaf (from a brochure).
 **3 · Supply & demand:** what buyers want vs what the building offers vs what's coming
 
 <img src="../../docs/images/supply-demand.jpg" alt="Supply and demand">
+
+**The developer (optional):** every project by the developer, ready / under construction / planned, with
+photos, delivery record, unit mix, rented % or absorption and premiums per unit type
+
+<img src="../../docs/images/developer.jpg" alt="Developer section">
 
 **4 · View map:** what each side of the building faces. GIS DDA allowed heights and a Google Maps satellite view
 (tap a direction to point the arrow). Example: Weston by Wadan, DLRC.
