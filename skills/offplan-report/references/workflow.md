@@ -26,6 +26,10 @@ handover date, DLD amount if shown, admin/Oqood fee, service charge AED/sqft, fu
 Look the developer up in `bank-offers.md`. If there is a deal, add `offer:{…}` to the data (fields in that file),
 re-check the terms on the developer's / bank's page that day, and list what isn't stated in the notes.
 
+## 1c. Resale or new? Project sales and similar listings
+Ask whether the unit is a resale (owner) or new from the developer; then collect this project's own DLD sales
+(`proj`) and every similar listing, marking units still sold by the developer. How: `listings-and-evidence.md`.
+
 ## 2. Area comparables (2 sources, last 3 months, same bedroom type)
 For each source get **(a) average/median annual rent** and **(b) off-plan price per sqft**:
 - **DXB Interact** (main, size-matched ±10% of the unit size with `P74_MIN_SIZE` / `P74_MAX_SIZE`): rent = New

@@ -10,6 +10,7 @@
 - **Same section order in all three calculators** (see `modules.md`): the mortgage section comes after the listings.
 - Fix: a 0% fixed rate no longer shows "NaN".
 - Distressed deal test only for owner resales (secondary market); `market:"primary"` switches it off.
+- New `references/listings-and-evidence.md`: how to collect similar listings and resale info; the first-run questions now ask whether the unit is a resale.
 
 ## 1.0.0 — 12 Oct 2026
 First release, as part of **The Ultimate Real Estate Calculator** v1.3.

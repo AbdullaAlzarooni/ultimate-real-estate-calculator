@@ -34,6 +34,11 @@ Premium = the gap, calibrated to the signed rent level → `furn.prem`; furnitur
 - Building age: the community's ready sales by building age (DXB Interact `P74_AGE`, Bayut) → `growth.age`
   (`rate`, `rate2`, `after`, `bands`, `src`, `rule`).
 
+## 4b. Similar listings now; resale or new?
+Every similar unit for sale on Property Finder and Bayut in this building (`listings`), marking units still
+sold by the developer. Resale (normal for ready units) → the distressed test can be switched on with `distressed:true`;
+a mortgage report → `mortgageReport:true`, `defBuyer:1`. How: `listings-and-evidence.md`, `modules.md`.
+
 ## 5. Mortgage inputs
 That day's EIBOR from the Central Bank → `eibor` (date, rates, default tenor 3M). Defaults: rate, term, fixed years,
 release fee, insurance %, margin (`data-schema.md`). Loan limits per buyer type (`rules.md`).

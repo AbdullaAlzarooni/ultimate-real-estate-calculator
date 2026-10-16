@@ -20,6 +20,7 @@ Read these before starting (all in `references/`):
 - `sources.md`   – every website, what to read on it, URL patterns, gotchas, fallbacks
 - `rules.md`     – formulas, fees, loan limits, growth bands, building age, long holds, premiums, labels
 - `design.md`    – section order and design/wording decisions
+- `listings-and-evidence.md` – how to collect the project's sales, similar listings and resale info
 - `modules.md`   – optional modules (distressed deal, mortgage, market evidence, developer) and the section order
 - `data-schema.md` – every field of the data file
 - `developer-section.md` – the optional Developer section
@@ -73,6 +74,8 @@ target, % built, unit mix, rented % or absorption rate, and price / rent premium
 (off-plan premium for projects not finished yet), with area and unit-type filters and a search box."
 If no, build the report without it. If yes, tell them it adds a lot of time, then follow
 `references/developer-section.md` (data format: `data-schema.md` → Developer section).
+2c. **Ask whether the unit is a resale (from an owner) or bought new from the developer.** Only resales get the
+   distressed deal test (`listings-and-evidence.md` step 0). For a mortgage, see `modules.md`.
 3. Then ask for the first property (a Bayut / Property Finder listing link, or the price, size, building and
    unit type) and whether the buyer pays cash or takes a mortgage (the report shows both either way; this sets
    nothing, it just tells you what to explain). Follow `workflow.md`. Tell them what you are doing as you go.

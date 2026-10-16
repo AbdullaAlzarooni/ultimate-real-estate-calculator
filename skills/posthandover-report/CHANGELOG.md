@@ -9,6 +9,8 @@
 - Result boxes show the sale and "on your cash" lines as total and per year.
 - "Things to know" flows in two columns without gaps next to long notes (as in the Ready report).
 - Distressed deal test only for owner resales (secondary market); listings mark units still sold by the developer as **New**.
+- New `references/listings-and-evidence.md`: how to collect the project's sales, similar listings and resale info; the first-run questions now ask whether the unit is a resale.
+- Fix: `tools/domtest.js`, `tools/dump.js` and the sheet checks work again (they read the wrong script since 1.3).
 
 ## 1.1.1 — 12 Oct 2026
 - `build.py` lists the developer photos in `<name>.files.txt`, so they are published with the report.

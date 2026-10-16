@@ -18,6 +18,7 @@ Read these before starting (all in `references/`):
 - `sources.md`   – every website, what to read on it, URL patterns, gotchas, fallbacks
 - `rules.md`     – formulas, growth bands, premiums, valuation cases, labels; post-handover maths at the end
 - `design.md`    – section order and design/wording decisions; post-handover additions at the end
+- `listings-and-evidence.md` – how to collect the project's sales, similar listings and resale info
 - `modules.md`   – optional modules (distressed deal, mortgage, market evidence, developer) and the section order
 - `data-schema.md` – every field of the data file, including the post-handover fields
 
@@ -72,5 +73,7 @@ target, % built, unit mix, rented % or absorption rate, and price / rent premium
 (off-plan premium for projects not finished yet), with area and unit-type filters and a search box."
 If no, build the report without it. If yes, tell them it adds a lot of time, then follow
 `references/developer-section.md` (data format: `data-schema.md` → Developer section).
+2c. **Ask whether the unit is a resale (from an owner) or bought new from the developer.** Only resales get the
+   distressed deal test (`listings-and-evidence.md` step 0). This report has no mortgage section.
 3. Then ask for the first property (sales offer PDF with the full payment plan, brochure, or a project link)
    and follow `workflow.md`. Tell them what you are doing as you go and what each step needs from them.

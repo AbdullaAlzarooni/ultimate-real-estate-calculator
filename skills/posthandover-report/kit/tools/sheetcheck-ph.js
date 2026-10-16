@@ -1,9 +1,15 @@
 // Compares the report with a literal transcription of the Post-Handover Property Evaluation Form
 // (master tab "Post-Handover Properties Evaluation Form", cells C16–C84). Usage: node tools/sheetcheck-ph.js <report.html> [40]
 const fs=require("fs");const h=fs.readFileSync(process.argv[2],"utf8");
-const js=h.split("<script>")[1].split("</script>")[0];
-const els={};const mk=id=>els[id]||(els[id]={id,innerHTML:"",textContent:"",addEventListener(){},parentElement:{hidden:false}});
-global.document={querySelector:s=>mk(s),addEventListener(){},title:""};global.window=global;
+const js=[...h.matchAll(/<script>([\s\S]*?)<\/script>/g)].map(m=>m[1]).find(x=>x.includes("const UNITS"));
+/* a minimal page for Node: enough of the DOM for the report script to run */
+const els={};const L=[];const listeners=L;
+const mkE=id=>({id,innerHTML:"",textContent:"",value:"",hidden:false,disabled:false,max:0,min:0,style:{setProperty(){}},dataset:{},children:[],classList:{add(){},remove(){},toggle(){},contains(){return false}},addEventListener(){},removeEventListener(){},setAttribute(){},getAttribute(){return null},removeAttribute(){},appendChild(){},insertAdjacentHTML(){},scrollIntoView(){},scrollBy(){},scrollTo(){},focus(){},blur(){},click(){},closest(){return null},querySelector(s){return mk(id+" "+s)},querySelectorAll(){return []},getBoundingClientRect(){return {left:0,top:0,right:0,bottom:0,width:0,height:0}},parentElement:{hidden:false,style:{}},firstChild:null,offsetParent:{},scrollWidth:0,clientWidth:0,scrollLeft:0,scrollTop:0,scrollHeight:0,clientHeight:0});
+const mk=id=>els[id]||(els[id]=mkE(id));
+global.document={querySelector:s=>mk(s),querySelectorAll:()=>[],getElementById:i=>mk("#"+i),createElement:t=>mkE(t),addEventListener:(t,f)=>L.push([t,f]),body:mkE("body"),documentElement:mkE("html"),title:"",activeElement:null};
+global.window=global;global.requestAnimationFrame=()=>0;global.location={href:"",hash:"",search:""};global.innerWidth=1300;
+global.matchMedia=()=>({matches:false,addEventListener(){},addListener(){}});
+
 const inj=js.replace(/(const casePsf=[^\n]*\n)/,"$1globalThis.__x={D,calc,rentF,appF,casePsf,gOf,rgOf:i=>{const b=D.growth.rent.used;return [-5,0,b,Math.max(8,b+3)][i]}};\n");if(inj===js)throw "noinj";eval(inj);
 const {D,calc,rentF,appF,casePsf,gOf,rgOf}=__x;
 const plus40=process.argv[3]==="40";
