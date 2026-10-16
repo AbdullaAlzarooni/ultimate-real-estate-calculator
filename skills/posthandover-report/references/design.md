@@ -3,8 +3,7 @@
 The template already implements all of this. Don't undo it when editing.
 
 ## Page order
-Sticky menu → hero → controls → 1 Is it a good deal → 2 What could happen → 3 Supply & demand →
-4 Things to know → 5 Unit & payment plan → 6 Location & comfort → 7 The calculations (folded) → footer.
+Sticky menu → hero → controls → sections in the order of `modules.md` (1 Is it a good deal → 2 What could happen → 3 Market evidence → 4 Listings → 5 Mortgage → 6 Supply & demand → 7 Developer → 8 Things to know → 9 Unit → 10 Location → 11 Calculations); sections without data are skipped and renumbered.
 
 ## Hero
 - Eyebrow "<agent name> · Off-plan evaluation", title "<Project> — <Type>".

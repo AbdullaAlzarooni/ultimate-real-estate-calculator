@@ -1,6 +1,8 @@
 <script>document.addEventListener("error",e=>{const i=e.target;if(i&&i.tagName==="IMG"&&i.getAttribute("src")&&!i.dataset.f){i.dataset.f=1;const d=document.createElement("div");d.className="noimg";d.textContent="Photo not available";d.style.cssText="display:flex;align-items:center;justify-content:center;min-height:140px;background:var(--surface-2);color:var(--muted);font-size:12px;border-radius:inherit;width:100%;height:100%";i.replaceWith(d)}},true);</script>
 <style>
 /* ready report additions */
+.ls-tbl th,.ls-tbl td{padding:7px 10px;text-align:right;white-space:nowrap;font-size:13px;border-bottom:1px solid var(--line)}.ls-tbl th:first-child,.ls-tbl td:first-child{text-align:left}.ls-tbl thead th{font:600 12px var(--f-display);color:var(--muted)}.ls-tbl td.pos{color:var(--good);font-weight:600}.ls-tbl td.neg{color:var(--bad);font-weight:600}.ls-tag{display:inline-block;padding:2px 8px;border-radius:999px;font:600 11px var(--f-display)}.ls-tag.good{background:color-mix(in srgb,var(--good) 20%,transparent);color:var(--good)}.ls-tag.ok{background:color-mix(in srgb,var(--warn,#e0b040) 22%,transparent);color:var(--warn,#e0b040)}.ls-tag.bad{background:color-mix(in srgb,var(--bad) 16%,transparent);color:var(--bad)}.ls-tag.muted{background:var(--surface-2);color:var(--muted)}.ls-self td{background:color-mix(in srgb,var(--accent) 12%,transparent);font-weight:600}.ls-tbl{table-layout:fixed;min-width:1040px}.ls-tbl td{overflow:hidden;text-overflow:ellipsis}.ls-tbl td.ls-unit{white-space:nowrap}.ls-warn{color:var(--warn);cursor:help;margin-left:4px;font-size:12px}#tipbox{position:fixed;z-index:50;max-width:280px;background:var(--surface-2);color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:8px 10px;font:500 12px/1.45 var(--f-body);box-shadow:0 6px 20px rgba(0,0,0,.35);pointer-events:none}.ls-sort{cursor:pointer;user-select:none}.ls-sort .ar{display:inline-block;width:14px;text-align:center;margin-left:3px;opacity:.35}.ls-sort.on .ar{opacity:1}#ls-wrap.ls-scroll{max-height:520px;overflow:auto}.ls-box{position:relative}.ls-fade{position:absolute;left:1px;right:1px;bottom:1px;height:64px;display:flex;align-items:flex-end;justify-content:center;padding-bottom:8px;border-radius:0 0 12px 12px;background:linear-gradient(transparent,var(--surface) 75%);pointer-events:none}.ls-morepill{white-space:nowrap;pointer-events:auto;cursor:pointer;border:0;border-radius:999px;padding:7px 16px;background:var(--accent);color:#0b1a0f;font:700 13px var(--f-display);box-shadow:0 4px 14px rgba(0,0,0,.35)}.ls-morepill:hover{filter:brightness(1.08)}#ls-hint{margin:8px 0 0}#ls-wrap.ls-scroll thead th{position:sticky;top:0;z-index:1;background:var(--surface)}@media print{#ls-wrap.ls-scroll{max-height:none;overflow:visible}}.ls-sort:hover,.ls-sort.on{color:var(--ink)!important}.ls-morebtn{margin:10px 0 4px;background:var(--surface-2);color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:6px 14px;font:600 13px var(--f-display);cursor:pointer}.ls-x{font-size:11px;color:var(--muted);font-weight:500}.ls-unit{text-align:left!important;color:var(--muted)}.ls-tbl td:nth-child(2),.ls-tbl th:nth-child(2),.ls-tbl td:nth-child(8),.ls-tbl th:nth-child(8),.ls-tbl td:nth-child(11),.ls-tbl th:nth-child(11),.ls-tbl td:nth-child(12),.ls-tbl th:nth-child(12){text-align:center}.ls-tbl td:nth-child(9),.ls-tbl th:nth-child(9){text-align:left}.ls-links a{font-weight:600}.ls-alt{font-size:11px;margin-left:6px;color:var(--muted)!important;font-weight:500!important}.ls-tbl td .ls-tag{margin-left:6px;vertical-align:middle;line-height:16px}.ls-tbl td{vertical-align:middle}.ls-tbl td.ls-me{text-align:center!important;padding-left:13px!important;padding-right:0!important}.ls-tbl td.ls-me .ls-tag{margin-left:0}#ls-dist .card{margin-bottom:12px}#listings .tbl-wrap{margin-top:8px}
+ul.notes{display:block;columns:2;column-gap:28px}ul.notes li{break-inside:avoid;margin:0 0 12px}@media (max-width:760px){ul.notes{columns:1}}
 .seg-lab{font:600 11px var(--f-display);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);align-self:center;margin-right:2px}
 .selrow{align-items:center;flex-wrap:wrap}
 .seg-lab{min-width:44px}
@@ -24,7 +26,7 @@ td.l{text-align:left}
 
 <div class="wrap">
   <nav class="toc" aria-label="Sections">
-    <a href="#hero-row">Verdict</a><a href="#deal">Deal check</a><a href="#outcomes">What could happen</a><a href="#market">Market evidence</a><a href="#sd">Supply &amp; demand</a><a href="#dev">Developer</a><a href="#know">Things to know</a><a href="#unit-sec">Unit &amp; costs</a><a href="#comfort-sec">Location</a><a href="#details">Calculations</a>
+    <a href="#hero-row">Verdict</a><a href="#deal">Deal check</a><a href="#outcomes">What could happen</a><a href="#market">Market evidence</a><a href="#listings">Listings</a><a href="#sd">Supply &amp; demand</a><a href="#dev">Developer</a><a href="#know">Things to know</a><a href="#unit-sec">Unit &amp; costs</a><a href="#comfort-sec">Location</a><a href="#details">Calculations</a>
   </nav>
 
   <header class="hero">
@@ -48,7 +50,7 @@ td.l{text-align:left}
     <div id="mort-box" hidden>
     <div class="selrow mrow"><span class="seg-lab">Loan</span><label class="sl">Fixed rate <input class="num" type="number" id="rate-n" step="0.01" min="0" max="15"> %<input type="range" id="rate" min="2.5" max="7" step="0.05"></label><label class="sl">Term <input class="num" type="number" id="term-n" step="1" min="1" max="25"> yrs<input type="range" id="term" min="1" max="25" step="1"></label><button type="button" class="pdfbtn" id="mort-reset">Reset</button></div>
     <div class="selrow mrow"><span class="seg-lab"></span><span class="sl">Fixed for</span><div class="seg" id="sel-fy" role="group" aria-label="Fixed period"></div></div>
-    <div class="selrow mrow"><span class="seg-lab"></span><span class="sl">Then EIBOR</span><div class="seg" id="sel-ten" role="group" aria-label="EIBOR period"></div><label class="sl">+ bank margin <input class="num" type="number" id="marg" step="0.05" min="0" max="5"> %</label></div>
+    <div class="selrow mrow"><span class="seg-lab"></span><span class="sl">Then EIBOR</span><div class="seg" id="sel-ten" role="group" aria-label="EIBOR period"></div><label class="sl">+ bank margin <input class="num" type="number" id="marg" step="0.05" min="0" max="5"> %</label><label class="sl" id="fc-w" hidden>floor <input class="num" type="number" id="flr" step="0.05" min="0" max="10"> % · ceiling <input class="num" type="number" id="ceil" step="0.25" min="1" max="20"> %</label></div>
     <p class="small" id="pay-line" style="margin:0 0 0 54px"></p>
     </div>
     <p class="small" id="dc-lede"></p>
@@ -80,8 +82,19 @@ td.l{text-align:left}
     </div>
   </section>
 
+  <section id="listings">
+    <h2>4 · Similar listings now <small id="ls-sub"></small></h2>
+    <p class="sd-take" id="ls-take"></p>
+    <div id="ls-dist"></div>
+    <div class="selrow noprint"><span class="seg-lab">Show</span><div class="seg" id="sel-ls" role="group" aria-label="Which listings"></div></div>
+    <p class="small noprint" id="ls-hint" hidden></p>
+    <div class="ls-box"><div class="tbl-wrap" id="ls-wrap"><table class="ls-tbl" id="ls-tbl"></table></div><div class="ls-fade noprint" id="ls-fade" hidden><button type="button" class="ls-morepill" id="ls-pill"></button></div></div>
+    <button type="button" class="ls-morebtn noprint" id="ls-more-b" data-lsm="1"></button>
+    <p class="small" id="ls-note"></p>
+  </section>
+
   <section id="sd">
-    <h2>4 · Supply &amp; demand <small id="sd-sub"></small></h2>
+    <h2>5 · Supply &amp; demand <small id="sd-sub"></small></h2>
     <p class="sd-take" id="sd-take"></p>
     <div class="sd-grid">
       <div class="card"><div class="sdtag demand">Demand</div><div class="sdh" id="mix-tag"></div><div class="donutwrap"><svg class="donut" id="donut" viewBox="0 0 160 160" role="img" aria-label="Sales by bedroom type"></svg><ul class="dleg" id="dleg"></ul></div><p class="small" id="mix-note" style="margin:10px 0 0"></p></div>
@@ -94,7 +107,7 @@ td.l{text-align:left}
   </section>
 
   <section id="dev">
-    <h2>5 · The developer <small id="dev-sub"></small></h2>
+    <h2>6 · The developer <small id="dev-sub"></small></h2>
     <p class="sd-take" id="dev-take"></p>
     <div style="display:flex;flex-wrap:wrap;align-items:center;gap:6px"><div class="dev-tabs noprint" role="tablist" id="dev-tabs"></div><span class="noprint" id="dev-areas-w" style="margin-left:auto"><select id="dev-areas" aria-label="Area" class="dev-select"></select></span><label class="dev-search noprint" style="margin-left:0"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="dev-q" type="search" placeholder="Search a project or area" aria-label="Search projects"></label></div>
         <div class="dev-tabs noprint" id="dev-types" aria-label="Unit type" style="margin-top:0"></div>
@@ -104,12 +117,12 @@ td.l{text-align:left}
   </section>
 
   <section id="know">
-    <h2>6 · Things to know</h2>
+    <h2>7 · Things to know</h2>
     <div class="card"><ul class="notes" id="notes"></ul></div>
   </section>
 
   <section id="unit-sec">
-    <h2>7 · The unit &amp; your costs</h2>
+    <h2>8 · The unit &amp; your costs</h2>
     <div class="g2">
       <div class="card"><div class="src-tag" id="unit-tag">Unit</div><dl class="kv" id="unit"></dl><p class="small noprint" id="unit-int" style="margin:8px 0 0"></p></div>
       <div class="card"><div class="src-tag" id="cost-tag">Buying costs</div><dl class="kv" id="costs"></dl><p class="small" id="cost-note" style="margin:8px 0 0"></p></div>
@@ -117,13 +130,13 @@ td.l{text-align:left}
   </section>
 
   <section id="comfort-sec">
-    <h2>8 · Location &amp; comfort <small>notes only · no effect on numbers</small></h2>
+    <h2>9 · Location &amp; comfort <small>notes only · no effect on numbers</small></h2>
     <div class="card viewmap" id="viewmap" hidden></div>
     <div class="comfort" id="comfort"></div>
   </section>
 
   <section id="details">
-    <h2>9 · The calculations <small>for anyone who wants to check</small></h2>
+    <h2>10 · The calculations <small>for anyone who wants to check</small></h2>
     <details class="fold">
       <summary>Market comparison · each data source</summary>
       <div class="fold-body">
@@ -159,12 +172,20 @@ const sgn=(n,d=2)=>(n>0?"+":n<0?"−":"")+fmt(Math.abs(n)*100,d)+"%";
 const REC=`<span class="recb" title="Our analysis">★ Recommended · our analysis</span>`;
 /* picks: F = furnished rent on/off, B = buyer (0 cash, 1.. mortgage profiles), Y = years index, G = market index */
 const defF=()=>D.furnished?1:0;
-let RATE=null, TERM=null, FY=null, MARG=null, TEN=null, F=defF(), B=0, MT=1, Y=null, G=null, S=null, RI=null;
+let RATE=null, TERM=null, FY=null, MARG=null, TEN=null, F=defF(), B=D.defBuyer||0, MT=1, Y=null, G=null, S=null, RI=null;
 const rgOf=i=>{const b=D.growth.rent.used;return [-5,0,b,+Math.max(8,b+3).toFixed(2)][i]};
 const mainSrc=()=>Math.max(0,D.sources.findIndex(x=>x.main));
 
 /* ===== formulas: Abdulla Alzarooni Ready Property Evaluation Form (sheet rows in brackets) ===== */
-const varRate=()=>D.eibor.rates[TEN]+(+MARG||0);
+let FLR=null, CEIL=null, ES=0;
+var LSF=null, LSM=0, LSS={k:"psf",d:1};
+/* small tooltip for [data-tip] (hover, focus or tap) */
+{let box=null;const show=el=>{hide();box=document.createElement("div");box.id="tipbox";box.textContent=el.dataset.tip;document.body.appendChild(box);const r=el.getBoundingClientRect(),w=box.offsetWidth,h=box.offsetHeight;let x=Math.min(innerWidth-w-8,Math.max(8,r.left+r.width/2-w/2)),y=r.top-h-8;if(y<8)y=r.bottom+8;box.style.left=x+"px";box.style.top=y+"px"},hide=()=>{if(box){box.remove();box=null}};
+ document.addEventListener("mouseover",e=>{const t=e.target.closest&&e.target.closest("[data-tip]");if(t)show(t)});document.addEventListener("mouseout",e=>{const t=e.target.closest&&e.target.closest("[data-tip]");if(t)hide()});
+ document.addEventListener("focusin",e=>{const t=e.target.closest&&e.target.closest("[data-tip]");if(t)show(t)});document.addEventListener("focusout",hide);
+ document.addEventListener("click",e=>{const t=e.target.closest&&e.target.closest("[data-tip]");t?show(t):hide()});addEventListener("scroll",hide,true);}
+const clampR=x=>Math.min(CEIL??D.varDefaults.ceiling??99,Math.max(FLR??D.varDefaults.floor??0,x));
+const varRate=()=>clampR(D.eibor.rates[TEN]+(+MARG||0));
 const rateTxt=()=>FY?`${(+RATE).toFixed(2)}% fixed for ${FY} yr${FY>1?"s":""}, then ${TEN} EIBOR + ${(+MARG||0).toFixed(2)}% (${varRate().toFixed(2)}% today)`:`variable: ${TEN} EIBOR ${D.eibor.rates[TEN].toFixed(2)}% + ${(+MARG||0).toFixed(2)}% = ${varRate().toFixed(2)}%`;
 const bAge=()=>{if(!D.completedDate)return 0;const [y,m]=D.completedDate.split("-").map(Number),t=D.date?new Date(D.date):new Date();return Math.max(0,(t-new Date(y,m-1,15))/3.156e10)};
 function calc(o={}){
@@ -175,37 +196,44 @@ function calc(o={}){
   const loan=P-dp;                                                         /* C24 */
   const madm=ltv?0.0025*loan+290+0.01*loan*1.05+3150:0;                   /* C23 */
   const equity=dp+fees+madm;                                               /* C27 */
-  const fy=o.fy??FY??D.mortgage.fixedYears, r1=(o.rate??RATE??D.mortgage.rate), rv=D.eibor.rates[o.ten??TEN??D.eibor.tenor]+(+(o.marg??MARG??D.varDefaults.margin)), r=(fy?r1:rv)/100/12, n=(o.term??TERM??D.mortgage.term)*12;
-  const emi=loan?loan*r/(1-Math.pow(1+r,-n)):0;                            /* C34 */
-  const k=Math.min(fy*12,n), rr=rv/100/12, bal=loan?loan*Math.pow(1+r,k)-emi*(Math.pow(1+r,k)-1)/r:0, emi2=fy&&loan&&k<n?bal*rr/(1-Math.pow(1+rr,-(n-k))):emi;   /* payment after the fixed period */
-  const life=D.mortgage.lifePct/100*loan, prop=loan?D.mortgage.propPct/100*P:0;   /* C35, C36 */
-  const mMonth=emi+life+prop, mYear=mMonth*12;                             /* C37, C38 */
+  const fy=o.fy??FY??D.mortgage.fixedYears, r1=(o.rate??RATE??D.mortgage.rate), rv=clampR(D.eibor.rates[o.ten??TEN??D.eibor.tenor]+(+(o.marg??MARG??D.varDefaults.margin))), r=(fy?r1:rv)/100/12, n=(o.term??TERM??D.mortgage.term)*12;
+  const emi=loan?(r?loan*r/(1-Math.pow(1+r,-n)):loan/n):0;                            /* C34 */
+  const k=Math.min(fy*12,n), rr=rv/100/12, bal=loan?(r?loan*Math.pow(1+r,k)-emi*(Math.pow(1+r,k)-1)/r:loan-emi*k):0, emi2=fy&&loan&&k<n?(rr?bal*rr/(1-Math.pow(1+rr,-(n-k))):bal/(n-k)):emi;   /* payment after the fixed period */
+  /* month-by-month schedule: fixed rate for the fixed period, then EIBOR + margin (kept between floor and ceiling);
+     life insurance = lifePct % a month of the remaining balance, property insurance = propPct % a year of the price */
+  const lp=D.mortgage.lifePct/100, propY=loan?D.mortgage.propPct/100*P:0, sch=[];
+  /* after the fixed period the rate resets every 1/3/6/12 months (EIBOR tenor); scenario o.es = EIBOR es% higher/lower than today for the whole variable period; the payment is recalculated at each reset */
+  const TN=o.ten??TEN??D.eibor.tenor, RS={"1M":1,"3M":3,"6M":6,"1Y":12}[TN]||3, es=o.es||0, eb=D.eibor.rates[TN], mg=+(o.marg??MARG??D.varDefaults.margin);
+  if(loan){let b=loan,rm=r,pay=emi;for(let m=1;m<=n;m++){if(m<=k){rm=r;pay=emi}else if((m-k-1)%RS===0){rm=clampR(eb+es+mg)/100/12;const left=n-m+1;pay=rm?b*rm/(1-Math.pow(1+rm,-left)):b/left}const it=b*rm,lf=lp*b;b=Math.max(0,b-(pay-it));sch.push({m,rt:rm*1200,pay,it,pr:pay-it,bal:b,lf})}}
+  const yrOf=i=>{const s=sch.slice((i-1)*12,i*12);const t=f=>s.reduce((a,x)=>a+x[f],0);return {i,pay:t("pay"),it:t("it"),pr:t("pr"),lf:t("lf"),prop:s.length?propY:0,bal:s.length?s[s.length-1].bal:0,rt:s.length?s[s.length-1].rt:0,cost:t("pay")+t("lf")+(s.length?propY:0)}};
+  const Y1=yrOf(1), life=loan?Y1.lf/12:0, prop=propY/12;   /* C35, C36 (year-1 monthly average) */
+  const mYear=loan?Y1.cost:0, mMonth=mYear/12;              /* C37, C38 */
   const furnPrem=fu?D.furn.prem:0;
-  const sm=src.sm||1, rent=(src.rent+furnPrem)*sm;                       /* sm: size multiplier when too few deals at this size */                                              /* C12/C43 */
-  const sc=(D.internal?D.sc*(D.internal+D.balcony*0.25):D.size*D.sc)*1.05; /* C44 */
+  const sm=src.sm||1, rent=((o.rentBase??src.rent)+furnPrem)*sm;                       /* sm: size multiplier when too few deals at this size */                                              /* C12/C43 */
+  const SZ=o.sz??D.size, sc=(o.sz==null&&D.internal?D.sc*(D.internal+D.balcony*0.25):SZ*D.sc)*1.05; /* C44 */
   const net=rent-sc-mYear, cf=net/12, yld=net/equity;                      /* C46, C47, C50 */
-  const mYear2=(emi2+life+prop)*12, netAfter=rent-sc-mYear2, yldAfter=netAfter/equity;   /* after the fixed period, at EIBOR + margin */
+  const mYear2=loan?(fy&&k<n?yrOf(fy+1).cost:mYear):0, netAfter=rent-sc-mYear2, yldAfter=netAfter/equity;   /* after the fixed period, at EIBOR + margin */
   const rent2=rent*(1+rentUp), net2=rent2-sc-mYear, yld2=net2/equity;      /* C57, C60, C64 */
-  const unitPsf=P/D.size, comp=src.psf;                                  /* C70, C71 */
+  const unitPsf=P/SZ, comp=src.psf;                                  /* C70, C71 */
   const cgr=(comp-unitPsf)/unitPsf;                                        /* C72 */
   const furnVal=fu?Math.min(D.furn.prem*D.furn.years,D.furn.cost):0;
-  const fair=comp*D.size+furnVal, fairGap=(fair-P)/P;
+  const fair=comp*SZ+furnVal, fairGap=(fair-P)/P;
   const furnLeft=fu?furnVal*Math.max(0,1-yrs/D.furn.years):0;
   const A=D.growth.age||{}, ag=(A.rate||0)/100, ag2=(A.rate2??A.rate??0)/100, age0=bAge();
   const yrsYoung=Math.max(0,Math.min(yrs,(A.after??99)-age0)), yrsOld=yrs-yrsYoung, ageF=Math.pow(1-ag,yrsYoung)*Math.pow(1-ag2,yrsOld);
   const gY1=Math.min(yrs,5), gY2=Math.max(0,yrs-5), a2=a>0?Math.min(a/2,0.03):a, growF=Math.pow(1+a,gY1)*Math.pow(1+a2,gY2);   /* long holds: from year 6 growth = half, max 3% a year (falls stay as they are) */
-  const sellBase=comp*D.size*growF*ageF*(1+appF);       /* C82, C80 = growth net of building age */
+  const sellBase=comp*SZ*growF*ageF*(1+appF);       /* C82, C80 = growth net of building age */
   const sell=sellBase+furnLeft;
   const comm=0.02*sell*1.05;
   const profit=sell-(dp+fees+madm+loan)-comm;                              /* C85 */
   const ret=profit/(equity+D.extraCapital), retY=Math.pow(Math.max(1+ret,0),1/yrs)-1;   /* C88, C89 */
   /* "with the rent collected": rent grows each year; mortgage cost = fixed payment, then the EIBOR payment */
-  let rentSum=0;for(let i=1;i<=Math.ceil(yrs);i++){const ri=rent*Math.pow(1+rentUp,i-1),mc=loan?(fy&&i>fy&&k<n?mYear2:mYear):0;rentSum+=(ri-sc-mc)*Math.min(1,yrs-i+1)}
+  let rentSum=0;for(let i=1;i<=Math.ceil(yrs);i++){const ri=rent*Math.pow(1+rentUp,i-1),mc=loan?yrOf(i).cost:0;rentSum+=(ri-sc-mc)*Math.min(1,yrs-i+1)}
   /* loan still owed at the sale, principal repaid, and the early settlement fee (UAE cap: 1% of the balance, max AED 10,000) */
-  const m=Math.min(Math.round(yrs*12),n), balAt=t=>t<=k?loan*Math.pow(1+r,t)-emi*(Math.pow(1+r,t)-1)/r:bal*Math.pow(1+rr,t-k)-emi2*(Math.pow(1+rr,t-k)-1)/rr;
+  const m=Math.min(Math.round(yrs*12),n), balAt=t=>t<=k?(r?loan*Math.pow(1+r,t)-emi*(Math.pow(1+r,t)-1)/r:loan-emi*t):(rr?bal*Math.pow(1+rr,t-k)-emi2*(Math.pow(1+rr,t-k)-1)/rr:bal-emi2*(t-k));
   const balSale=loan?Math.max(0,balAt(m)):0, repaid=loan-balSale, settle=loan&&balSale>0?Math.min(0.01*balSale,10000):0, release=loan?D.mortgage.releaseFee:0;
   const withRent=profit+rentSum+repaid-settle-release, retR=withRent/equity, retRY=Math.pow(Math.max(1+retR,0),1/yrs)-1;
-  return {a2,gY1,gY2,growF,ag,ag2,age0,yrsYoung,yrsOld,ageF,rentSum,balSale,repaid,settle,release,emi2,fy,mYear2,netAfter,yldAfter,src,P,b,ltv,dp,fees,loan,madm,equity,emi,life,prop,mMonth,mYear,furnPrem,rent,sc,net,cf,yld,rent2,net2,yld2,unitPsf,comp,cgr,furnVal,fair,fairGap,furnLeft,sellBase,sell,comm,profit,ret,retY,withRent,retR,retRY,yrs,a};
+  return {sch,yrOf,propY,rentUp,a2,gY1,gY2,growF,ag,ag2,age0,yrsYoung,yrsOld,ageF,rentSum,balSale,repaid,settle,release,emi2,fy,mYear2,netAfter,yldAfter,src,P,b,ltv,dp,fees,loan,madm,equity,emi,life,prop,mMonth,mYear,furnPrem,rent,sc,net,cf,yld,rent2,net2,yld2,unitPsf,comp,cgr,furnVal,fair,fairGap,furnLeft,sellBase,sell,comm,profit,ret,retY,withRent,retR,retRY,yrs,a};
 }
 /* price at which a target is met (bisection on price) */
 const solve=(f,t)=>{let lo=D.price*0.3,hi=D.price*2;for(let i=0;i<60;i++){const m=(lo+hi)/2;f(calc({price:m}))>t?lo=m:hi=m}return (lo+hi)/2};
@@ -238,8 +266,9 @@ $("#buy-row").hidden=!B;
 $("#sel-buy").innerHTML=D.buyers.map((x,i)=>i?`<button aria-pressed="${B===i}" data-b="${i}">${x.n}</button>`:"").join("");
 $("#sel-mort").hidden=!B;$("#mort-box").hidden=!B;$("#rate").value=RATE;$("#term").min=FY;$("#term").value=TERM;{const a=$("#rate-n"),b=$("#term-n");if(document.activeElement!==a)a.value=(+RATE).toFixed(2);if(document.activeElement!==b){b.value=TERM;}b.min=FY;}
 $("#rate").disabled=!FY;$("#sel-fy").innerHTML=[[1,"1 yr"],[2,"2 yrs"],[3,"3 yrs"],[4,"4 yrs"],[5,"5 yrs"]].map(([v,t])=>`<button aria-pressed="${FY===v}" data-fy="${v}">${t}</button>`).join("");
-$("#sel-ten").innerHTML=Object.entries(D.eibor.rates).map(([k,v])=>`<button aria-pressed="${TEN===k}" data-ten="${k}">${k} · ${v.toFixed(2)}%</button>`).join("");{const el=$("#marg");if(document.activeElement!==el)el.value=(+MARG).toFixed(2);}
+$("#sel-ten").innerHTML=Object.entries(D.eibor.rates).map(([k,v])=>`<button aria-pressed="${TEN===k}" data-ten="${k}">${k} · ${v.toFixed(2)}%</button>`).join("");{const el=$("#marg");if(document.activeElement!==el)el.value=(+MARG).toFixed(2);}if(D.varDefaults.floor!=null){$("#fc-w").hidden=false;const a=$("#flr"),c=$("#ceil");if(document.activeElement!==a)a.value=(+(FLR??D.varDefaults.floor)).toFixed(2);if(document.activeElement!==c)c.value=(+(CEIL??D.varDefaults.ceiling)).toFixed(2);}
 $("#pay-line").innerHTML=r.ltv?(FY>=TERM?`Monthly loan payment: <b>${aed(r.emi)}</b> at ${(+RATE).toFixed(2)}% fixed for the whole ${TERM}-year term (the fixed period covers it).`:FY?`Monthly loan payment: <b>${aed(r.emi)}</b> for the first ${FY} year${FY>1?"s":""} (${(+RATE).toFixed(2)}% fixed), then about <b>${aed(r.emi2)}</b> at ${TEN} EIBOR + ${(+MARG).toFixed(2)}% = ${varRate().toFixed(2)}% (if EIBOR stays where it is).`:`Monthly loan payment: <b>${aed(r.emi)}</b> at ${varRate().toFixed(2)}%, moving with EIBOR.`)+` EIBOR: <a href="${D.eibor.src}" target="_blank" rel="noopener">Central Bank of the UAE</a>, ${D.eibor.date}. EIBOR period = how often your rate resets (1M monthly, 3M every 3 months…). Margins differ by bank and client: default 1.50%; the lowest published is about 1.00%, most are 1.25–1.99%. Type your bank's.`:"";$("#sel-mort").innerHTML=[[1,"1st mortgage"],[2,"2nd mortgage"]].map(([v,t])=>`<button aria-pressed="${MT===v}" data-mt="${v}">${t}</button>`).join("");
+if(r.ltv&&r.loan<250000)$("#pay-line").innerHTML+=` <span class="pill bad">⚠ Loan ${aed(r.loan)} is under the AED 250,000 most banks lend. Check with your bank.</span>`;
 $("#dc-lede").innerHTML=`${fname} · ${bname}${r.ltv?` (${pct(r.ltv,0)} loan at ${rateTxt()} over ${TERM} years)`:""} · ${SRC.name} (${SRC.sample}, ${SRC.period}) · data pulled ${SRC.asOf||D.date}. Green means the check passes.`;
 
 /* checks */
@@ -304,14 +333,37 @@ $("#furn").innerHTML=`<thead><tr><th></th><th>Furnished</th><th>Unfurnished</th>
  <tr><td class="k">Sale range /sqft</td><td>${Fm.sale.Frange}</td><td>${Fm.sale.Urange}</td><td></td></tr></tbody>`;
 $("#furn-note").innerHTML=Fm.note;
 
+/* similar listings now: live asking prices vs what similar units actually sold for */
+{const LS=D.listings,sec=$("#listings");if(!LS){sec.hidden=true}else{sec.hidden=false;
+ const today=new Date(LS.asOf),comp=r.comp,lo=Math.round(D.size*.9),hi=Math.round(D.size*1.1);
+ const ex=new Set(LS.exclude||[]), band=sz=>(sz>=lo&&sz<=hi)?{rent:null,main:1}:(LS.bands||[]).find(b=>sz>=b.min&&sz<=b.max), raw=LS.items.filter(x=>!ex.has(x[1])).map(([site,id,price,size,f,s,dt,ver,tail,alt])=>{const bd=band(size),psf=price/size,gap=(comp-psf)/psf,q=calc({price,sz:size,F:f==="Y"?1:0,B:0,MT:1,rentBase:bd&&bd.rent?bd.rent:undefined}),d=dt?new Date(2000+ +dt.slice(0,2),+dt.slice(2,4)-1,+dt.slice(4,6)):null,days=d?Math.max(0,Math.round((today-d)/864e5)):null;
+   const m=!!bd,ob=(v,y,a)=>v>=y?2:v>=a?1:0,a1=ob(gap,.1,.07),a2=m?ob(q.yld,.07,.06):null,tag=a2==null?["muted","–"]:a1===2&&a2===2?["good","Yes"]:a1===0||a2===0?["bad","No"]:["ok","Almost"];
+   const links=[[site,LS.base[site]+(tail||id)+".html"]].concat(alt?[["by",LS.base.by+alt+".html"]]:[]);return {site,id,price,size,f,s,days,ver,psf,gap,yld:q.yld,tag,url:links[0][1],links,known:m,self:id===LS.self,match:size>=lo&&size<=hi,key:price+"/"+size+"/"+f}});
+ const all=raw;
+  if(LSF==null)LSF="m";const SK={price:x=>x.price,size:x=>x.size,psf:x=>x.psf,gap:x=>-x.gap,yld:x=>x.known?-x.yld:1e9,dist:x=>({good:0,ok:1,bad:2,muted:3})[x.tag[0]],days:x=>x.days==null?1e9:x.days}, sk=SK[LSS.k]||SK.psf, list=(LSF==="m"?all.filter(x=>x.match):all).sort((a,b)=>(sk(a)-sk(b))*LSS.d||a.psf-b.psf);
+ const med=a=>{const v=a.map(x=>x.psf).sort((p,q)=>p-q),k=v.length>>1;return v.length?(v.length%2?v[k]:(v[k-1]+v[k])/2):0};
+ const me=all.find(x=>x.self), others=all.filter(x=>!x.self), almost=others.filter(x=>x.tag[0]==="ok").length, dist=others.filter(x=>x.tag[0]==="good").sort((a,b)=>b.gap-a.gap), below=others.filter(x=>x.gap>0).length, best=others.slice().sort((a,b)=>b.gap-a.gap)[0], rank=me?all.slice().sort((a,b)=>a.psf-b.psf).indexOf(me)+1:0;
+ $("#ls-sub").textContent=`${all.length} for sale · ${LS.src} · ${LS.asOf}`;
+ $("#ls-take").innerHTML=`${all.length} ${D.unit.toLowerCase()}s are for sale in ${D.project} right now, asking <b>${aed(Math.min(...all.map(x=>x.price)))}–${aed(Math.max(...all.map(x=>x.price)))}</b>, a median <b>${fmt(med(all))} AED/sqft</b> vs <b>${fmt(comp)}</b> that similar units actually sold for (${r.src.name}). <b>${below}</b> ask less than that; <b>${dist.length}</b> pass both distressed-deal tests (at least 10% below what similar units sold for and a 7%+ net yield)${almost?`; <b>${almost}</b> almost do`:""}.${me?` This unit ranks <b>#${rank} of ${all.length}</b> by price per sqft (1 = cheapest).`:""}`;
+ const fN=f=>f==="Y"?"Furnished":f==="P"?"Partly furnished":f==="N"?"Unfurnished":"", sN=s=>s==="v"?"Vacant":s==="t"?"Tenanted":"";
+ $("#ls-dist").innerHTML=dist.length?`<div class="card"><div class="src-tag">Possible distressed deals in the market · ${dist.length}</div><p class="small" style="margin:6px 0 0">${dist.map(x=>`<b>${aed(x.price)}</b> · ${x.size} sqft · ${fmt(x.psf)} AED/sqft (${pct(x.gap,0)} below) · ${pct(x.yld)} yield · ${fN(x.f)} · <a href="${x.url}" target="_blank" rel="noopener">view</a>`).join("<br>")}</p><p class="small" style="margin:6px 0 0">Asking prices, not deals. Check size, price and title deed with the agent before relying on any of them.</p></div>`:`<div class="card"><div class="src-tag">Possible distressed deals in the market · none today</div><p class="small" style="margin:6px 0 0">No similar-size listing is both 10% below what similar units sold for and at a 7%+ yield. Cheapest per sqft: <b>${aed(best.price)}</b> · ${best.size} sqft · ${best.gap>0?pct(best.gap,0)+" below":pct(-best.gap,0)+" above"}${best.known?` · ${pct(best.yld)} yield`:` · yield not known (${best.size} sqft is outside the size where rent was measured)`} (<a href="${best.url}" target="_blank" rel="noopener">view</a>).</p></div>`;
+ $("#sel-ls").innerHTML=[["m",`Similar size ${lo}–${hi} sqft · ${all.filter(x=>x.match).length}`],["a",`All sizes · ${all.length}`]].map(([v,t])=>`<button aria-pressed="${LSF===v}" data-ls="${v}">${t}</button>`).join("");
+ const th=(k,t)=>`<th class="ls-sort${LSS.k===k?" on":""}" data-lss="${k}" title="Sort">${t}<span class="ar">${LSS.k===k?(LSS.d>0?"↑":"↓"):"↕"}</span></th>`, cols=`<colgroup><col style="width:40px"><col style="width:92px"><col style="width:96px"><col style="width:56px"><col style="width:82px"><col style="width:90px"><col style="width:84px"><col style="width:112px"><col><col style="width:80px"><col style="width:106px"><col style="width:64px"></colgroup>`, head=cols+`<thead><tr><th>#</th><th></th>${th("price","Asking price")}${th("size","Size")}${th("psf","AED/sqft")}${th("gap","vs sold")}${th("yld","Net yield")}${th("dist","Distressed deal?")}<th>Unit</th>${th("days","Listed")}<th>Property Finder</th><th>Bayut</th></tr></thead>`;
+ const row=(x,i)=>x.self?row0(x,i).replace("<tr>",'<tr class="ls-self">').replace(`<td class="ls-me"></td>`,`<td class="ls-me"><span class="ls-tag good">This unit</span></td>`):row0(x,i), row0=(x,i)=>{const unit=[fN(x.f),x.s?sN(x.s):""].filter(Boolean).join(" · ");
+   return `<tr><td>${i+1}</td><td class="ls-me"></td><td><b>${fmt(x.price)}</b></td><td>${x.size}</td><td>${fmt(x.psf)}</td><td class="${x.gap>0?"pos":"neg"}">${x.gap>0?pct(x.gap,0)+" below":pct(-x.gap,0)+" above"}</td><td>${x.known?pct(x.yld):"–"}</td><td><span class="ls-tag ${x.tag[0]}">${x.tag[1]}</span></td><td class="ls-unit">${unit}${x.ver?"":` <span class="ls-warn" tabindex="0" data-tip="Not verified: Property Finder / Bayut has not checked this listing against the title deed and DLD permit yet. It may still be genuine, but confirm the price and that it is still available with the agent.">⚠</span>`}</td><td>${x.days==null?"–":x.days===0?"today":x.days+" d ago"}</td>${["pf","by"].map(k=>{const l=x.links.filter(z=>z[0]===k);return `<td class="ls-links">${l.length?l.map(z=>`<a href="${z[1]}" target="_blank" rel="noopener">View ↗</a>`).join(" "):"<span class=\"ls-x\">–</span>"}</td>`}).join("")}</tr>`};
+ const shown=(()=>{const b=LSM?list:list.slice(0,10);return !LSM&&me&&list.includes(me)&&!b.includes(me)?b.concat([me]):b})();
+ $("#ls-tbl").innerHTML=head+`<tbody>${shown.map(x=>row(x,list.indexOf(x))).join("")}</tbody>`;
+ $("#ls-wrap").classList.toggle("ls-scroll",!!LSM);$("#ls-hint").hidden=!LSM;$("#ls-hint").textContent=`Showing all ${list.length} · scroll inside the table to see them`;
+ {const w=$("#ls-wrap"),f=$("#ls-fade"),p=$("#ls-pill"),rows=[...w.querySelectorAll("tbody tr")],upd=()=>{const end=w.scrollTop+w.clientHeight>=w.scrollHeight-4;f.hidden=!LSM||end;const wr=w.getBoundingClientRect(),left=rows.filter(r=>r.getBoundingClientRect().bottom>wr.bottom-2).length;p.textContent=`↓ ${left} more listing${left===1?"":"s"}`};w.onscroll=upd;p.onclick=()=>w.scrollBy({top:w.clientHeight-80,behavior:"smooth"});requestAnimationFrame(upd)}$("#ls-more-b").hidden=list.length<=10;$("#ls-more-b").textContent=LSM?"Show fewer":`Show all ${list.length}`;
+$("#ls-note").innerHTML=`Cheapest per sqft first; tap a column title to sort by it (tap again to flip). "vs sold" compares the asking price per sqft with ${fmt(comp)} AED/sqft, what similar units actually sold for (${r.src.name}, the source picked above). Net yield = at the asking price, cash, with ${aed(r.src.rent)} rent${D.furn?` (+${fmt(D.furn.prem)} if furnished)`:""}${(LS.bands||[]).map(b=>`; ${b.min}–${b.max} sqft studios use their own measured rent, ${aed(b.rent)} (${b.src})`).join("")}. <span style="color:var(--warn)">⚠</span> = not verified: Property Finder / Bayut has not checked that listing against the title deed and DLD permit yet. It may still be genuine, but confirm the price and that it is still available with the agent. Distressed deal? = your form's two objectives: Yes = 10%+ below and 7%+ yield; Almost = 7–10% below or 6–7% yield, with neither a No; No = less than 7% below or under 6% yield. A unit on both Property Finder and Bayut is one row with both links. "Listed" = when the listing went up (Property Finder's date, or Bayut's "Added on"; the earlier one when a unit is on both). ${LS.note||""}`;}}
 /* notes, unit, costs */
-$("#notes").innerHTML=D.notes.map(n=>`<li>${n}</li>`).join("");
+$("#notes").innerHTML=D.notes.map(n=>`<li>${n}</li>`).join("")+(D.nocNote===false?"":`<li><b>Developer NOC:</b> AED 500–5,000 + VAT depending on the developer, usually paid by the seller. Not included in the costs; if you agree to pay it, add it to your costs.</li>`);
 $("#unit-tag").textContent="Unit · "+D.source;
 $("#unit").innerHTML=[["Price",aed(D.price)],["Size",`${fmt(D.size)} sqft (${fmt(D.internal)} inside + ${fmt(D.balcony)} balcony)`+(D.sizeNote?`<br><span class="small">${D.sizeNote}</span>`:"")],["Price per sqft",fmt(r.unitPsf)+" AED"],["Type",D.unit],["Furnishing",D.furnText],["Building",D.height],["Completed",D.completed],["Service charge",D.sc+" AED/sqft"],["Parking",D.parking],...(D.sizes?[["Unit sizes in the building",D.sizes]]:[])].map(([k,v])=>`<dt>${k}</dt><dd>${v}</dd>`).join("");
 $("#unit-int").innerHTML=D.listing?`Internal: <a href="${D.listing}" target="_blank" rel="noopener">the listing</a> (not shown in the client PDF)`:"";
 $("#cost-tag").textContent="Buying costs · "+bname;
 $("#costs").innerHTML=[[r.ltv?`Down payment (${pct(1-r.ltv,0)})`:"Price",aed(r.dp)],["DLD 4%",aed(0.04*D.price)],["Trustee fee + VAT",aed(D.price>=500000?4200:2100)],["DLD admin",aed(580)],["Agency 2% + VAT",aed(0.02*D.price*1.05)],...(r.ltv?[["Mortgage costs",aed(r.madm)],["Loan",aed(r.loan)],["Monthly payment + insurance",aed(r.mMonth)]]:[]),["Your cash in",`<b>${aed(r.equity)}</b>`]].map(([k,v])=>`<dt>${k}</dt><dd>${v}</dd>`).join("");
-$("#cost-note").innerHTML=r.ltv?`Mortgage costs: 0.25% registration + AED 290 + 1% bank fee + VAT + AED 3,150 valuation. Loan limit for ${bname}: ${pct(r.ltv,0)} under AED 5M (your Status Sheet). Loan above the AED 250,000 most banks need: <b>${r.loan>250000?"Yes":"No"}</b>. Insurance: life ${D.mortgage.lifePct}% of the loan and property ${D.mortgage.propPct}% of the price a month.`:"Cash purchase: no mortgage costs. Tap a mortgage option above to compare.";
+$("#cost-note").innerHTML=r.ltv?`Mortgage costs: 0.25% registration + AED 290 + 1% bank fee + VAT + AED 3,150 valuation. Loan limit for ${bname}: ${pct(r.ltv,0)} under AED 5M (your Status Sheet). Loan above the AED 250,000 most banks need: <b>${r.loan>250000?"Yes":"No"}</b>. Insurance (placeholders, ask your bank): life ${D.mortgage.lifePct}% a month of the remaining loan, property ${D.mortgage.propPct}% of the price a year.`:"Cash purchase: no mortgage costs. Tap a mortgage option above to compare.";
 
 $("#growth").innerHTML=`<thead><tr><th>Growth rate</th><th>Last 12 months</th><th>Band rule</th><th>Used</th></tr></thead><tbody>`+[["Rent",D.growth.rent],["Price",D.growth.price]].map(([k,g])=>`<tr><td class="l"><b>${k}</b><br><span class="small">${g.src}</span></td><td>${g.raw.toFixed(1)}%</td><td class="small">${g.rule}</td><td><b>${g.used.toFixed(2)}%</b></td></tr>`).join("")+(D.growth.age?(()=>{const A=D.growth.age,q=calc({y:Y}),net=(Math.pow(q.growF*q.ageF,1/Y)-1)*100;return `<tr><td class="l"><b>Building age</b><br><span class="small">${A.src}.<br>${A.bands}</span></td><td>−${A.rate.toFixed(1)}%</td><td class="small">${A.rule}</td><td><b>−${A.rate.toFixed(2)}%</b><br><span class="small">then −${(A.rate2??A.rate).toFixed(2)}%</span></td></tr><tr><td class="l"><b>Price, net of building age (${Y} yr${Y>1?"s":""})</b><br><span class="small">Building is ${q.age0.toFixed(1)} yrs old today → ${(q.age0+Y).toFixed(1)} at the sale: ${q.yrsYoung>0?`${+q.yrsYoung.toFixed(2)} yrs at −${A.rate}%`:""}${q.yrsYoung>0&&q.yrsOld>0?" + ":""}${q.yrsOld>0?`${+q.yrsOld.toFixed(2)} yrs at −${A.rate2}%`:""}. Average with the market +${D.growth.price.used}%${q.gY2?` for 5 yrs, then +${+(q.a2*100).toFixed(2)}% (half, max 3%) for ${+q.gY2.toFixed(2)} yrs`:""} · this goes in your form's C80${q.age0+Y>10?`. After age 10 the sales data shows a slower drop (about −1.2% a year), so −3% is on the cautious side`:""}</span></td><td></td><td></td><td><b>${net.toFixed(2)}%</b></td></tr>`})():"")+"</tbody>";
 {const rf=D.factors.reduce((t,f)=>t+f.v[0],0),af=D.factors.reduce((t,f)=>t+f.v[1],0);
@@ -330,8 +382,8 @@ $("#steps").innerHTML=`
   ${L("Loan",`${fmt(D.price)} − ${fmt(r.dp)}`,aed(r.loan))}
   ${L("Monthly payment"+(r.fy?" (fixed years)":""),`${r.fy?(+RATE).toFixed(2)+"% fixed":rateTxt()} · ${TERM} years`,aed(r.emi))}
   ${r.fy&&r.fy<TERM?L("After "+r.fy+" yr"+(r.fy>1?"s":""),`${TEN} EIBOR ${D.eibor.rates[TEN].toFixed(2)}% + ${(+MARG).toFixed(2)}% on the remaining balance`,aed(r.emi2)):""}
-  ${L("Life insurance",`${D.mortgage.lifePct}% × ${fmt(r.loan)}`,aed(r.life))}
-  ${L("Property insurance",`${D.mortgage.propPct}% × ${fmt(D.price)}`,aed(r.prop))}
+  ${L("Life insurance",`${D.mortgage.lifePct}% a month × remaining loan (year-1 average)`,aed(r.life))}
+  ${L("Property insurance",`${D.mortgage.propPct}% a year × ${fmt(D.price)} ÷ 12`,aed(r.prop))}
   ${L("Per year","× 12",aed(r.mYear),1)}</div></div>`:""}
  <div class="card step"><h3><span class="i">${r.ltv?"03":"02"}</span>Net rent today</h3><div class="calc">
   ${L("Rent",`${SRC.name}, ${SRC.period}`+(F?` + ${fmt(D.furn.prem)} furnished`:""),aed(r.rent))}
@@ -474,7 +526,7 @@ const donut=(svg,leg,mix,mine,extra,pal,suffix)=>{cols=PAL[pal];const tot=mix.re
  $("#dev-src").innerHTML=V.note;
 }}
 document.title=D.title||`${D.project} · ${D.label}`;
-document.querySelectorAll("section > h2").forEach(h=>{const m=h.firstChild&&h.firstChild.nodeType===3&&h.firstChild.textContent.match(/^\s*(\d+)\s*·\s*/);if(m){h.firstChild.textContent=h.firstChild.textContent.slice(m[0].length);h.insertAdjacentHTML("afterbegin",`<span class="num">${m[1]}</span>`)}});
+{let N=0;document.querySelectorAll("section > h2").forEach(h=>{const sec=h.parentElement,m=h.firstChild&&h.firstChild.nodeType===3&&h.firstChild.textContent.match(/^\s*(\d+)\s*·\s*/);if(!m)return;h.firstChild.textContent=h.firstChild.textContent.slice(m[0].length);if(sec.hidden||sec.style.display==="none")return;h.insertAdjacentHTML("afterbegin",`<span class="num">${++N}</span>`)});}
 document.addEventListener("click",e=>{
  const b=e.target.closest&&e.target.closest("[data-mg],[data-f],[data-b],[data-y],[data-g],[data-s],[data-ri],[data-mt]");if(!b)return;
  if(b.dataset.mt!=null)MT=+b.dataset.mt;
@@ -485,11 +537,12 @@ document.addEventListener("click",e=>{
  render();
 });
 document.addEventListener("change",e=>{const id=e.target.id,v=e.target.value;if(id==="yrs-n"&&v!==""){Y=Math.min(10,Math.max(1,Math.round(+v)));e.target.blur();render()}if(id==="rate-n"&&v!==""){RATE=+Math.min(15,Math.max(0,+v)).toFixed(2);e.target.blur();render()}if(id==="term-n"&&v!==""){TERM=Math.min(25,Math.max(FY,Math.round(+v)));e.target.blur();render()}});
-document.addEventListener("input",e=>{const id=e.target.id,v=e.target.value;if(id==="rate"){RATE=+v;render()}if(id==="term"){TERM=+v;render()}if(id==="marg"){MARG=v===""?0:+(+v).toFixed(2);render()}});
+document.addEventListener("input",e=>{const id=e.target.id,v=e.target.value;if(id==="rate"){RATE=+v;render()}if(id==="term"){TERM=+v;render()}if(id==="marg"){MARG=v===""?0:+(+v).toFixed(2);render()}if(id==="flr"&&v!==""){FLR=+(+v).toFixed(2);render()}if(id==="ceil"&&v!==""){CEIL=+(+v).toFixed(2);render()}});
+document.addEventListener("click",e=>{const b=e.target.closest&&e.target.closest("[data-ls]");if(b){LSF=b.dataset.ls;LSM=0;render()}const m=e.target.closest&&e.target.closest("[data-lsm]");if(m){LSM=LSM?0:1;render()}const o=e.target.closest&&e.target.closest("[data-lss]");if(o){const k=o.dataset.lss;LSS=LSS.k===k?{k,d:-LSS.d}:{k,d:1};render()}});
 document.addEventListener("click",e=>{const b=e.target.closest&&e.target.closest("[data-fy],[data-ten]");if(!b)return;if(b.dataset.fy)FY=+b.dataset.fy;if(b.dataset.ten)TEN=b.dataset.ten;render()});
 document.addEventListener("click",e=>{if(e.target.closest&&e.target.closest("#mort-reset")){RATE=D.mortgage.rate;TERM=D.mortgage.term;FY=null;MARG=null;TEN=null;render()}});
 document.addEventListener("keydown",e=>{const b=e.target.closest&&e.target.closest(".sc.pick,.sc.rpick");if(b&&(e.key==="Enter"||e.key===" ")){e.preventDefault();b.click()}});
-document.addEventListener("click",e=>{if(!e.target.closest||!e.target.closest("#rec-btn"))return;F=defF();B=0;MT=1;RATE=null;TERM=null;FY=null;MARG=null;TEN=null;Y=null;G=null;S=null;RI=null;render()});
+document.addEventListener("click",e=>{if(!e.target.closest||!e.target.closest("#rec-btn"))return;F=defF();B=D.defBuyer||0;MT=1;FLR=null;CEIL=null;ES=0;RATE=null;TERM=null;FY=null;MARG=null;TEN=null;Y=null;G=null;S=null;RI=null;render()});
 /* gallery */
 {const f=$("#hero-img");const sl=[...f.querySelectorAll(".gslide")];
  if(!sl.length)f.hidden=true;else{let gi=0,timer=null;const dots=$("#gdots");
@@ -512,7 +565,7 @@ document.addEventListener("click",e=>{if(!e.target.closest||!e.target.closest("#
 let DL=null;if(window.claude&&window.claude.use)window.claude.use("downloads").then(d=>{DL=d}).catch(()=>{});
 document.addEventListener("click",async e=>{const a=e.target.closest&&e.target.closest("#pdf-btn");if(!a)return;
  if(a.getAttribute("href")&&DL){e.preventDefault();const name=a.getAttribute("href");try{const r=await fetch(name);if(!r.ok)throw new Error("fetch");await DL.save({filename:name,data:await r.blob()})}catch(err){$("#pdf-msg").textContent=err&&err.code==="declined"?"":" Couldn't download here. Open the page in its own tab and try again."}return}
- if(!a.getAttribute("href")){e.preventDefault();F=defF();B=0;MT=1;RATE=null;TERM=null;FY=null;MARG=null;TEN=null;Y=null;G=null;S=null;RI=null;render();try{window.print()}catch(err){$("#pdf-msg").textContent=" Use the browser's Print → Save as PDF."}}});
+ if(!a.getAttribute("href")){e.preventDefault();F=defF();B=D.defBuyer||0;MT=1;FLR=null;CEIL=null;ES=0;RATE=null;TERM=null;FY=null;MARG=null;TEN=null;Y=null;G=null;S=null;RI=null;render();try{window.print()}catch(err){$("#pdf-msg").textContent=" Use the browser's Print → Save as PDF."}}});
 $("#eyebrow").textContent=(AGENT.name?AGENT.name+" · ":"")+"Ready property evaluation";
 /*@@FOOTER@@*/
 </script>

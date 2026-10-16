@@ -2,6 +2,25 @@
 
 The collection has its own version; each calculator also has its own version and changelog.
 
+## v1.4 — 16 Oct 2026
+| Calculator | Version |
+|---|---|
+| Off-plan Report | 1.4.0 ([changelog](skills/offplan-report/CHANGELOG.md)) |
+| Post-Handover Report | 1.2.0 ([changelog](skills/posthandover-report/CHANGELOG.md)) |
+| Ready Property Report | 1.1.0 ([changelog](skills/ready-report/CHANGELOG.md)) |
+| Airbnb / holiday home | coming soon |
+
+- **Distressed deal and mortgage are now built into the calculators**, switched on by the data (`references/modules.md`):
+  - **Distressed deal test** (7% rental ROI + 10% below what similar units sold for, both must be met) in all three,
+    for owner resales only (secondary market, off-plan or ready).
+  - **Similar listings now** (Property Finder + Bayut) flag possible distressed deals; units still sold by the developer show **New**.
+  - **Mortgage section** ("Your mortgage, year by year") in off-plan and ready; off-plan adds **developer × bank deals**
+    (e.g. ADCB × Ellington, `references/bank-offers.md`). Never in post-handover.
+  - **Market evidence** for off-plan and post-handover: the project's own DLD sales and owner resales.
+- **Same section order in all three calculators**: deal → what could happen → market evidence → listings → mortgage →
+  supply & demand → developer → things to know → unit → location → calculations.
+- Fixes: a 0% fixed rate no longer shows "NaN"; "Things to know" no longer leaves gaps next to long notes.
+
 ## v1.3 — 12 Oct 2026
 | Calculator | Version |
 |---|---|

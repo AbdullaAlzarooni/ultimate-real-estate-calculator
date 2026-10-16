@@ -5,7 +5,7 @@ description: Build a client-ready Dubai/UAE ready (completed) property evaluatio
 
 # Ready Property Report
 
-Version **1.0.0** (see `VERSION` and `CHANGELOG.md`).
+Version **1.1.0** (see `VERSION` and `CHANGELOG.md`).
 
 A report for a **ready unit on the resale market**: is the price fair vs what similar units in the building
 actually sold for, what does it rent for (unfurnished and furnished), the net yield on the cash you put in,
@@ -20,6 +20,7 @@ Read these before starting (all in `references/`):
 - `sources.md`   – every website, what to read on it, URL patterns, gotchas, fallbacks
 - `rules.md`     – formulas, fees, loan limits, growth bands, building age, long holds, premiums, labels
 - `design.md`    – section order and design/wording decisions
+- `modules.md`   – optional modules (distressed deal, mortgage, market evidence, developer) and the section order
 - `data-schema.md` – every field of the data file
 - `developer-section.md` – the optional Developer section
 

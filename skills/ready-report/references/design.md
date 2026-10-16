@@ -4,9 +4,7 @@ The template already implements all of this. Don't undo it when editing. Shared 
 Off-plan Report (`../../offplan-report/references/design.md`).
 
 ## Page order
-Sticky menu → hero → controls → 1 Is it a good deal → 2 What could happen → 3 Market evidence →
-4 Supply & demand → 5 The developer (optional) → Things to know → The unit & your costs → Location & comfort →
-The calculations (folded) → footer. Section numbers and menu links skip sections that aren't shown.
+Sticky menu → hero → controls → sections in the order of `modules.md` (1 Is it a good deal → 2 What could happen → 3 Market evidence → 4 Listings → 5 Mortgage → 6 Supply & demand → 7 Developer → 8 Things to know → 9 Unit → 10 Location → 11 Calculations); sections without data are skipped and renumbered.
 
 ## Hero
 - Eyebrow "<agent name> · Ready property evaluation", title "<Project> — <Label>".

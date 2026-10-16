@@ -22,6 +22,10 @@ handover date, DLD amount if shown, admin/Oqood fee, service charge AED/sqft, fu
 - **Image-only PDFs** (most brochures): text extraction returns nothing, so render the pages to images
   (PyMuPDF `fitz`, or `pdftoppm` from poppler) and read them; make a contact sheet to find the key pages.
 
+## 1b. Developer × bank offer (every off-plan property)
+Look the developer up in `bank-offers.md`. If there is a deal, add `offer:{…}` to the data (fields in that file),
+re-check the terms on the developer's / bank's page that day, and list what isn't stated in the notes.
+
 ## 2. Area comparables (2 sources, last 3 months, same bedroom type)
 For each source get **(a) average/median annual rent** and **(b) off-plan price per sqft**:
 - **DXB Interact** (main, size-matched ±10% of the unit size with `P74_MIN_SIZE` / `P74_MAX_SIZE`): rent = New

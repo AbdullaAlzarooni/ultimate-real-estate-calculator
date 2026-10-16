@@ -1,5 +1,15 @@
 # Changelog — Post-Handover Report
 
+## 1.2.0 — 16 Oct 2026
+- **Modules switched on by the data** (`references/modules.md`): `distressed:true` + `proj` adds the Distressed deal test
+  (7% rental ROI on the total cost + 10% below this project's own DLD sales); the top card keeps the post-handover figures
+  (yield on your cash, rent vs the plan). **No mortgage** in this report.
+- **Market evidence** and **Similar listings now** show whenever the data has `proj`.
+- **Same section order in all three calculators** (see `modules.md`).
+- Result boxes show the sale and "on your cash" lines as total and per year.
+- "Things to know" flows in two columns without gaps next to long notes (as in the Ready report).
+- Distressed deal test only for owner resales (secondary market); listings mark units still sold by the developer as **New**.
+
 ## 1.1.1 — 12 Oct 2026
 - `build.py` lists the developer photos in `<name>.files.txt`, so they are published with the report.
 - Fix: with no logo or agent photo in `brand/`, the footer showed "Photo not available" boxes; empty slots are

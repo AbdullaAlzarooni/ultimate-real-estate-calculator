@@ -60,3 +60,11 @@ Optional per project: `area` (dropdown name, default = first part of `loc`), `no
 `opNote` (e.g. "no DXB Interact sales page yet"), `compSrc` (where the date came from if not DLD).
 The subject project (`n` equal to `D.project`) is marked "This project" / "This building" and listed first;
 the section opens on the tab it belongs to. Photos go in `data/<name>-img/dev/` (about 70 KB each).
+
+## offer (developer × bank deal) — only when `bank-offers.md` lists one for this developer
+`UNITS.studio.offer={n,rate,fy,maxLtv,date,src,pm?,handoverOnly?}` adds a second option in Mortgage → Bank.
+Needs the normal plan in `UNITS.studio.construction={dev,start:[y,m],months,handoverPct,items:[[label,month,pct],…],planText,note}`.
+
+## Modules (optional, `modules.md`)
+`distressed:true` + `proj={name,range,psf,n,period,psf12,n12,src,asOf,note,op,sales:[[date,unit,sqft,price,seller]],resales:[[date,unit,sqft,price]],dev,handover:{listing,dld,dev,devName,progress,tone},listings:{asOf,src,base:{pf,by},note,items:[[site,id,price,size,f,s,yymmdd,ver,urltail,alt]]}}`; resale fees `nocFee`, `buyAgency`, `adminLabel`.
+Mortgage: `construction`, `eibor`, `mortgage`, `buyers`, `varDefaults` (+ `offer`).

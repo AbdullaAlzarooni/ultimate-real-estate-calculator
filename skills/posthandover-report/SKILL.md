@@ -5,7 +5,7 @@ description: Build a client-ready Dubai/UAE post-handover payment plan (PHPP) ev
 
 # Post-handover evaluation report
 
-Version **1.1.1** (see `VERSION` and `CHANGELOG.md`).
+Version **1.2.0** (see `VERSION` and `CHANGELOG.md`).
 
 Same report as the Off-plan Report (verdict, deal checks, what-if scenarios, supply & demand, view maps,
 location comfort, step-by-step maths, photos, client PDF) plus everything a **post-handover payment plan**
@@ -18,6 +18,7 @@ Read these before starting (all in `references/`):
 - `sources.md`   – every website, what to read on it, URL patterns, gotchas, fallbacks
 - `rules.md`     – formulas, growth bands, premiums, valuation cases, labels; post-handover maths at the end
 - `design.md`    – section order and design/wording decisions; post-handover additions at the end
+- `modules.md`   – optional modules (distressed deal, mortgage, market evidence, developer) and the section order
 - `data-schema.md` – every field of the data file, including the post-handover fields
 
 The build kit is in `kit/` (copy it to a working folder first – see step 0).

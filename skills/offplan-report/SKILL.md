@@ -5,7 +5,7 @@ description: Build a client-ready Dubai/UAE off-plan property evaluation report 
 
 # Off-plan evaluation report
 
-Version **1.3.1** (see `VERSION` and `CHANGELOG.md`).
+Version **1.4.0** (see `VERSION` and `CHANGELOG.md`).
 
 Turns one off-plan unit into a polished, phone-friendly report: verdict, deal checks, what-if
 scenarios, supply & demand, payment plan, location comfort, full step-by-step maths, photo gallery,
@@ -16,6 +16,7 @@ Read these before starting (all in `references/`):
 - `sources.md`   – every website, what to read on it, URL patterns, gotchas, fallbacks
 - `rules.md`     – formulas, growth bands, premiums, valuation cases, labels, wording rules
 - `design.md`    – section order and the design/wording decisions the report must keep
+- `modules.md`   – optional modules (distressed deal, mortgage, market evidence, developer) and the section order
 - `data-schema.md` – every field of the data file, with the Weston example
 
 The build kit is in `kit/` (copy it to a working folder first – see step 0).
@@ -71,3 +72,5 @@ If no, build the report without it. If yes, tell them it adds a lot of time, the
 `references/developer-section.md` (data format: `data-schema.md` → Developer section).
 3. Then ask for the first property (sales offer PDF, brochure, or a project link) and follow `workflow.md`.
    Tell them what you are doing as you go (e.g. "Reading Bayut rents…") and what each step needs from them.
+
+**Developer × bank offers:** for every off-plan property, look the developer up in `references/bank-offers.md`; if it has a deal (e.g. Ellington × ADCB, Emaar × ADCB, Dubai Holding × ADCB/ENBD/CBD, Expo City × DIB, Sobha × ENBD/ADIB/RAKBANK), add the bank-offer option to the mortgage section (workflow step 1b).

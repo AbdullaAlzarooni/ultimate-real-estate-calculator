@@ -1,5 +1,16 @@
 # Changelog — Ready Property Report
 
+## 1.1.0 — 16 Oct 2026
+- **Modules switched on by the data** (`references/modules.md`): the Distressed Deal and Mortgage reports are now part of
+  this report. `distressed:true` adds the Distressed deal test (7% rental ROI + 10% below size-matched sales);
+  `mortgageReport:true` adds the mortgage deal test (positive cashflow) and opens on a mortgage.
+- **Your mortgage, year by year**: EIBOR scenarios (as today / +1% / −1%), yearly and monthly cashflow chart, year table
+  and month-by-month schedule; variable rate kept between a floor and a ceiling; property insurance once a year.
+- **Similar listings now** (Property Finder + Bayut): every similar unit for sale, sortable, size filter, "distressed deal?" per listing.
+- **Same section order in all three calculators** (see `modules.md`): the mortgage section comes after the listings.
+- Fix: a 0% fixed rate no longer shows "NaN".
+- Distressed deal test only for owner resales (secondary market); `market:"primary"` switches it off.
+
 ## 1.0.0 — 12 Oct 2026
 First release, as part of **The Ultimate Real Estate Calculator** v1.3.
 - Report for **ready units on the resale market**: verdict (priced above / below recent sales, net rent and yield

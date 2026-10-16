@@ -67,3 +67,6 @@ Optional per project: `area` (dropdown name, default = first part of `loc`), `no
 `opNote` (e.g. "no DXB Interact sales page yet"), `compSrc` (where the date came from if not DLD).
 The subject project (`n` equal to `D.project`) is marked "This project" / "This building" and listed first;
 the section opens on the tab it belongs to. Photos go in `data/<name>-img/dev/` (about 70 KB each).
+
+## Modules (optional, `modules.md`)
+`UNITS.studio.distressed=true` → Distressed deal test · `UNITS.studio.mortgageReport=true` → mortgage deal test + opens on a mortgage (set `defBuyer:1`).

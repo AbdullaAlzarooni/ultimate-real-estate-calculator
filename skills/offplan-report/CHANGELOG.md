@@ -1,5 +1,20 @@
 # Changelog — Off-plan Report
 
+## 1.4.0 — 16 Oct 2026
+- **Modules switched on by the data** (`references/modules.md`): the Distressed Off-plan report is now part of this report.
+  `distressed:true` + `proj` adds section 1 A "Distressed deal test" (7% rental ROI + 10% below this project's own DLD sales),
+  a distressed headline and the resale fees (developer NOC + buyer's agency).
+- **Market evidence** and **Similar listings now** (Property Finder + Bayut, sortable, filters, "distressed deal?" per listing)
+  show whenever the data has the project's sales (`proj`), not only for distressed deals.
+- **Mortgage section** ("Your mortgage, year by year"): cash / mortgage switch, normal bank at handover and the developer ×
+  bank deal (`offer`, `references/bank-offers.md`), construction-phase draws, fixed then EIBOR + margin, insurance,
+  yearly / monthly cashflow chart and tables. Shows when the data has `construction`, `eibor`, `mortgage`, `buyers`, `varDefaults`.
+- **Same section order in all three calculators**: deal → what could happen → market evidence → listings → mortgage →
+  supply & demand → developer → things to know → unit → location → calculations.
+- Result boxes show the sale and "on your cash" lines as total and per year.
+- "Things to know" flows in two columns without gaps next to long notes (as in the Ready report).
+- Distressed deal test only for owner resales (secondary market); listings mark units still sold by the developer as **New**.
+
 ## 1.3.1 — 12 Oct 2026
 - The Starfall example now includes the **Developer section** (every Binghatti project) with its photos.
 - `build.py` lists the developer photos in `<name>.files.txt`, so they are published with the report.
