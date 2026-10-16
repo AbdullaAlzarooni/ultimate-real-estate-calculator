@@ -35,6 +35,8 @@ The build kit is in `kit/` (copy it to a working folder first – see step 0).
 6. **Credit line stays.** Never remove the footer line "The Ultimate Real Estate Calculator · Off-plan Report v… © 2026 Abdulla Alzarooni …" or the
    copyright notices; they are required by the LICENSE.
 7. **Verify before handing over:** run the checks in `workflow.md` (step 9). Report failures honestly.
+8. **Before every report** (not only the first one), ask whether they want the optional **Developer section** (step 2b:
+   it takes a long time) and whether the unit is a **resale** or new from the developer (step 2c).
 
 ## Quick start
 ```bash
