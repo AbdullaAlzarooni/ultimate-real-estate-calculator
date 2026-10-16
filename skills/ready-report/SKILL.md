@@ -41,6 +41,8 @@ The build kit is in `kit/` (copy it to a working folder first – see step 0).
    copyright notices; they are required by the LICENSE.
 7. **Never use Property Monitor** (it prohibits AI / automated use; `sources.md`).
 8. **Every image must load** and **verify before handing over** (`workflow.md` step 9). Report failures honestly.
+9. **Before every report** (not only the first one), ask whether they want the optional **Developer section** (step 2b:
+   it takes a long time) and whether the unit is a **resale** or new from the developer (step 2c).
 
 ## Quick start
 ```bash
