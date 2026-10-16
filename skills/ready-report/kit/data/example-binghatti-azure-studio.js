@@ -99,7 +99,6 @@ UNITS.studio.sd={
   ],
   src:[["DXB Interact – JVC units supply (Al Barsha South Fourth)","https://dxbinteract.com/dubai-units-supply-analysis"],["DXB Interact – JVC sales & rents","https://dxbinteract.com/dubai-house-prices/jumeirah-village-circle"],["DXB Interact – Binghatti Azure project","https://dxbinteract.com/projects/binghatti-azure"],["DXB Interact – Binghatti Azure sales","https://dxbinteract.com/dubai-house-prices/binghatti-azure"],["Bayut – JVC transactions","https://www.bayut.com/property-market-analysis/transactions/sale/studio-property/dubai/jumeirah-village-circle-jvc/"]]
 };
-/* agent shown in the footer · leave whatsapp/brn empty to hide them */
 UNITS.studio.listings={asOf:"14 Oct 2026", src:"Property Finder + Bayut", bands:[{min:377,max:410,rent:45000,src:"DXB Interact, 27 new leases of 377–410 sqft studios in the building, 1 Jun – 11 Oct 2026, average"}], self:"109500483",
   base:{pf:"https://www.propertyfinder.ae/en/plp/buy/apartment-for-sale-dubai-jumeirah-village-circle-district-16-binghatti-azure-",by:"https://www.bayut.com/property/details-"},
   note:"Property Finder and Bayut, every ready studio for sale in Binghatti Azure, read 14 Oct 2026. A unit with the same price and size on both sites is counted once. 'This unit' = the unit in this report (Bayut 15183199; on Property Finder as 109500483, same price, size and furnishing).",

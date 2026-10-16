@@ -33,6 +33,8 @@ More screenshots on the [Off-plan Report](skills/offplan-report/README.md#see-it
 
 **Built into every calculator (v1.4):** distressed deal test for owner resales, similar listings with possible distressed deals, a mortgage section (off-plan and ready; off-plan also shows developer × bank deals such as ADCB × Ellington), and the same section order in all three. See each skill's `references/modules.md`.
 
+<p><img src="docs/images/distressed-test.jpg" width="49%" alt="Distressed deal test"> <img src="docs/images/offplan-mortgage.jpg" width="49%" alt="Mortgage with a developer x bank deal"></p>
+
 ## Install guide (step by step)
 Takes about 15 minutes the first time. Built and tested on **macOS**; Windows and Linux should work but
 haven't been tested yet.

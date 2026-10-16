@@ -24,15 +24,33 @@ Example: Binghatti Starfall studio, Al Jaddaf (from a brochure).
 
 <p><img src="../../docs/images/verdict.jpg" width="420" alt="Verdict"></p>
 
-**1 · Is it a good deal?** Four quick checks and where the price sits
+**Is it a good deal?** Four quick checks and where the price sits
 
 <img src="../../docs/images/deal-checks.jpg" alt="Deal checks">
 
-**2 · What could happen:** pick the market and rents, see profit and yield
+**What could happen:** pick the market and rents, see profit and yield
 
 <img src="../../docs/images/what-if.jpg" alt="What-if scenarios">
 
-**3 · Supply & demand:** what buyers want vs what the building offers vs what's coming
+**Example 2: Belgravia Gardens 2-bed, a resale (Falcon City).** New in v1.4:
+
+**Distressed deal test (resales only):** 7% rental ROI and 10% below this project's own DLD sales, both must be met; then the usual market checks
+
+<img src="../../docs/images/distressed-test.jpg" alt="Distressed deal test">
+
+**Market evidence:** the project's own DLD sales, owner resales and price per sqft compared
+
+<img src="../../docs/images/market-evidence.jpg" alt="Market evidence">
+
+**Similar listings now:** every similar unit for sale on Property Finder and Bayut, sortable, with possible distressed deals flagged (units still sold by the developer show *New*)
+
+<img src="../../docs/images/similar-listings.jpg" alt="Similar listings now">
+
+**Your mortgage, year by year:** cash or mortgage, a normal bank at handover or the **developer × bank deal** (here ADCB × Ellington: the bank pays the construction instalments after you have paid 50%), every payment before and after handover, and what is left each month
+
+<img src="../../docs/images/offplan-mortgage.jpg" alt="Mortgage with the ADCB x Ellington deal">
+
+**Supply & demand:** what buyers want vs what the building offers vs what's coming
 
 <img src="../../docs/images/supply-demand.jpg" alt="Supply and demand">
 
@@ -41,7 +59,7 @@ photos, delivery record, unit mix, rented % or absorption and premiums per unit 
 
 <img src="../../docs/images/developer.jpg" alt="Developer section">
 
-**4 · View map:** what each side of the building faces. GIS DDA allowed heights and a Google Maps satellite view
+**View map:** what each side of the building faces. GIS DDA allowed heights and a Google Maps satellite view
 (tap a direction to point the arrow). Example: Weston by Wadan, DLRC.
 
 <img src="../../docs/images/view-map-gis.jpg" alt="View map, GIS DDA tab">

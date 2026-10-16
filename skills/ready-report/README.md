@@ -29,9 +29,21 @@ Example: Binghatti Azure furnished studio, JVC, listed at AED 625,000.
 
 <img src="../../docs/images/ready-mortgage.jpg" alt="Mortgage options: buyer type, fixed rate, EIBOR and bank margin">
 
+**Your mortgage, year by year:** what is left for you each month or year after the loan, insurance and service charge; EIBOR as today, +1% or −1%; year table and month-by-month schedule
+
+<img src="../../docs/images/ready-mortgage-years.jpg" alt="Mortgage year by year">
+
 **Four deal checks and where the price sits**
 
 <img src="../../docs/images/ready-deal-checks.jpg" alt="Deal checks and where the price sits">
+
+**Distressed deal test (resales):** 7% rental ROI and 10% below what similar units sold for, both must be met (example: `example-binghatti-azure-distressed.js`)
+
+<img src="../../docs/images/ready-distressed-test.jpg" alt="Distressed deal test">
+
+**Mortgage deal test:** does the rent cover the mortgage? (example: `example-binghatti-azure-mortgage.js`)
+
+<img src="../../docs/images/ready-mortgage-test.jpg" alt="Mortgage deal test">
 
 **What could happen:** sell after 1–10 years (market growth and building age), or keep it and rent it out
 

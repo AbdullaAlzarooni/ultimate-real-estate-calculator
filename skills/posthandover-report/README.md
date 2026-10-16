@@ -31,6 +31,10 @@ what happens if the unit sits empty after handover
 
 <img src="../../docs/images/ph-plan.jpg" alt="Payment plan and rent vs post-handover instalments">
 
+**Market evidence and similar listings** (same as the [Off-plan Report](../offplan-report/README.md)): the project's own DLD sales, every similar unit for sale, and possible distressed deals among owner resales
+
+<img src="../../docs/images/similar-listings.jpg" alt="Similar listings now">
+
 **View map:** what each side of the building faces (GIS DDA allowed heights + Google Maps)
 
 <img src="../../docs/images/view-map-gis.jpg" alt="View map">
