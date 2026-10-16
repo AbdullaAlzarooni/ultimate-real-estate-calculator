@@ -1,16 +1,21 @@
 # Post-Handover Report
 
-[![Latest: v1.1.1](https://img.shields.io/badge/latest-v1.1.1-2ea44f)](CHANGELOG.md)
+[![Latest: v1.2.0](https://img.shields.io/badge/latest-v1.2.0-2ea44f)](CHANGELOG.md)
 
 Part of **[The Ultimate Real Estate Calculator](../../README.md)**.
 
-**Version 1.1.1** · [Changelog](CHANGELOG.md) · Version history: [all versions](https://github.com/AbdullaAlzarooni/ultimate-real-estate-calculator/tags) · [collection releases](https://github.com/AbdullaAlzarooni/ultimate-real-estate-calculator/releases) · by **Abdulla Alzarooni** (Real Estate with Abdulla Alzarooni)
+**Version 1.2.0** · [Changelog](CHANGELOG.md) · Version history: [all versions](https://github.com/AbdullaAlzarooni/ultimate-real-estate-calculator/tags) · [collection releases](https://github.com/AbdullaAlzarooni/ultimate-real-estate-calculator/releases) · by **Abdulla Alzarooni** (Real Estate with Abdulla Alzarooni)
 
 For units sold on a **post-handover payment plan** (60/40, 50/50 and similar): you keep paying after
 handover, so the real questions are **does the rent cover those instalments, how much do I add each
 month, and what do I earn on the cash I actually put in?** Give Claude the **sales offer** (or a brochure /
 project link) and it builds a client-ready report (web page + PDF) that answers them, on top of everything
 in the [Off-plan Report](../offplan-report/README.md).
+
+
+**Also built in (v1.2):** a **distressed deal test** for resales, **market evidence** (the project's DLD sales) and
+**similar listings now** with possible distressed deals. No mortgage section: it doesn't apply to post-handover plans
+(`references/modules.md`).
 
 ---
 

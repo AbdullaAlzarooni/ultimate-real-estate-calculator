@@ -1,15 +1,20 @@
 # Ready Property Report
 
-[![Latest: v1.0.0](https://img.shields.io/badge/latest-v1.0.0-2ea44f)](CHANGELOG.md)
+[![Latest: v1.1.0](https://img.shields.io/badge/latest-v1.1.0-2ea44f)](CHANGELOG.md)
 
 Part of **[The Ultimate Real Estate Calculator](../../README.md)**.
 
-**Version 1.0.0** · [Changelog](CHANGELOG.md) · Version history: [all versions](https://github.com/AbdullaAlzarooni/ultimate-real-estate-calculator/tags) · [collection releases](https://github.com/AbdullaAlzarooni/ultimate-real-estate-calculator/releases) · by **Abdulla Alzarooni** (Real Estate with Abdulla Alzarooni)
+**Version 1.1.0** · [Changelog](CHANGELOG.md) · Version history: [all versions](https://github.com/AbdullaAlzarooni/ultimate-real-estate-calculator/tags) · [collection releases](https://github.com/AbdullaAlzarooni/ultimate-real-estate-calculator/releases) · by **Abdulla Alzarooni** (Real Estate with Abdulla Alzarooni)
 
 For **ready (completed) units on the resale market**, bought with **cash or a mortgage**. Give Claude a
 Bayut or Property Finder listing and it builds a client-ready report (web page + PDF) that answers:
 **is the price fair compared with what similar units in the building actually sold for, what does it rent
 for, what do I earn on my cash, what will the mortgage cost me, and what could I sell it for later?**
+
+
+**Also built in (v1.1):** a **distressed deal test** for resales (7% rental ROI + 10% below similar sales),
+**similar listings now** with possible distressed deals, and **Your mortgage, year by year** (yearly and monthly
+cashflow, EIBOR scenarios, a positive-cashflow test) (`references/modules.md`).
 
 ---
 

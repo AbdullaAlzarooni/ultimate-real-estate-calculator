@@ -2,7 +2,7 @@
 
 [![Latest: v1.4](https://img.shields.io/badge/latest-v1.4-2ea44f)](https://github.com/AbdullaAlzarooni/ultimate-real-estate-calculator/releases/latest)
 
-**Version 1.3** · [Changelog](CHANGELOG.md) · [Releases](https://github.com/AbdullaAlzarooni/ultimate-real-estate-calculator/releases)
+**Version 1.4** · [Changelog](CHANGELOG.md) · [Releases](https://github.com/AbdullaAlzarooni/ultimate-real-estate-calculator/releases)
 
 by **Abdulla Alzarooni** · Real Estate with Abdulla Alzarooni ·
 [Instagram](https://www.instagram.com/abdulla.al.zarooni)
@@ -26,9 +26,9 @@ More screenshots on the [Off-plan Report](skills/offplan-report/README.md#see-it
 ## Calculators
 | Calculator | What it does | Version |
 |---|---|---|
-| [**Off-plan Report**](skills/offplan-report/README.md) | Sales offer / brochure / Reelly or GenieMap link → full off-plan evaluation (profit at handover, yield, what-ifs, supply & demand, optional developer section, payment plan, view map, location, PDF) | 1.4.0 |
-| [**Post-Handover Report**](skills/posthandover-report/README.md) | Units on a post-handover payment plan (60/40, 50/50…) → everything in the off-plan report plus: does the rent cover the instalments after handover, monthly top-up, yield on your cash, empty-months slider | 1.2.0 |
-| [**Ready Property Report**](skills/ready-report/README.md) | Bayut / Property Finder listing of a ready unit → price vs size-matched recent sales in the building, rent (unfurnished / furnished) and yield on your cash, **cash or mortgage** (UAE National / Resident / Non-resident, 1st or 2nd mortgage, fixed rate then EIBOR + margin, insurance and fees), sell after 1–10 years with a building-age discount, supply & demand, optional developer section, view map, PDF | 1.1.0 |
+| [**Off-plan Report**](skills/offplan-report/README.md) | Sales offer / brochure / Reelly or GenieMap link → full off-plan evaluation (profit at handover, yield, what-ifs, supply & demand, optional developer section, payment plan, view map, location, PDF) · **distressed deal test** for resales · **similar listings** with possible distressed deals · **mortgage** with developer × bank deals (e.g. ADCB × Ellington) | 1.4.0 |
+| [**Post-Handover Report**](skills/posthandover-report/README.md) | Units on a post-handover payment plan (60/40, 50/50…) → everything in the off-plan report plus: does the rent cover the instalments after handover, monthly top-up, yield on your cash, empty-months slider · **distressed deal test** for resales · **similar listings** with possible distressed deals (no mortgage: it doesn't apply to post-handover plans) | 1.2.0 |
+| [**Ready Property Report**](skills/ready-report/README.md) | Bayut / Property Finder listing of a ready unit → price vs size-matched recent sales in the building, rent (unfurnished / furnished) and yield on your cash, **cash or mortgage** (UAE National / Resident / Non-resident, 1st or 2nd mortgage, fixed rate then EIBOR + margin, insurance and fees), sell after 1–10 years with a building-age discount, supply & demand, optional developer section, view map, PDF · **distressed deal test** · **similar listings** with possible distressed deals · **mortgage, year by year** (yearly cashflow, EIBOR scenarios) | 1.1.0 |
 | Airbnb / holiday home | coming soon | – |
 
 **Built into every calculator (v1.4):** distressed deal test for owner resales, similar listings with possible distressed deals, a mortgage section (off-plan and ready; off-plan also shows developer × bank deals such as ADCB × Ellington), and the same section order in all three. See each skill's `references/modules.md`.
