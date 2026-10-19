@@ -1,5 +1,11 @@
 # Changelog — Ready Property Report
 
+## 1.2.0 — 19 Oct 2026
+- **Interactive area map** (Location section B): roads with names, metro, tram, Etihad Rail and planned lines, 215 community areas with a card each (description, Dubai 2040 plan, area news), landmarks, malls, parks, beaches, future projects, schools, universities and hospitals, search with highlight, the nearest places with drive times, English / Arabic. Street map drawn from OpenStreetMap; no satellite imagery. Switched on by one line in the data file: `const INFRA_MAP={infra:"<folder>-img/infra-map"};` (folder holds `infra-layers.json` + `img/`). The examples ship with their maps; leave the line out for a property without a map.
+- **Location sub-sections lettered A / B / C**: A the view from your unit, B the area map, C area news (pages of 6).
+- **Light / dark mode switch** at the top of the report.
+- `build.py` adds the map files to `<report>.files.txt` so they are uploaded with the report.
+
 ## 1.1.0 — 16 Oct 2026
 - **Modules switched on by the data** (`references/modules.md`): the Distressed Deal and Mortgage reports are now part of
   this report. `distressed:true` adds the Distressed deal test (7% rental ROI + 10% below size-matched sales);

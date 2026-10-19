@@ -5,7 +5,7 @@ description: Build a client-ready Dubai/UAE ready (completed) property evaluatio
 
 # Ready Property Report
 
-Version **1.1.0** (see `VERSION` and `CHANGELOG.md`).
+Version **1.2.0** (see `VERSION` and `CHANGELOG.md`).
 
 A report for a **ready unit on the resale market**: is the price fair vs what similar units in the building
 actually sold for, what does it rent for (unfurnished and furnished), the net yield on the cash you put in,

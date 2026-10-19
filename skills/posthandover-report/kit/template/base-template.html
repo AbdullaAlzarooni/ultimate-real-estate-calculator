@@ -38,6 +38,10 @@ h2{font-size:21px;font-weight:600;display:flex;flex-wrap:wrap;align-items:baseli
 h2 small{font:500 12px var(--f-body);color:var(--muted);letter-spacing:.04em;text-transform:uppercase}
 .brandrow{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:6px}
 .toc{align-items:center}
+.theme-sw{margin-left:auto;flex:none;display:inline-flex;gap:2px;padding:3px;border-radius:999px;border:1px solid var(--line);background:var(--surface);position:sticky;right:0}
+.theme-sw button{display:inline-flex;align-items:center;justify-content:center;font:500 12px var(--f-display);padding:5px 9px;border:0;border-radius:999px;background:transparent;color:var(--muted);cursor:pointer}
+.theme-sw button[aria-pressed=true]{background:var(--ink);color:var(--bg)}
+
 .toc-brand{flex:none;display:flex;align-items:center;padding:0 14px 0 4px;margin-right:6px;border-right:1px solid var(--line)}
 .logo{height:17px;width:auto;display:block}
 .l-light{display:none}
@@ -458,6 +462,7 @@ footer{padding-top:22px}
 <div class="wrap">
   <nav class="toc" aria-label="Sections">
     <a href="#hero-row">Verdict</a><a href="#deal">Deal check</a><a href="#outcomes">What could happen</a><a href="#sd">Supply &amp; demand</a><a href="#dev">Developer</a><a href="#know">Things to know</a><a href="#unit-sec">Unit &amp; payments</a><a href="#comfort-sec">Location</a><a href="#details">Calculations</a>
+    <span class="theme-sw" role="group" aria-label="Colour theme"><button type="button" data-th="light" aria-label="Light mode" title="Light mode"><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg></button><button type="button" data-th="dark" aria-label="Dark mode" title="Dark mode"><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7z"/></svg></button></span><script>/* Light | Dark switch: remembers the choice; until then the page follows the device */(function(){var K="rep-theme",r=document.documentElement;try{var v=localStorage.getItem(K);if(v==="light"||v==="dark")r.dataset.theme=v}catch(e){}var mq=window.matchMedia?matchMedia("(prefers-color-scheme: dark)"):null;function eff(){return r.dataset.theme||(mq&&mq.matches?"dark":"light")}function mark(){document.querySelectorAll(".theme-sw button").forEach(function(b){b.setAttribute("aria-pressed",String(b.dataset.th===eff()))})}document.addEventListener("click",function(e){var b=e.target.closest&&e.target.closest(".theme-sw button");if(!b)return;r.dataset.theme=b.dataset.th;try{localStorage.setItem(K,b.dataset.th)}catch(x){}mark()});document.addEventListener("DOMContentLoaded",mark);if(mq&&mq.addEventListener)mq.addEventListener("change",mark)})();</script>
   </nav>
 
   <header class="hero">
@@ -536,8 +541,14 @@ footer{padding-top:22px}
 
   <section id="comfort-sec">
     <h2>7 · Location &amp; comfort <small>notes only · no effect on numbers</small></h2>
+    <h3 class="s2-sub loc-sub" data-for="viewmap" hidden><b></b>View from your unit</h3>
     <div class="card viewmap" id="viewmap" hidden></div>
     <div class="comfort" id="comfort"></div>
+    <h3 class="s2-sub loc-sub imap-h" data-for="imap-block" hidden><b></b>Roads, rail and places around <span></span></h3>
+    <div class="imap-block" id="imap-block" hidden><div id="imap"></div></div>
+    <h3 class="s2-sub loc-sub" data-for="imap-news-slot" hidden><b></b>Area news</h3>
+    <div class="imap-news-slot" id="imap-news-slot"></div>
+    <script>/* letter the Location sub-sections that are shown: A, B, C */document.addEventListener("DOMContentLoaded",()=>{let i=0;document.querySelectorAll("#comfort-sec .loc-sub").forEach(h=>{const t=document.getElementById(h.dataset.for),v=!!t&&!t.hidden&&t.innerHTML.trim()!=="";h.hidden=!v;if(v)h.querySelector("b").textContent="ABCD"[i++]+" · "})})</script>
   </section>
 
   <section id="details">

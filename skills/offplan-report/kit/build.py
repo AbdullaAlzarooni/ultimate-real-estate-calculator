@@ -48,9 +48,26 @@ slides = "".join(
     for i, (f, c) in enumerate(pairs))
 html = html.replace("@@HERO_SLIDES@@", slides)
 
+# interactive area map (optional): the data file names a folder under data/ that holds infra-layers.json + img/
+mi = re.search(r'\binfra:"([^"]+)"', src)
+map_files = []
+if mi:
+    mdir = here / "data" / mi.group(1); pre = "data/" + mi.group(1)
+    lj = (mdir / "infra-layers.json").read_text()
+    lj = lj.replace('"img/', '"' + pre + '/img/').replace('data-img=\\"img/', 'data-img=\\"' + pre + '/img/')
+    base = pre + "/img/base.webp" if (mdir / "img" / "base.webp").exists() else ""   # no satellite photo = Street map only
+    tools = here / "tools" / "infra-map"
+    inject = ("<style>" + (tools / "infra-map.css").read_text() + "</style><script>" + (tools / "infra-map.js").read_text()
+              + '\n(function(){const M=' + lj + ';M.embed=true;const b=document.getElementById("imap-block");if(!b)return;b.hidden=false;'
+              + 'const h=document.querySelector(".imap-h span");if(h)h.textContent=M.project||"";initInfraMap(document.getElementById("imap"),M,"' + base + '");})();</script>')
+    html = html.replace("</body>", inject + "</body>") if "</body>" in html else html.rstrip("\n") + "\n" + inject + "\n"
+    map_files = sorted(set(re.findall(re.escape(pre) + r'/img/[A-Za-z0-9._/-]+\.(?:webp|jpg|png)', lj)) | ({base} if base else set()))
+    missing = [p for p in map_files if not (here / p).exists()]
+    assert not missing, ("map images missing", missing[:5])
+
 out = here / (data.stem + ".html")
 out.write_text(html)
 extra = re.findall(r'\bsat:"([^"]+)"', src)   # view-map satellite image (tools/satview.py)
 extra += re.findall(r'"img":"([^"]+)"', src)   # developer section photos
-(here / (data.stem + ".files.txt")).write_text("\n".join("data/" + f for f in [p for p, _ in pairs] + extra))
+(here / (data.stem + ".files.txt")).write_text("\n".join(["data/" + f for f in [p for p, _ in pairs] + extra] + map_files))
 print("built", out.name)

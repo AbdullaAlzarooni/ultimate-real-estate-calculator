@@ -1,10 +1,10 @@
 # Off-plan Report
 
-[![Latest: v1.4.0](https://img.shields.io/badge/latest-v1.4.0-2ea44f)](CHANGELOG.md)
+[![Latest: v1.5.0](https://img.shields.io/badge/latest-v1.5.0-2ea44f)](CHANGELOG.md)
 
 Part of **[The Ultimate Real Estate Calculator](../../README.md)**.
 
-**Version 1.4.0** · [Changelog](CHANGELOG.md) · Version history: [all off-plan versions](https://github.com/AbdullaAlzarooni/ultimate-real-estate-calculator/tags) · [collection releases](https://github.com/AbdullaAlzarooni/ultimate-real-estate-calculator/releases) · by **Abdulla Alzarooni** (Real Estate with Abdulla Alzarooni)
+**Version 1.5.0** · [Changelog](CHANGELOG.md) · Version history: [all off-plan versions](https://github.com/AbdullaAlzarooni/ultimate-real-estate-calculator/tags) · [collection releases](https://github.com/AbdullaAlzarooni/ultimate-real-estate-calculator/releases) · by **Abdulla Alzarooni** (Real Estate with Abdulla Alzarooni)
 
 Turn any Dubai / UAE off-plan unit into a **client-ready evaluation report** (web page + PDF) in one
 conversation with Claude. Give it a **sales offer**, a **brochure**, or a project link from

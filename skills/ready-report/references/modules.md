@@ -32,3 +32,6 @@ Sections without data are skipped and the numbers close up (the page numbers the
   `adminLabel`) instead of the Oqood admin fee.
 - Objectives: rental ROI = net rent at handover ÷ total cost (Yes ≥ 7%, almost 6–7%); capital appreciation =
   (project median AED/sqft − your AED/sqft) ÷ your AED/sqft (Yes ≥ 10%, almost 7–10%).
+
+## Interactive area map (`INFRA_MAP`)
+One line in the data file switches on Location section B, the interactive map: `const INFRA_MAP={infra:"<folder>-img/infra-map"};`. `build.py` reads `data/<folder>/infra-layers.json`, inlines `tools/infra-map/infra-map.js` + `.css`, and lists `data/<folder>/img/...` in `<report>.files.txt`. Without a `img/base.webp` the map shows the Street map only (the public version). Section C (area news) fills itself from the map data. The examples ship with ready-made maps; a map for a new location is built separately, so for a new property leave the line out and the Location section closes up (A view map only).

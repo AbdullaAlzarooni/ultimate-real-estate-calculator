@@ -2,6 +2,20 @@
 
 The collection has its own version; each calculator also has its own version and changelog.
 
+## v1.5 — 19 Oct 2026
+| Calculator | Version |
+|---|---|
+| Off-plan Report | 1.5.0 ([changelog](skills/offplan-report/CHANGELOG.md)) |
+| Post-Handover Report | 1.3.0 ([changelog](skills/posthandover-report/CHANGELOG.md)) |
+| Ready Property Report | 1.2.0 ([changelog](skills/ready-report/CHANGELOG.md)) |
+| Airbnb / holiday home | coming soon |
+
+- **Interactive area map in all three calculators** (Location section B): roads with names, metro, tram, Etihad Rail and planned lines,
+  215 community areas with cards (description, Dubai 2040 plan, area news), places, schools, universities and hospitals,
+  search with highlight, nearest places with drive times, English / Arabic. Street map from OpenStreetMap. Switched on by `INFRA_MAP` in the data.
+- **Location sub-sections lettered A / B / C**: view from your unit, area map, area news.
+- **Light / dark mode switch** at the top of every report.
+
 ## v1.4 — 16 Oct 2026
 | Calculator | Version |
 |---|---|
